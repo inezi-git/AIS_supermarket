@@ -1,1 +1,111 @@
-/
+CREATE SCHEMA `DB_SuperMarket` DEFAULT CHARACTER SET utf8;
+SET NAMES utf8mb4;
+
+CREATE TABLE `DB_SuperMarket`.`Employee`  (
+             `id_employee` varchar(10) NOT NULL,
+             `empl_surname` varchar(50) NOT NULL,
+             `empl_name` varchar(50) NOT NULL,
+             `empl_patronymic` varchar(50) ,
+             `empl_role` varchar(10) NOT NULL,
+             `salary` decimal(13, 4) UNSIGNED NOT NULL,
+             `date_of_birth` date NOT NULL,
+             `date_of_start` date NOT NULL,
+             `phone_number` varchar(13) NOT NULL,
+             `city` varchar(50) NOT NULL,
+             `street` varchar(50) NOT NULL,
+             `zip_code` varchar(9) NOT NULL,
+             `email` varchar(50) NOT NULL,
+             `password` varchar(64) NOT NULL,
+             PRIMARY KEY (`id_employee`)
+);
+
+CREATE TABLE `DB_SuperMarket`.`Category` (
+            `category_number` int NOT NULL AUTO_INCREMENT,
+            `category_name` varchar(50) NOT NULL,
+            PRIMARY KEY (`category_number`)
+);
+
+CREATE TABLE `DB_SuperMarket`.`Product`  (
+            `id_product` int NOT NULL AUTO_INCREMENT,
+            `category_number` int NOT NULL,
+            `product_name` varchar(50) NOT NULL,
+            `producer` varchar(100) NOT NULL,
+            `characteristics` varchar(100) NOT NULL,
+            CONSTRAINT fk_category_number
+                FOREIGN KEY (`category_number`)
+                    REFERENCES Category (`category_number`)
+                    ON UPDATE CASCADE
+                    ON DELETE NO ACTION,
+            PRIMARY KEY (`id_product`)
+);
+
+CREATE TABLE `DB_SuperMarket`.`Customer_Card`  (
+            `card_number` varchar(13) NOT NULL,
+            `cust_surname` varchar(50) NOT NULL,
+            `cust_name` varchar(50) NOT NULL,
+            `cust_patronymic` varchar(50),
+            `phone_number` varchar(13) NOT NULL,
+            `city` varchar(50),
+            `street` varchar(50),
+            `zip_code` varchar(9),
+            `percent` int NOT NULL,
+            PRIMARY KEY (`card_number`)
+);
+
+CREATE TABLE `DB_SuperMarket`.`Check`  (
+              `check_number` varchar(10) NOT NULL,
+              `id_employee` varchar(10) NOT NULL,
+              `card_number` varchar(13),
+              `print_date` datetime NOT NULL,
+              `sum_total` decimal(13, 4) NOT NULL,
+              `vat` decimal(13, 4) NOT NULL,
+              CONSTRAINT fk_id_employee
+                  FOREIGN KEY (`id_employee`)
+                      REFERENCES Employee (`id_employee`)
+                      ON UPDATE CASCADE
+                      ON DELETE NO ACTION,
+              CONSTRAINT fk_card_number
+                  FOREIGN KEY (`card_number`)
+                      REFERENCES Customer_Card (`card_number`)
+                      ON UPDATE CASCADE
+                      ON DELETE NO ACTION,
+              PRIMARY KEY (`check_number`)
+);
+
+CREATE TABLE `DB_SuperMarket`.`Store_Product`  (
+              `UPC` varchar(12) NOT NULL,
+              `UPC_prom` varchar(12),
+              `id_product` int NOT NULL,
+              `selling_price` decimal(13, 4) NOT NULL,
+              `products_number` int NOT NULL,
+              `promotional_product` boolean NOT NULL,
+              CONSTRAINT `fk_UPC_prom`
+                  FOREIGN KEY (`UPC_prom`)
+                      REFERENCES `Store_Product` (`UPC`)
+                      ON UPDATE CASCADE
+                      ON DELETE SET NULL,
+              CONSTRAINT fk_id_product
+                  FOREIGN KEY (`id_product`)
+                      REFERENCES Product (`id_product`)
+                      ON UPDATE CASCADE
+                      ON DELETE NO ACTION,
+              PRIMARY KEY (`UPC`)
+);
+
+CREATE TABLE `DB_SuperMarket`.`Sale`  (
+             `UPC` varchar(12) NOT NULL,
+             `check_number` varchar(10) NOT NULL,
+             `product_number` int NOT NULL,
+             `selling_price` DECIMAL(13, 4) NOT NULL,
+             PRIMARY KEY (`UPC`, `check_number`),
+             CONSTRAINT fk_UPC
+                 FOREIGN KEY (`UPC`)
+                     REFERENCES Store_Product (`UPC`)
+                     ON UPDATE CASCADE
+                     ON DELETE NO ACTION,
+             CONSTRAINT fk_check_number
+                 FOREIGN KEY (`check_number`)
+                     REFERENCES `Check` (`check_number`)
+                     ON UPDATE CASCADE
+                     ON DELETE CASCADE
+);
