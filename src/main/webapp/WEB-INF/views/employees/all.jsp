@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container">
+    <a href="${pageContext.request.contextPath}/employees/add" class="btn btn-primary">Add new employee</a>
 <table class="table table-striped">
     <tr>
         <th>ID</th>

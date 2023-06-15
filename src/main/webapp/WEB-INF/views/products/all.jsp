@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="container">
+    <a href="${pageContext.request.contextPath}/products/add" class="btn btn-primary">Add new product</a>
 <table class="table table-striped">
 <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
     <tr>

@@ -10,7 +10,8 @@
 </head>
 <body>
 <div class="container">
-<table class="table table-striped">
+    <a href="${pageContext.request.contextPath}/categories/add" class="btn btn-primary">Add new category</a>
+    <table class="table table-striped">
     <tr>
         <th>Number</th>
         <th>Name</th>

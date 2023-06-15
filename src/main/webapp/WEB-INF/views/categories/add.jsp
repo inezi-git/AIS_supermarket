@@ -1,27 +1,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>Add Category</title>
 </head>
 <body>
-<form method="post" id="category" action="${pageContext.request.contextPath}/categories/add"></form>
-<h1>Add category:</h1>
-<table border="1">
-    <tr>
-        <th>Category Name</th>
-    </tr>
-    <tr>
-        <td>
-            <input type="text" name="category_name" form="category" required>
-        </td>
-        <td>
-            <input type="submit" name="add" form="category">
-        </td>
-    </tr>
-</table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+<div class="container">
+    <h1>Add new category</h1>
+    <form method="post" id="category" action="${pageContext.request.contextPath}/categories/add">
+        <div class="form-group">
+            <label for="category">Category name</label>
+            <input type="text" name="category_name" id="category_name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="add" form="category" class="btn btn-primary">
+            <a href="${pageContext.request.contextPath}/categories" class="btn btn-secondary">Cancel</a>
+        </div>
+
+    </form>
+</div>
 </body>
 </html>
+<%@include file="../footer.jsp"%>
+
