@@ -35,6 +35,10 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/checks">Checks</a>
+                        </li>
+
+                        <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/customer_cards">Customer cards</a>
                         </li>
                     </c:if>
