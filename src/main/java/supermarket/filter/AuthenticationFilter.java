@@ -1,4 +1,4 @@
-package supermarket.web.filter;
+package supermarket.filter;
 
 import supermarket.lib.Injector;
 import supermarket.model.Employee;
@@ -75,7 +75,6 @@ public class AuthenticationFilter implements Filter {
 
 
         cashierUrls = Set.of(
-                "/employees/me",
                 "/store_products/find-by-upc-for-cashier",
                 "/checks/today",
                 "/checks/find-all-mine-by-period",
