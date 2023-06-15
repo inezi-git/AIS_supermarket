@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
+<%@include file="header.jsp"%>
 <html>
 <head>
     <title>Login</title>
@@ -28,9 +28,9 @@
         </td>
     </tr>
 </table>
-<h5>
-    <a href="${pageContext.request.contextPath}/register">Register new employee</a>
-</h5>
+
 </form>
 </body>
 </html>
+
+<%@include file="footer.jsp"%>

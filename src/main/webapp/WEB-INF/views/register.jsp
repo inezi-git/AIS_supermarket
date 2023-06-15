@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
+<%@include file="header.jsp"%>
 <html>
 <head>
     <title>Registration</title>
@@ -74,6 +75,7 @@
         </td>
     </tr>
 </table>
-<h5><a href="${pageContext.request.contextPath}/logout">Exit</a></h5>
 </body>
 </html>
+
+<%@include file="footer.jsp"%>

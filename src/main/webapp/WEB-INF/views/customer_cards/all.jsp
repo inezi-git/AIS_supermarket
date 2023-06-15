@@ -2,12 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>All customer cards</title>
 </head>
 <body>
-<h1>All customer cards:</h1>
 <table border="1">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
     <tr>
@@ -45,6 +45,7 @@
         </tr>
     </c:forEach>
 </table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
 </body>
 </html>
+
+<%@include file="../footer.jsp"%>

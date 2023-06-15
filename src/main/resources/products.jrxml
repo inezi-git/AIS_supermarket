@@ -24,6 +24,11 @@
 		<property name="com.jaspersoft.studio.field.label" value="product_name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
 	</field>
+	<field name="producer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="producer"/>
+		<property name="com.jaspersoft.studio.field.label" value="producer"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producer"/>
+	</field>
 	<field name="characteristics" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="characteristics"/>
 		<property name="com.jaspersoft.studio.field.label" value="characteristics"/>

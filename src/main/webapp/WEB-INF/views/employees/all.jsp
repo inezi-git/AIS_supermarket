@@ -3,13 +3,12 @@
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>All Employees</title>
 </head>
 <body>
-<h1>All employees:</h1>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -60,6 +59,7 @@
         </tr>
     </c:forEach>
 </table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
 </body>
 </html>
+
+<%@include file="../footer.jsp"%>

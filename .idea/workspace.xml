@@ -10,16 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06d4a4dc-7b02-427c-919f-c58ee046a445" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc11485d-14b4-4395-8115-717eb7386d1a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bc11485d-14b4-4395-8115-717eb7386d1a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/ReportController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/category/ReportCategoriesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/ReportChecksController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/customer/ReportCustomerCardsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/employee/ReportEmployeesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/product/ReportProductsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store/ReportStoreProductsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/products.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/products.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/all.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/report.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/all.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +32,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JspContextManager">
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -278,6 +284,7 @@
       <workItem from="1686733839502" duration="10283000" />
       <workItem from="1686745962926" duration="40000" />
       <workItem from="1686814640982" duration="642000" />
+      <workItem from="1686815712226" duration="7420000" />
     </task>
     <servers />
   </component>
