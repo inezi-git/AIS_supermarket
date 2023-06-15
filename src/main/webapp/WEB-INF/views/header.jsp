@@ -21,23 +21,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
+                    <c:if test ="${not empty userRole}">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/categories">Categories</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/products">Products</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/store_products">Store products</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/customer_cards">Customer cards</a>
+                        </li>
+                    </c:if>
                     <c:if test="${userRole eq 'Manager'}">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/categories">Categories</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/products">Products</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/store_products">Store products</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/customer_cards">Customer cards</a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/employees">Employees</a>
                         </li>
@@ -49,6 +50,19 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Manager
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Log out</a></li>
+                            </ul>
+                        </li>
+                    </c:if>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <c:if test="${userRole eq 'Cashier'}">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cashier
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Log out</a></li>

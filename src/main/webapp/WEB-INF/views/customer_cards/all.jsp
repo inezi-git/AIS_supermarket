@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>All customer cards</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
@@ -39,11 +40,11 @@
                 <c:out value="${cashier.percent}"/>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/customer_cards/update?cardNumber=${cashier.cardNumber}">UPDATE</a>
+                <a href="${pageContext.request.contextPath}/customer_cards/update?cardNumber=${cashier.cardNumber}"><i class="bi bi-pencil-fill"></i></a>
             </td>
             <c:if test="${userRole eq 'Manager'}">
             <td>
-                <a href="${pageContext.request.contextPath}/customer_cards/delete?cardNumber=${cashier.cardNumber}">DELETE</a>
+                <a href="${pageContext.request.contextPath}/customer_cards/delete?cardNumber=${cashier.cardNumber}"><i class="bi bi-trash"></i></a>
             </td>
             </c:if>
         </tr>

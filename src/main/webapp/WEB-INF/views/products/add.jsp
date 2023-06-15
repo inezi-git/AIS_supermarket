@@ -1,43 +1,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>Add Product</title>
 </head>
 <body>
-<form method="post" id="product" action="${pageContext.request.contextPath}/products/add"></form>
-<h1>Add product:</h1>
-<table border="1">
-    <tr>
-        <th>Category</th>
-        <th>Product Name</th>
-        <th>Producer</th>
-        <th>Characteristics</th>
-    </tr>
-    <tr>
-        <td>
-            <select name="category_number" form="product" required>
+<div class="container">
+    <h1>Add new product</h1>
+    <form method="post" id="product" action="${pageContext.request.contextPath}/products/add">
+        <div class="form-group">
+            <label for="category_number">Category</label>
+            <select name="category_number" id="category_number" class="form-control" form="product" required>
                 <c:forEach var="category" items="${categories}">
                     <option value="${category.categoryNumber}">${category.categoryNumber} ${category.categoryName}</option>
                 </c:forEach>
             </select>
-        </td>
-        <td>
-            <input type="text" name="product_name" form="product">
-        </td>
-        <td>
-            <input type="text" name="producer" form="product">
-        </td>
-        <td>
-            <input type="text" name="characteristics" form="product">
-        </td>
-        <td>
-            <input type="submit" name="add" form="product">
-        </td>
-    </tr>
-</table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+        </div>
+        <div class="form-group">
+            <label for="product_name">Product name</label>
+            <input type="text" name="product_name" id="product_name" class="form-control" form="product">
+        </div>
+        <div class="form-group">
+            <label for="producer">Producer</label>
+            <input type="text" name="producer" id="producer" class="form-control" form="product">
+        </div>
+        <div class="form-group">
+            <label for="characteristics">Characteristics</label>
+            <input type="text" name="characteristics" id="characteristics" class="form-control" form="product">
+        </div>
+        <div class="form-group">
+            <input type="submit" name="add" form="product" class="btn btn-primary" value="Save">
+            <a href="${pageContext.request.contextPath}/products" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
 </body>
 </html>
+<%@include file="../footer.jsp"%>
+

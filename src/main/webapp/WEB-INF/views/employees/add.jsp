@@ -1,79 +1,77 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="../header.jsp"%>
 <html>
 <head>
-    <title>Add Employee</title>
+    <title>Add employee</title>
 </head>
 <body>
-<form method="post" id="employee" action="${pageContext.request.contextPath}/employees/add"></form>
-<h1>Add employee:</h1>
-<table border="1">
-    <tr>
-        <th>Surname</th>
-        <th>Name</th>
-        <th>Patronymic</th>
-        <th>Role</th>
-        <th>Salary</th>
-        <th>Date of birth</th>
-        <th>Date of start</th>
-        <th>Phone number</th>
-        <th>City</th>
-        <th>Street</th>
-        <th>Zip code</th>
-        <th>Email</th>
-        <th>Password</th>
-    </tr>
-    <tr>
-        <td>
-            <input type="text" name="empl_surname" form="employee" required>
-        </td>
-        <td>
-            <input type="text" name="empl_name" form="employee" required>
-        </td>
-        <td>
-            <input type="text" name="empl_patronymic" form="employee">
-        </td>
-        <td>
-            <select name="empl_role" form="employee" required>
+<div class="container">
+    <h1>Add new employee</h1>
+    <form method="post" id="employee" action="${pageContext.request.contextPath}/employees/add">
+        <div class="form-group">
+            <label for="empl_surname">Surname</label>
+            <input type="text" name="empl_surname" id="empl_surname" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="empl_name">Name</label>
+            <input type="text" name="empl_name" id="empl_name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="empl_patronymic">Patronymic</label>
+            <input type="text" name="empl_patronymic" id="empl_patronymic" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="empl_role">Role</label>
+            <select name="empl_role" id="empl_role" class="form-control" required>
                 <c:forEach var="role" items="${employeeRoles}">
                     <option value="${role}">${role.name()}</option>
                 </c:forEach>
             </select>
-        </td>
-        <td>
-            <input type="number" name="salary" form="employee" required>
-        </td>
-        <td>
-            <input type="date" name="date_of_birth" form="employee" required>
-        </td>
-        <td>
-            <input type="date" name="date_of_start" form="employee" required>
-        </td>
-        <td>
-            <input type="text" name="phone_number" form="employee" required>
-        </td>
-        <td>
-            <input type="text" name="city" form="employee" required>
-        </td>
-        <td>
-            <input type="text" name="street" form="employee" required>
-        </td>
-        <td>
-            <input type="text" name="zip_code" form="employee">
-        </td>
-        <td>
-            <input type="text" name="email" form="employee" required>
-        </td>
-        <td>
-            <input type="password" name="password" form="employee" required>
-        </td>
-        <td>
-            <input type="submit" name="add" form="employee">
-        </td>
-    </tr>
-</table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+        </div>
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="number" name="salary" id="salary" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="date_of_birth">Date of birth</label>
+            <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="date_of_start">Date of start</label>
+            <input type="date" name="date_of_start" id="date_of_start" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone number</label>
+            <input type="text" name="phone_number" id="phone_number" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" name="street" id="street" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="zip_code">Zip code</label>
+            <input type="text" name="zip_code" id="zip_code" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="add" form="employee" class="btn btn-primary" value="Save">
+            <a href="${pageContext.request.contextPath}/employees" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
 </body>
 </html>
+<%@include file="../footer.jsp"%>
+

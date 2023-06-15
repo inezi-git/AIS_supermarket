@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>All Products</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
 </head>
 <body>
 <div class="container">
@@ -39,10 +41,10 @@
             </td>
             <c:if test="${userRole eq 'Manager'}">
             <td>
-                <a href="${pageContext.request.contextPath}/products/update?id=${product.id}">UPDATE</a>
+                <a href="${pageContext.request.contextPath}/products/update?id=${product.id}"><i class="bi bi-pencil-fill"></i></a>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/products/delete?id=${product.id}">DELETE</a>
+                <a href="${pageContext.request.contextPath}/products/delete?id=${product.id}"><i class="bi bi-trash"></i></a>
             </td>
             </c:if>
         </tr>

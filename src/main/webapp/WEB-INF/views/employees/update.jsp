@@ -78,7 +78,6 @@
             <label for="password">Enter Password</label>
             <input type="password" name="password" id="password" class="form-control" required>
         </div>
-
         <div class="form-group">
             <input type="submit" name="update" form="employee" value="Update" class="btn btn-primary">
             <a href="${pageContext.request.contextPath}/employees" class="btn btn-secondary">Cancel</a>

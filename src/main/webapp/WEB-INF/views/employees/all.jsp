@@ -7,6 +7,7 @@
 <html>
 <head>
     <title>All Employees</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
@@ -55,10 +56,10 @@
                 <c:out value="${cashier.email}"/>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/employees/update?id=${cashier.id}">UPDATE</a>
+                <a href="${pageContext.request.contextPath}/employees/update?id=${cashier.id}"><i class="bi bi-pencil-fill"></i></a>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/employees/delete?id=${cashier.id}">DELETE</a>
+                <a href="${pageContext.request.contextPath}/employees/delete?id=${cashier.id}"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
     </c:forEach>

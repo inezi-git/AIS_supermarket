@@ -67,8 +67,10 @@
             <input type="password" name="password" id="password" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="submit" name="add" id="add" class="btn btn-primary">
+            <input type="submit" name="add" form="employee" class="btn btn-primary" value="Save">
+            <a href="${pageContext.request.contextPath}/index" class="btn btn-secondary">Cancel</a>
         </div>
+
     </form>
 </div>
 </body>
