@@ -19,15 +19,15 @@
         </div>
         <div class="form-group">
             <label for="product_name">Product name</label>
-            <input type="text" name="product_name" id="product_name" class="form-control" form="product">
+            <input type="text" name="product_name" id="product_name" class="form-control" form="product" required>
         </div>
         <div class="form-group">
             <label for="producer">Producer</label>
-            <input type="text" name="producer" id="producer" class="form-control" form="product">
+            <input type="text" name="producer" id="producer" class="form-control" form="product" required>
         </div>
         <div class="form-group">
             <label for="characteristics">Characteristics</label>
-            <input type="text" name="characteristics" id="characteristics" class="form-control" form="product">
+            <input type="text" name="characteristics" id="characteristics" class="form-control" form="product" required>
         </div>
         <div class="form-group">
             <input type="submit" name="add" form="product" class="btn btn-primary" value="Save">
