@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06d4a4dc-7b02-427c-919f-c58ee046a445" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllChecksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllChecksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/CheckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/update.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,6 +282,7 @@
       <workItem from="1686856582065" duration="27000" />
       <workItem from="1686856827478" duration="1781000" />
       <workItem from="1686858731223" duration="72000" />
+      <workItem from="1686859296494" duration="182000" />
     </task>
     <servers />
   </component>
