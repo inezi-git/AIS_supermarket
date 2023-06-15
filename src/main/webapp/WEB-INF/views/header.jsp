@@ -13,15 +13,14 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">ZLAGODA</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/index">ZLAGODA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
-
                     <c:if test="${userRole eq 'Manager'}">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/categories">Categories</a>
@@ -42,12 +41,24 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/employees">Employees</a>
                         </li>
+                    </c:if>
+                </ul>
 
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/logout">Log out</a>
+                <ul class="navbar-nav">
+                    <c:if test="${userRole eq 'Manager'}">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Manager
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Log out</a></li>
+                            </ul>
                         </li>
                     </c:if>
+                </ul>
 
+
+                <ul class="navbar-nav">
                     <c:if test="${empty userRole}">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page">About</a>
