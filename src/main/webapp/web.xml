@@ -343,15 +343,6 @@
 </servlet-mapping>
 
 <servlet>
-  <servlet-name>getAllInfoAboutMe</servlet-name>
-  <servlet-class>supermarket.controller.employee.GetAllInfoAboutMeController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>getAllInfoAboutMe</servlet-name>
-  <url-pattern>/employees/me</url-pattern>
-</servlet-mapping>
-
-<servlet>
   <servlet-name>getAllEmployees</servlet-name>
   <servlet-class>supermarket.controller.employee.GetAllEmployeesController</servlet-class>
 </servlet>

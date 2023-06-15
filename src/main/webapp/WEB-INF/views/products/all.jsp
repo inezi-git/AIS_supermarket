@@ -7,7 +7,8 @@
     <title>All Products</title>
 </head>
 <body>
-<table border="1">
+<div class="container">
+<table class="table table-striped">
 <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
     <tr>
         <th>ID</th>
@@ -15,6 +16,8 @@
         <th>Name</th>
         <th>Producer</th>
         <th>Characteristics</th>
+        <th></th>
+        <th></th>
     </tr>
     <c:forEach var="product" items="${products}">
         <tr>
@@ -44,6 +47,7 @@
         </tr>
     </c:forEach>
 </table>
+</div>
 </body>
 </html>
 

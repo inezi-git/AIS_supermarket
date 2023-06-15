@@ -9,10 +9,14 @@
     <title>All Categories</title>
 </head>
 <body>
-<table border="1">
+<div class="container">
+<table class="table table-striped">
     <tr>
         <th>Number</th>
         <th>Name</th>
+        <th></th>
+        <th></th>
+
     </tr>
     <c:forEach var="category" items="${categories}">
         <tr>
@@ -31,6 +35,7 @@
         </tr>
     </c:forEach>
 </table>
+</div>
 
 </body>
 </html>

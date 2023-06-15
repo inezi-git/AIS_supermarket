@@ -11,8 +11,8 @@
     <title>All Store Products</title>
 </head>
 <body>
-<h1>All store products:</h1>
-<table border="1">
+<div class="container">
+<table class="table table-striped">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
     <tr>
         <th>UPC</th>
@@ -21,6 +21,8 @@
         <th>Selling price</th>
         <th>Amount</th>
         <th>Is Promotional</th>
+        <th></th>
+        <th></th>
     </tr>
     <c:forEach var="storeProduct" items="${storeProducts}">
         <tr>
@@ -53,6 +55,7 @@
         </tr>
     </c:forEach>
 </table>
+</div>
 </body>
 </html>
 

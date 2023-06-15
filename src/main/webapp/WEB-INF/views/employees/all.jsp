@@ -9,7 +9,8 @@
     <title>All Employees</title>
 </head>
 <body>
-<table border="1">
+<div class="container">
+<table class="table table-striped">
     <tr>
         <th>ID</th>
         <th>Full Name</th>
@@ -20,6 +21,8 @@
         <th>Phone number</th>
         <th>Address</th>
         <th>Email</th>
+        <th></th>
+        <th></th>
     </tr>
     <c:forEach var="cashier" items="${employees}">
         <tr>
@@ -59,6 +62,7 @@
         </tr>
     </c:forEach>
 </table>
+</div>
 </body>
 </html>
 

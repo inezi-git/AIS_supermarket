@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <div class="container">
+        <h>Home page of SuperMarket ZLAGODA</h>
+    </div>
 </body>
 
 </html>
