@@ -10,7 +10,7 @@
 <form method="post" id="redirect"></form>
 <h1 class="body">Welcome to Zlagoda Market!</h1>
 <table>
-    <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
+    <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
     <tr>
         <th>Redirect to</th>
     </tr>
@@ -37,7 +37,6 @@
         <tr><td><a href="${pageContext.request.contextPath}/customer_cards/add">Add New Customer</a></td></tr>
         <tr><td><a href="${pageContext.request.contextPath}/customer_cards">Display All Customers</a></td></tr>
         <tr><td><a href="${pageContext.request.contextPath}/customer_cards/find-by-percent">Find All Customers By Certain Percent</a></td></tr>
-        <tr><td><a href="${pageContext.request.contextPath}/report">Print Report</a></td></tr>
     </c:if>
     <c:if test="${userRole eq 'Cashier'}">
         <tr><td><a href="${pageContext.request.contextPath}/products">Display All Products</a></td></tr>
