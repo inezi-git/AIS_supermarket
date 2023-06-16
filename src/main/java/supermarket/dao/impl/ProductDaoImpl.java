@@ -89,7 +89,8 @@ public class ProductDaoImpl implements ProductDao {
             updateProductStatement.setInt(1, product.getCategory().getCategoryNumber());
             updateProductStatement.setString(2, product.getName());
             updateProductStatement.setString(3, product.getCharacteristics());
-            updateProductStatement.setLong(4, product.getId());
+            updateProductStatement.setString(4, product.getCharacteristics());
+            updateProductStatement.setLong(5, product.getId());
             updateProductStatement.executeUpdate();
         } catch (SQLException e) {
             throw new DataProcessingException("Couldn't update "

@@ -3,14 +3,25 @@
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>Non-Promotional Store Products</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-<h1>All non-promotional store products:</h1>
-<table border="1">
+<div class="container">
+    <div class="btn-group" role="group" aria-label="buttons">
+        <a href="${pageContext.request.contextPath}/store_products/add" class="btn btn-primary">Add new store product</a>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Non-promotional</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/promotional">Promotional</a></li>
+                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products">All store products</a></li>
+            </ul>
+        </div>
+    </div>
+    <table class="table table-striped">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
     <tr>
         <th>UPC</th>
@@ -19,6 +30,8 @@
         <th>Selling price</th>
         <th>Amount</th>
         <th>Is Promotional</th>
+        <th></th>
+        <th></th>
     </tr>
     <c:forEach var="storeProduct" items="${storeProducts}">
         <tr>
@@ -42,15 +55,16 @@
             </td>
             <c:if test="${userRole eq 'Manager'}">
                 <td>
-                    <a href="${pageContext.request.contextPath}/store_products/update?upc=${storeProduct.upc}">UPDATE</a>
+                    <a href="${pageContext.request.contextPath}/store_products/update?upc=${storeProduct.upc}"><i class="bi bi-pencil-fill"></i></a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/store_products/delete?upc=${storeProduct.upc}">DELETE</a>
+                    <a href="${pageContext.request.contextPath}/store_products/delete?upc=${storeProduct.upc}"><i class="bi bi-trash"></i></a>
                 </td>
             </c:if>
         </tr>
     </c:forEach>
-</table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+    </table>
+</div>
 </body>
 </html>
+<%@include file="../footer.jsp"%>

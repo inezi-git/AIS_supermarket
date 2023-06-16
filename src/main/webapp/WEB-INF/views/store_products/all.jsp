@@ -3,9 +3,7 @@
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
 <%@include file="../header.jsp"%>
-
 <html>
 <head>
     <title>All Store Products</title>
@@ -13,7 +11,16 @@
 </head>
 <body>
 <div class="container">
-    <a href="${pageContext.request.contextPath}/store_products/add" class="btn btn-primary">Add new store product</a>
+    <div class="btn-group" role="group">
+        <a href="${pageContext.request.contextPath}/store_products/add" class="btn btn-primary">Add new store product</a>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All store products</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/promotional">Promotional</a></li>
+                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/non-promotional">Non-promotional</a></li>
+            </ul>
+        </div>
+    </div>
 <table class="table table-striped">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
     <tr>
