@@ -12,35 +12,35 @@
     <form method="post" id="customer_card" action="${pageContext.request.contextPath}/customer_cards/add"></form>
     <div class="form-group">
         <label for="cust_surname">Surname</label>
-        <input type="text" name="cust_surname" id="cust_surname" class="form-control" required>
+        <input type="text" name="cust_surname" id="cust_surname" class="form-control" form="customer_card" required>
     </div>
     <div class="form-group">
         <label for="cust_name">Name</label>
-        <input type="text" name="cust_name" id="cust_name" class="form-control" required>
+        <input type="text" name="cust_name" id="cust_name" class="form-control" form="customer_card" required>
     </div>
     <div class="form-group">
         <label for="cust_patronymic">Patronymic</label>
-        <input type="text" name="cust_patronymic" id="cust_patronymic" class="form-control">
+        <input type="text" name="cust_patronymic" id="cust_patronymic" class="form-control" form="customer_card">
     </div>
     <div class="form-group">
         <label for="phone_number">Phone number</label>
-        <input type="text" name="phone_number" id="phone_number" class="form-control" required>
+        <input type="text" name="phone_number" id="phone_number" class="form-control" form="customer_card" required>
     </div>
     <div class="form-group">
         <label for="city">City</label>
-        <input type="text" name="city" id="city" class="form-control" required>
+        <input type="text" name="city" id="city" class="form-control" form="customer_card" required>
     </div>
     <div class="form-group">
         <label for="street">Street</label>
-        <input type="text" name="street" id="street" class="form-control" required>
+        <input type="text" name="street" id="street" class="form-control" form="customer_card" required>
     </div>
     <div class="form-group">
         <label for="zip_code">Zip code</label>
-        <input type="text" name="zip_code" id="zip_code" class="form-control">
+        <input type="text" name="zip_code" id="zip_code" class="form-control" form="customer_card">
     </div>
     <div class="form-group">
         <label for="percent">Percent</label>
-        <input type="number" name="percent" id="percent" class="form-control" required>
+        <input type="text" name="percent" id="percent" class="form-control" form="customer_card" required>
     </div>
 
     <div class="form-group">

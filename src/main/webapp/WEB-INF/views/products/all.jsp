@@ -22,7 +22,6 @@
                 <input type="submit" value="Find">
             </div>
         </form>
-
     </div>
 
 <table class="table table-striped">

@@ -21,6 +21,7 @@
             </div>
         </form>
     </div>
+
     <table class="table table-striped">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
     <tr>
