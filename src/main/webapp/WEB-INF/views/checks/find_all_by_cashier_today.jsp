@@ -2,17 +2,23 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>Checks</title>
 </head>
 <body>
+<c:if test="${userRole eq 'Cashier'}">
+    <div class="container">
+        <tr><td><a href="${pageContext.request.contextPath}/checks/add">Sell Store Products</a></td></tr>
+    </div>
+</c:if>
+
 <c:if test="${empty checks}">
-    <h2>No Checks Found</h2>
+    <h2>No checks found today</h2>
 </c:if>
 <c:if test="${not empty checks}">
-    <h2>Checks Found:</h2>
+
     <table border="1">
         <thead>
         <tr>
@@ -34,6 +40,8 @@
         </tbody>
     </table>
 </c:if>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+
+
 </body>
 </html>
+<%@include file="../footer.jsp"%>

@@ -18,8 +18,8 @@
         </div>
         <form method="get" action="${pageContext.request.contextPath}/products/find-by-name">
             <div class="d-flex justify-content-between">
-            <input class="form-control" type="text" placeholder="Product name" id="name" name="name" value="${param.name}" required>
-            <input type="submit" value="Find">
+                <input class="form-control" type="text" placeholder="Product name" id="name" name="name" value="${param.name}" required>
+                <input type="submit" value="Find">
             </div>
         </form>
 

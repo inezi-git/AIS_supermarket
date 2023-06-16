@@ -22,7 +22,6 @@ public class AddCustomerCardController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         req.getRequestDispatcher("/WEB-INF/views/customer_cards/add.jsp").forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {

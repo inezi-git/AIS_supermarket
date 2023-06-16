@@ -42,6 +42,7 @@
         <label for="percent">Percent</label>
         <input type="number" name="percent" id="percent" class="form-control" required>
     </div>
+
     <div class="form-group">
         <input type="submit" name="add" form="customer_card" class="btn btn-primary" value="Save">
         <a href="${pageContext.request.contextPath}/customer_cards" class="btn btn-secondary">Cancel</a>

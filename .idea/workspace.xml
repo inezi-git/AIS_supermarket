@@ -10,17 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06d4a4dc-7b02-427c-919f-c58ee046a445" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllChecksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllChecksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllMyChecksByPeriodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllMyChecksByPeriodController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/categories.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/checks.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/customer_cards.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/employees.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/products.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/store_products.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/customer/AddCustomerCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/customer/AddCustomerCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_cashier_today.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_cashier_today.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/find_by_last_name.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/find_by_last_name.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/all.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/find_by_category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/find_by_category.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/find_by_name.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/find_by_name.jsp" afterDir="false" />
@@ -307,6 +303,7 @@
       <workItem from="1686912396711" duration="518000" />
       <workItem from="1686913056075" duration="2148000" />
       <workItem from="1686939173905" duration="6184000" />
+      <workItem from="1686945388899" duration="1937000" />
     </task>
     <servers />
   </component>

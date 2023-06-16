@@ -1,13 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>Create Check</title>
 </head>
 <body>
-<h1>Create Check</h1>
 <form method="post" id="createCheckForm" action="${pageContext.request.contextPath}/checks/add">
     <div>
         <label for="card_number">Customer Card:</label>
@@ -55,6 +54,7 @@
     <br>
     <input type="submit" value="Create Check">
 </form>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
 </body>
 </html>
+
+<%@include file="../footer.jsp"%>

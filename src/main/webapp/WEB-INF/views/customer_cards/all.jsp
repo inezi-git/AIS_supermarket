@@ -10,8 +10,18 @@
 </head>
 <body>
 <div class="container">
-    <a href="${pageContext.request.contextPath}/customer_cards/add" class="btn btn-primary">Add new customer card</a>
-<table class="table table-striped">
+    <div class="btn-group" role="group">
+        <div>
+            <a href="${pageContext.request.contextPath}/customer_cards/add" class="btn btn-primary">Add new customer card</a>
+        </div>
+        <form method="get" action="${pageContext.request.contextPath}/customer_cards/find-by-last-name">
+            <div class="d-flex justify-content-between">
+                <input type="text" id="lastName" placeholder="Customer's last name" name="lastName" value="${param.lastName}" required>
+                <input type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <table class="table table-striped">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
     <tr>
         <th>ID</th>

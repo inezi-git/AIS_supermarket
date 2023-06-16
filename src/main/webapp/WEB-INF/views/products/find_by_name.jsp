@@ -9,7 +9,7 @@
 <body>
 <div class="container">
 <c:if test="${empty products}">
-    <h2>No Products Found</h2>
+    <h2>No products found</h2>
 </c:if>
 <c:if test="${not empty products}">
     <table class="table table-striped">
