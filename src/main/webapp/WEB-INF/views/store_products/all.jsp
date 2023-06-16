@@ -20,6 +20,10 @@
                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/non-promotional">Non-promotional</a></li>
             </ul>
         </div>
+        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
+        <c:if test="${userRole eq 'Manager'}">
+            <a href="${pageContext.request.contextPath}/report/store_products" class="btn btn-info">Get report about store products</a>
+        </c:if>
     </div>
 <table class="table table-striped">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />

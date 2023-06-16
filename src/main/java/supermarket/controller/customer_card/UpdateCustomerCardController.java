@@ -1,4 +1,4 @@
-package supermarket.controller.customer;
+package supermarket.controller.customer_card;
 
 import supermarket.lib.Injector;
 import supermarket.model.CustomerCard;

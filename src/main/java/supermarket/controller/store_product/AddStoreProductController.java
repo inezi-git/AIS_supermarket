@@ -1,4 +1,4 @@
-package supermarket.controller.store;
+package supermarket.controller.store_product;
 
 import supermarket.lib.Injector;
 import supermarket.model.Product;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UpdateStoreProductController extends HttpServlet {
+public class AddStoreProductController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
     private final StoreProductService storeProductService = (StoreProductService) injector
             .getInstance(StoreProductService.class);
@@ -24,28 +24,23 @@ public class UpdateStoreProductController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        String upc = req.getParameter("upc");
-        StoreProduct storeProduct = storeProductService.get(upc);
-        req.setAttribute("storeProduct", storeProduct);
         List<Product> products = productService.getAll();
         req.setAttribute("products", products);
-        req.getRequestDispatcher("/WEB-INF/views/store_products/update.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/store_products/add.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         req.setCharacterEncoding("UTF-8");
-        String upc = req.getParameter("UPC");
-        String upcProm = req.getParameter("UPC_prom");
         Product product = productService.get(Long.parseLong(req.getParameter("id_product")));
-        BigDecimal sellingPrice = BigDecimal.valueOf(Double
-                .parseDouble(req.getParameter("selling_price")));
+        BigDecimal sellingPrice = BigDecimal.valueOf(Long
+                .parseLong(req.getParameter("selling_price")));
         Integer amount = Integer.parseInt(req.getParameter("products_number"));
         Boolean isPromotional = Boolean.parseBoolean(req.getParameter("promotional_product"));
-        StoreProduct storeProduct = new StoreProduct(upc, upcProm, product,
+        StoreProduct storeProduct = new StoreProduct(null, null, product,
                 sellingPrice, amount, isPromotional);
-        storeProductService.update(storeProduct);
+        storeProductService.create(storeProduct);
         resp.sendRedirect(req.getContextPath() + "/store_products");
     }
 }

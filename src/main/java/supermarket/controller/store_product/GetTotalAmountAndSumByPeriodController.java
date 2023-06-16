@@ -1,7 +1,7 @@
-package supermarket.controller.store;
+package supermarket.controller.store_product;
 
 import supermarket.lib.Injector;
-import supermarket.model.ProductStat;
+import supermarket.model.StoreProduct;
 import supermarket.service.StoreProductService;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -11,24 +11,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ProductStatsController extends HttpServlet {
+public class GetTotalAmountAndSumByPeriodController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
-    private final StoreProductService productService = (StoreProductService)
-            injector.getInstance(StoreProductService.class);
+    private final StoreProductService storeProductService = (StoreProductService) injector
+            .getInstance(StoreProductService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/store_products/product_stats.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/store_products/total_amount_and_sum_by_period.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+
         LocalDateTime startDate = LocalDateTime.parse(req.getParameter("start_date"));
         LocalDateTime endDate = LocalDateTime.parse(req.getParameter("end_date"));
-        List<ProductStat> productStats = productService.requestProductStat(startDate, endDate);
-        req.setAttribute("productStats", productStats);
-        req.getRequestDispatcher("/WEB-INF/views/store_products/product_stats.jsp").forward(req, resp);
+
+        List<StoreProduct> productDetailsList = storeProductService.requestProduct(startDate, endDate);
+
+        req.setAttribute("productDetailsList", productDetailsList);
+        req.setAttribute("start_date", startDate);
+        req.setAttribute("end_date", endDate);
+
+        req.getRequestDispatcher("/WEB-INF/views/store_products/total_amount_and_sum_by_period.jsp").forward(req, resp);
     }
 }

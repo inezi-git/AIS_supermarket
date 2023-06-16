@@ -1,4 +1,4 @@
-package supermarket.controller.store;
+package supermarket.controller.store_product;
 
 import supermarket.lib.Injector;
 import supermarket.model.Sale;

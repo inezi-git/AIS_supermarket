@@ -1,4 +1,4 @@
-package supermarket.controller.store;
+package supermarket.controller.store_product;
 
 import supermarket.lib.Injector;
 import supermarket.model.StoreProduct;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GetAllNonPromotionalStoreProductsController extends HttpServlet {
+public class GetAllStoreProductsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
     private final StoreProductService storeProductService = (StoreProductService) injector
             .getInstance(StoreProductService.class);
@@ -19,8 +19,8 @@ public class GetAllNonPromotionalStoreProductsController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        List<StoreProduct> storeProducts = storeProductService.getAllNonPromotionalSortedByAmountAndName();
+        List<StoreProduct> storeProducts = storeProductService.getAllSortedByAmount();
         req.setAttribute("storeProducts", storeProducts);
-        req.getRequestDispatcher("/WEB-INF/views/store_products/non-promotional.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/store_products/all.jsp").forward(req, resp);
     }
 }

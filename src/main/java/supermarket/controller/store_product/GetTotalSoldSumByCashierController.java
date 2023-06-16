@@ -1,11 +1,11 @@
-package supermarket.controller.store;
+package supermarket.controller.store_product;
 
 import supermarket.lib.Injector;
 import supermarket.model.Employee;
 import supermarket.model.Sale;
 import supermarket.service.EmployeeService;
 import supermarket.service.SaleService;
-import supermarket.service.StoreProductService;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -16,10 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GetTotalSoldSumController extends HttpServlet {
+public class GetTotalSoldSumByCashierController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
-    private final StoreProductService storeProductService =
-            (StoreProductService) injector.getInstance(StoreProductService.class);
     private final SaleService saleService = (SaleService) injector
             .getInstance(SaleService.class);
     private final EmployeeService employeeService = (EmployeeService) injector
@@ -29,7 +27,13 @@ public class GetTotalSoldSumController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        req.getRequestDispatcher("/WEB-INF/views/store_products/find_total_sold_sum.jsp").forward(req, resp);
+        String cashierId = req.getParameter("cashierId");
+        if (cashierId != null) {
+            req.setAttribute("cashierId", cashierId);
+        }
+        List<Employee> cashiers = employeeService.getAllCashiersSortedBySurname();
+        req.setAttribute("cashiers", cashiers);
+        req.getRequestDispatcher("/WEB-INF/views/store_products/find_total_sold_sum_by_cashier.jsp").forward(req, resp);
     }
 
     @Override
@@ -37,22 +41,28 @@ public class GetTotalSoldSumController extends HttpServlet {
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
+        String cashierId = req.getParameter("cashierId");
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime startDate = LocalDateTime.parse(req.getParameter("startDate")
                 + " " + req.getParameter("startTime"), formatter);
         LocalDateTime endDate = LocalDateTime.parse(req.getParameter("endDate")
                 + " " + req.getParameter("endTime"), formatter);
 
-        List<Sale> sales = saleService.getSalesByDateRange(startDate, endDate);
+        List<Sale> sales = saleService.getSalesByCashierAndDateRange(cashierId, startDate, endDate);
         BigDecimal totalSum = BigDecimal.valueOf(sales.stream()
                 .map(Sale::getSellingPrice)
                 .mapToInt(BigDecimal::intValue)
                 .sum());
 
+        req.setAttribute("cashierId", cashierId);
         req.setAttribute("startDate", startDate);
         req.setAttribute("endDate", endDate);
         req.setAttribute("totalSum", totalSum);
 
-        req.getRequestDispatcher("/WEB-INF/views/store_products/find_total_sold_sum.jsp").forward(req, resp);
+        List<Employee> cashiers = employeeService.getAllCashiersSortedBySurname();
+        req.setAttribute("cashiers", cashiers);
+
+        req.getRequestDispatcher("/WEB-INF/views/store_products/find_total_sold_sum_by_cashier.jsp").forward(req, resp);
     }
 }

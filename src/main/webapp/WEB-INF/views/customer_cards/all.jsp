@@ -20,6 +20,10 @@
                 <input type="submit" value="Search">
             </div>
         </form>
+        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
+        <c:if test="${userRole eq 'Manager'}">
+            <a href="${pageContext.request.contextPath}/report/customer_cards" class="btn btn-info">Get report about customer cards</a>
+        </c:if>
     </div>
 
     <table class="table table-striped">

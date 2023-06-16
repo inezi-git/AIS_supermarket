@@ -6,7 +6,7 @@
 
 <servlet>
   <servlet-name>req1</servlet-name>
-  <servlet-class>supermarket.controller.store.GetMaxAndMinPriceForCategoryController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetMaxAndMinPriceForCategoryController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>req1</servlet-name>
@@ -15,7 +15,7 @@
 
 <servlet>
   <servlet-name>totalAmountAndSumByPeriodController</servlet-name>
-  <servlet-class>supermarket.controller.store.GetTotalAmountAndSumByPeriodController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetTotalAmountAndSumByPeriodController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>totalAmountAndSumByPeriodController</servlet-name>
@@ -24,7 +24,7 @@
 
 <servlet>
   <servlet-name>GetProductsOnSaleDuringPeriodController</servlet-name>
-  <servlet-class>supermarket.controller.store.ProductStatsController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.ProductStatsController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>GetProductsOnSaleDuringPeriodController</servlet-name>
@@ -33,7 +33,7 @@
 
 <servlet>
   <servlet-name>GetCustomerCardsBySumController</servlet-name>
-  <servlet-class>supermarket.controller.customer.GetCustomerCardsBySumController</servlet-class>
+  <servlet-class>supermarket.controller.customer_card.GetCustomerCardsBySumController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>GetCustomerCardsBySumController</servlet-name>
@@ -89,6 +89,61 @@
   <servlet-name>index</servlet-name>
   <url-pattern>/</url-pattern>
 </servlet-mapping>
+
+  <servlet>
+    <servlet-name>reportEmployees</servlet-name>
+    <servlet-class>supermarket.controller.employee.ReportEmployeesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reportEmployees</servlet-name>
+    <url-pattern>/report/employees</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>reportCategories</servlet-name>
+    <servlet-class>supermarket.controller.category.ReportCategoriesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reportCategories</servlet-name>
+    <url-pattern>/report/categories</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>reportProducts</servlet-name>
+    <servlet-class>supermarket.controller.product.ReportProductsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reportProducts</servlet-name>
+    <url-pattern>/report/products</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>reportStoreProducts</servlet-name>
+    <servlet-class>supermarket.controller.store_product.ReportStoreProductsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reportStoreProducts</servlet-name>
+    <url-pattern>/report/store_products</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>reportCustomerCards</servlet-name>
+    <servlet-class>supermarket.controller.customer_card.ReportCustomerCardsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reportCustomerCards</servlet-name>
+    <url-pattern>/report/customer_cards</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>reportChecks</servlet-name>
+    <servlet-class>supermarket.controller.check.ReportChecksController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reportChecks</servlet-name>
+    <url-pattern>/report/checks</url-pattern>
+  </servlet-mapping>
+
 <servlet>
   <servlet-name>addCategory</servlet-name>
   <servlet-class>supermarket.controller.category.AddCategoryController</servlet-class>
@@ -217,7 +272,7 @@
 
 <servlet>
   <servlet-name>addCustomerCard</servlet-name>
-  <servlet-class>supermarket.controller.customer.AddCustomerCardController</servlet-class>
+  <servlet-class>supermarket.controller.customer_card.AddCustomerCardController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>addCustomerCard</servlet-name>
@@ -226,7 +281,7 @@
 
 <servlet>
   <servlet-name>getAllCustomerCards</servlet-name>
-  <servlet-class>supermarket.controller.customer.GetAllCustomerCardsController</servlet-class>
+  <servlet-class>supermarket.controller.customer_card.GetAllCustomerCardsController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getAllCustomerCards</servlet-name>
@@ -235,7 +290,7 @@
 
 <servlet>
   <servlet-name>findCustomerCardByLastName</servlet-name>
-  <servlet-class>supermarket.controller.customer.GetCustomerCardsByLastNameController</servlet-class>
+  <servlet-class>supermarket.controller.customer_card.GetCustomerCardsByLastNameController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>findCustomerCardByLastName</servlet-name>
@@ -244,7 +299,7 @@
 
 <servlet>
   <servlet-name>findCustomerCardByPercent</servlet-name>
-  <servlet-class>supermarket.controller.customer.GetCustomerCardsByPercentController</servlet-class>
+  <servlet-class>supermarket.controller.customer_card.GetCustomerCardsByPercentController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>findCustomerCardByPercent</servlet-name>
@@ -253,7 +308,7 @@
 
 <servlet>
   <servlet-name>updateCustomerCard</servlet-name>
-  <servlet-class>supermarket.controller.customer.UpdateCustomerCardController</servlet-class>
+  <servlet-class>supermarket.controller.customer_card.UpdateCustomerCardController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>updateCustomerCard</servlet-name>
@@ -262,7 +317,7 @@
 
 <servlet>
   <servlet-name>deleteCustomerCard</servlet-name>
-  <servlet-class>supermarket.controller.customer.DeleteCustomerCardController</servlet-class>
+  <servlet-class>supermarket.controller.customer_card.DeleteCustomerCardController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>deleteCustomerCard</servlet-name>
@@ -379,7 +434,7 @@
 
 <servlet>
   <servlet-name>addStoreProduct</servlet-name>
-  <servlet-class>supermarket.controller.store.AddStoreProductController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.AddStoreProductController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>addStoreProduct</servlet-name>
@@ -388,7 +443,7 @@
 
 <servlet>
   <servlet-name>getAllStoreProducts</servlet-name>
-  <servlet-class>supermarket.controller.store.GetAllStoreProductsController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetAllStoreProductsController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getAllStoreProducts</servlet-name>
@@ -397,7 +452,7 @@
 
 <servlet>
   <servlet-name>getAllPromotionalStoreProducts</servlet-name>
-  <servlet-class>supermarket.controller.store.GetAllPromotionalStoreProductsController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetAllPromotionalStoreProductsController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getAllPromotionalStoreProducts</servlet-name>
@@ -406,7 +461,7 @@
 
 <servlet>
   <servlet-name>getAllNonPromotionalStoreProducts</servlet-name>
-  <servlet-class>supermarket.controller.store.GetAllNonPromotionalStoreProductsController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetAllNonPromotionalStoreProductsController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getAllNonPromotionalStoreProducts</servlet-name>
@@ -415,7 +470,7 @@
 
 <servlet>
   <servlet-name>getStoreProductTotalSoldSumByCashier</servlet-name>
-  <servlet-class>supermarket.controller.store.GetTotalSoldSumByCashierController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetTotalSoldSumByCashierController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getStoreProductTotalSoldSumByCashier</servlet-name>
@@ -424,7 +479,7 @@
 
 <servlet>
   <servlet-name>getStoreProductTotalSoldSum</servlet-name>
-  <servlet-class>supermarket.controller.store.GetTotalSoldSumController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetTotalSoldSumController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getStoreProductTotalSoldSum</servlet-name>
@@ -433,7 +488,7 @@
 
 <servlet>
   <servlet-name>getStoreProductTotalSoldAmount</servlet-name>
-  <servlet-class>supermarket.controller.store.GetStoreProductTotalAmountByPeriodController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetStoreProductTotalAmountByPeriodController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getStoreProductTotalSoldAmount</servlet-name>
@@ -442,7 +497,7 @@
 
 <servlet>
   <servlet-name>getStoreProductByUpc</servlet-name>
-  <servlet-class>supermarket.controller.store.GetStoreProductByUpcController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetStoreProductByUpcController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getStoreProductByUpc</servlet-name>
@@ -451,7 +506,7 @@
 
 <servlet>
   <servlet-name>getStoreProductByUpcForCashier</servlet-name>
-  <servlet-class>supermarket.controller.store.GetStoreProductByUpcForCashierController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.GetStoreProductByUpcForCashierController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getStoreProductByUpcForCashier</servlet-name>
@@ -460,7 +515,7 @@
 
 <servlet>
   <servlet-name>updateStoreProduct</servlet-name>
-  <servlet-class>supermarket.controller.store.UpdateStoreProductController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.UpdateStoreProductController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>updateStoreProduct</servlet-name>
@@ -469,7 +524,7 @@
 
 <servlet>
   <servlet-name>deleteStoreProduct</servlet-name>
-  <servlet-class>supermarket.controller.store.DeleteStoreProductController</servlet-class>
+  <servlet-class>supermarket.controller.store_product.DeleteStoreProductController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>deleteStoreProduct</servlet-name>

@@ -41,7 +41,10 @@
     </table>
 </c:if>
 
-
+<c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
+<c:if test="${userRole eq 'Manager'}">
+    <tr><td><a href="${pageContext.request.contextPath}/report/checks">Get report about checks</a></td></tr>
+</c:if>
 </body>
 </html>
 <%@include file="../footer.jsp"%>
