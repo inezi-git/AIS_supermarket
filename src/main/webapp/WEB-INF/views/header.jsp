@@ -35,7 +35,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/checks">Checks</a>
+                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/checks/today">Checks</a>
                         </li>
 
                         <li class="nav-item">

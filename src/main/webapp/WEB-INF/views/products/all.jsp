@@ -6,11 +6,25 @@
 <head>
     <title>All Products</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
 </head>
 <body>
 <div class="container">
-    <a href="${pageContext.request.contextPath}/products/add" class="btn btn-primary">Add new product</a>
+    <div class="btn-group" role="group">
+        <div>
+            <a href="${pageContext.request.contextPath}/products/add" class="btn btn-primary">Add new product</a>
+        </div>
+        <div>
+            <a href="${pageContext.request.contextPath}/products/find-by-category" class="btn btn-primary">Find by category</a>
+        </div>
+        <form method="get" action="${pageContext.request.contextPath}/products/find-by-name">
+            <div class="d-flex justify-content-between">
+            <input class="form-control" type="text" placeholder="Product name" id="name" name="name" value="${param.name}" required>
+            <input type="submit" value="Find">
+            </div>
+        </form>
+
+    </div>
+
 <table class="table table-striped">
 <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
     <tr>
@@ -51,6 +65,7 @@
     </c:forEach>
 </table>
 </div>
+
 </body>
 </html>
 

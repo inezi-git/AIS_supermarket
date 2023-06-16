@@ -31,7 +31,6 @@ public class GetAllMyChecksByPeriodController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
         String cashierId = (String) req.getSession().getAttribute("id_employee");
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime startDate = LocalDateTime.parse(req.getParameter("startDate")
                 + " " + req.getParameter("startTime"), formatter);
