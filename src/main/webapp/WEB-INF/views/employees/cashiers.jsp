@@ -3,14 +3,25 @@
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>All Cashiers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-<h1>All cashiers:</h1>
-<table border="1">
+<div class="container">
+    <div class="btn-group" role="group" aria-label="buttons">
+        <a href="${pageContext.request.contextPath}/employees/add" class="btn btn-primary">Add new employee</a>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Cashiers</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/employees">All employees</a></li>
+            </ul>
+        </div>
+    </div>
+    <table class="table table-striped">
     <tr>
         <th>ID</th>
         <th>Full Name</th>
@@ -20,6 +31,8 @@
         <th>Phone number</th>
         <th>Address</th>
         <th>Email</th>
+        <th></th>
+        <th></th>
     </tr>
     <c:forEach var="cashier" items="${cashiers}">
         <tr>
@@ -48,14 +61,16 @@
                 <c:out value="${cashier.email}"/>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/employees/update?id=${cashier.id}">UPDATE</a>
+                <a href="${pageContext.request.contextPath}/employees/update?id=${cashier.id}"><i class="bi bi-pencil-fill"></i></a>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/employees/delete?id=${cashier.id}">DELETE</a>
+                <a href="${pageContext.request.contextPath}/employees/delete?id=${cashier.id}"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
     </c:forEach>
-</table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+    </table>
+</div>
 </body>
 </html>
+
+<%@include file="../footer.jsp"%>

@@ -11,7 +11,15 @@
 </head>
 <body>
 <div class="container">
-    <a href="${pageContext.request.contextPath}/employees/add" class="btn btn-primary">Add new employee</a>
+    <div class="btn-group" role="group">
+        <a href="${pageContext.request.contextPath}/employees/add" class="btn btn-primary">Add new employee</a>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All employees</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/employees/cashiers">Cashiers</a></li>
+            </ul>
+        </div>
+    </div>
 <table class="table table-striped">
     <tr>
         <th>ID</th>
