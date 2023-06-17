@@ -10,6 +10,4 @@ public interface CustomerCardService extends BasicService<CustomerCard, String> 
     List<CustomerCard> getAllByPercentSortedBySurname(Integer percent);
 
     List<CustomerCard> getAllByLastName(String lastName);
-
-    List<CustomerCard> requestCustomer(BigDecimal inputSum);
 }

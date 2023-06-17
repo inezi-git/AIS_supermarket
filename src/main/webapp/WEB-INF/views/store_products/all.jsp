@@ -12,16 +12,19 @@
 <body>
 <div class="container">
     <div class="btn-group" role="group">
-        <a href="${pageContext.request.contextPath}/store_products/add" class="btn btn-primary">Add new store product</a>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All store products</button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/promotional">Promotional</a></li>
-                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/non-promotional">Non-promotional</a></li>
-            </ul>
-        </div>
-        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
+        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
         <c:if test="${userRole eq 'Manager'}">
+            <a href="${pageContext.request.contextPath}/store_products/add" class="btn btn-primary">Add new store product</a>
+        </c:if>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All store products</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/promotional">Promotional</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/non-promotional">Non-promotional</a></li>
+                </ul>
+            </div>
+        <c:if test="${userRole eq 'Manager'}">
+            <a href="${pageContext.request.contextPath}/store_products/find-by-upc" class="btn btn-secondary">Find by upc</a>
             <a href="${pageContext.request.contextPath}/report/store_products" class="btn btn-info">Get report about store products</a>
         </c:if>
     </div>

@@ -82,7 +82,6 @@
             <input type="submit" name="update" form="employee" value="Update" class="btn btn-primary">
             <a href="${pageContext.request.contextPath}/employees" class="btn btn-secondary">Cancel</a>
         </div>
-
     </form>
 </div>
 </body>

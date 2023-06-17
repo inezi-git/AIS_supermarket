@@ -3,15 +3,14 @@
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
-    <title>Find Store Product by UPC</title>
+    <title>Find By Check Number</title>
 </head>
 <body>
-<h1>Find Store Product by UPC</h1>
+<div class="container">
 <form method="post" action="${pageContext.request.contextPath}/checks/find-by-check-number">
-    <label for="checkNumber">UPC:</label>
     <select name="checkNumber" id="checkNumber" required>
         <c:forEach var="checkNumber" items="${checkNumbers}">
             <c:set var="selectedCheckNumber" value="${requestScope.selectedCheckNumber}" />
@@ -19,14 +18,13 @@
             || param.selectedCheckNumber == checkNumber ? 'selected' : ''}>${checkNumber}</option>
         </c:forEach>
     </select>
-    <input type="submit" value="Find">
+    <input type="submit" value="Find" class="btn btn-primary">
 </form>
 <c:if test="${not empty errorMessage}">
     <h2>${errorMessage}</h2>
 </c:if>
 <c:if test="${not empty check}">
-    <h2>Results for Check by Check Number ${selectedCheckNumber}:</h2>
-    <table border="1">
+    <table class="table table-striped">
         <thead>
         <tr>
             <th>Print Date</th>
@@ -47,6 +45,7 @@
         </tbody>
     </table>
 </c:if>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+</div>
 </body>
 </html>
+<%@include file="../footer.jsp"%>

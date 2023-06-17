@@ -19,10 +19,8 @@
                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/employees/cashiers">Cashiers</a></li>
             </ul>
         </div>
-        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
-        <c:if test="${userRole eq 'Manager'}">
-            <a href="${pageContext.request.contextPath}/report/employees" class="btn btn-info">Get report about employees</a>
-        </c:if>
+        <a href="${pageContext.request.contextPath}/employees/find-phone-and-address" class="btn btn-secondary">Find phone and address for employee</a>
+        <a href="${pageContext.request.contextPath}/report/employees" class="btn btn-info">Get report about employees</a>
     </div>
 <table class="table table-striped">
     <tr>

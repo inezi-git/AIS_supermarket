@@ -1,28 +1,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
   <title>Find Customers by Card Percentage</title>
 </head>
 <body>
-<h1>Find Customers by Card Percentage</h1>
+<div class="container">
 <form method="post" action="${pageContext.request.contextPath}/customer_cards/find-by-percent">
-  <label for="percent">Card Percentage:</label>
   <select name="percent" id="percent" required>
     <c:forEach var="p" items="${percentages}">
       <option value="${p}" ${percent == p || param.percent == p ? 'selected' : ''}>${p}%</option>
     </c:forEach>
   </select>
-  <input type="submit" value="Find">
+  <input type="submit" value="Find" class="btn btn-primary">
 </form>
 <c:if test="${not empty errorMessage}">
   <h2>${errorMessage}</h2>
 </c:if>
 <c:if test="${not empty customers}">
-  <h2>Results for Customers:</h2>
-  <table border="1">
+  <table class="table table-striped">
     <thead>
     <tr>
       <th>Full Name</th>
@@ -43,5 +41,10 @@
     </tbody>
   </table>
 </c:if>
+  <div>
+    <a href="${pageContext.request.contextPath}/customer_cards" class="btn btn-secondary">Back to all customers</a>
+  </div>
+</div>
 </body>
 </html>
+<%@include file="../footer.jsp"%>

@@ -23,19 +23,4 @@ public class SaleServiceImpl implements SaleService {
     public List<Sale> getSalesByCheck(Check check) {
         return saleDao.getSalesByCheckNumber(check.getCheckNumber());
     }
-
-    @Override
-    public List<Sale> getSalesByUpcAndDateRange(String upc, LocalDateTime from, LocalDateTime to) {
-        return saleDao.getSalesByUpcAndDateRange(upc, from, to);
-    }
-
-    @Override
-    public List<Sale> getSalesByCashierAndDateRange(String cashierId, LocalDateTime from, LocalDateTime to) {
-        return saleDao.getSalesByCashierAndDateRange(cashierId, from, to);
-    }
-
-    @Override
-    public List<Sale> getSalesByDateRange(LocalDateTime from, LocalDateTime to) {
-        return saleDao.getSalesByDateRange(from, to);
-    }
 }

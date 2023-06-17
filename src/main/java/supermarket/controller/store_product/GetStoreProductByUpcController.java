@@ -43,7 +43,7 @@ public class GetStoreProductByUpcController extends HttpServlet {
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         String upc = req.getParameter("upc");
-        req.setAttribute("selectedUpc", upc); // set the selectedUpc attribute here
+        req.setAttribute("selectedUpc", upc);
         Map<String, Object> storeProductData = storeProductService.getStoreProductDataByUpc(upc);
         if (storeProductData == null || storeProductData.isEmpty()) {
             req.setAttribute("errorMessage", "No store products by UPC " + upc + " found.");

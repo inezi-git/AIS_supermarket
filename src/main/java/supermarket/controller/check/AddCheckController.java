@@ -48,18 +48,14 @@ public class AddCheckController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-
         if (!validateAmounts(req)) {
             req.setAttribute("errorMessage", "Insufficient amount of a store product.");
             doGet(req, resp);
             return;
         }
-
         Check check = createCheck(req);
         checkService.create(check);
-
         saveSalesAndUpdateStoreProducts(req, check);
-
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 

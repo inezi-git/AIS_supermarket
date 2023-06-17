@@ -12,11 +12,11 @@
 <body>
 <div class="container">
     <div class="btn-group" role="group">
-        <div>
-            <a href="${pageContext.request.contextPath}/categories/add" class="btn btn-primary">Add new category</a>
-        </div>
-        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
+        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
         <c:if test="${userRole eq 'Manager'}">
+            <div>
+                <a href="${pageContext.request.contextPath}/categories/add" class="btn btn-primary">Add new category</a>
+            </div>
             <a href="${pageContext.request.contextPath}/report/categories" class="btn btn-info">Get report about categories</a>
         </c:if>
     </div>

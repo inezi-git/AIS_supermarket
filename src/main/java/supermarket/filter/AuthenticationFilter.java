@@ -44,7 +44,7 @@ public class AuthenticationFilter implements Filter {
                 "/customer_cards/update",
                 "/customer_cards/delete",
                 "/customer_cards",
-                "/customer_cards/find-by-percent",
+
                 "/categories/add",
                 "/categories/update",
                 "/categories/delete",
@@ -60,6 +60,7 @@ public class AuthenticationFilter implements Filter {
                 "/store_products/delete",
                 "/store_products",
                 "/store_products/promotional",
+                "/customer_cards/find-by-percent",
                 "/store_products/non-promotional",
                 "/report/employees", "/report/categories",
                 "/report/products", "/report/store_products",

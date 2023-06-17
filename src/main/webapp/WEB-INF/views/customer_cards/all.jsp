@@ -22,6 +22,7 @@
         </form>
         <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
         <c:if test="${userRole eq 'Manager'}">
+            <a href="${pageContext.request.contextPath}/customer_cards/find-by-percent" class="btn btn-secondary">Find by percent</a>
             <a href="${pageContext.request.contextPath}/report/customer_cards" class="btn btn-info">Get report about customer cards</a>
         </c:if>
     </div>

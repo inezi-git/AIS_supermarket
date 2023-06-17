@@ -53,11 +53,6 @@ public class StoreProductServiceImpl implements StoreProductService {
     }
 
     @Override
-    public Map<String, Object> getStoreProductPriceAndAmountByUpc(String upc) {
-        return storeProductDao.getStoreProductPriceAndAmountByUpc(upc);
-    }
-
-    @Override
     public List<StoreProduct> getAllPromotionalSortedByAmountAndName() {
         return storeProductDao.getAllPromotionalSortedByAmountAndName();
     }
@@ -65,20 +60,5 @@ public class StoreProductServiceImpl implements StoreProductService {
     @Override
     public List<StoreProduct> getAllNonPromotionalSortedByAmountAndName() {
         return storeProductDao.getAllNonPromotionalSortedByAmountAndName();
-    }
-
-    @Override
-    public List<CategoryMaxPriceProduct> requestCategory() {
-        return storeProductDao.requestCategory();
-    }
-
-    @Override
-    public List<StoreProduct> requestProduct(LocalDateTime startDate, LocalDateTime endDate) {
-        return storeProductDao.requestProduct(startDate, endDate);
-    }
-
-    @Override
-    public List<ProductStat> requestProductStat(LocalDateTime startDate, LocalDateTime endDate) {
-        return storeProductDao.requestProductStat(startDate, endDate);
     }
 }

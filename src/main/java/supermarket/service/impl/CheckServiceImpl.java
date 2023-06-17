@@ -41,11 +41,6 @@ public class CheckServiceImpl implements CheckService {
     }
 
     @Override
-    public Map<String, Object> getAllInfoByNumber(String number) {
-        return checkDao.getAllInfoByNumber(number);
-    }
-
-    @Override
     public List<Check> getAllByToday(String employeeId) {
         return checkDao.getAllByToday(employeeId);
     }
@@ -64,22 +59,5 @@ public class CheckServiceImpl implements CheckService {
     public List<Check> getAllChecksByCashierAndPeriod(String employeeId,
                                                       LocalDateTime from, LocalDateTime to) {
         return checkDao.getAllChecksByCashierAndPeriod(employeeId, from, to);
-    }
-
-    @Override
-    public BigDecimal getTotalSumByCashierAndPeriod(String employeeId,
-                                                    LocalDateTime from, LocalDateTime to) {
-        return checkDao.getTotalSumByCashierAndPeriod(employeeId, from, to);
-    }
-
-    @Override
-    public BigDecimal getTotalSumByPeriod(LocalDateTime from, LocalDateTime to) {
-        return checkDao.getTotalSumByPeriod(from, to);
-    }
-
-    @Override
-    public Integer getTotalAmountByProductAndPeriod(String productId,
-                                                    LocalDateTime from, LocalDateTime to) {
-        return checkDao.getTotalAmountByProductAndPeriod(productId, from, to);
     }
 }

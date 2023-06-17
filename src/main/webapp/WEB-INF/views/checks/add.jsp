@@ -53,7 +53,7 @@
             </tbody>
         </table>
         <br>
-        <input type="submit" value="Create Check" href="${pageContext.request.contextPath}/checks/today" class="btn btn-primary">
+        <input type="submit" value="Create Check" class="btn btn-primary">
     </form>
 </div>
 </body>

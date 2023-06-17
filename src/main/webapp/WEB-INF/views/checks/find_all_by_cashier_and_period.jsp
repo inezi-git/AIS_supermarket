@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Checks by Cashier and Date Range</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <div class="container">
 <h1>Find Checks by Cashier and Date Range</h1>
@@ -25,7 +26,7 @@
     <input type="date" id="endDate" name="endDate" value="${endDate.toLocalDate()}" required>
     <input type="time" id="endTime" name="endTime" value="${endDate.toLocalTime()}" required>
     <br><br>
-    <input type="submit" value="Find">
+    <input type="submit" value="Find" class="btn btn-primary">
 </form>
 <c:if test="${empty checks}">
     <h2>No checks created by this cashier were found</h2>
@@ -49,7 +50,7 @@
                 <td>${check.employee.employeeFullName}</td>
                 <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
                 <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}">Details</a></td>
+                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
             </tr>
         </c:forEach>
         </tbody>

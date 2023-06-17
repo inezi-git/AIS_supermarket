@@ -53,9 +53,4 @@ public class CustomerCardServiceImpl implements CustomerCardService {
     public List<CustomerCard> getAllByLastName(String lastName) {
         return customerCardDao.getAllByLastName(lastName);
     }
-
-    @Override
-    public List<CustomerCard> requestCustomer(BigDecimal inputSum) {
-        return customerCardDao.requestCustomer(inputSum);
-    }
 }

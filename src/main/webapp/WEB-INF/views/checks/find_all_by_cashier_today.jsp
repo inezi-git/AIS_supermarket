@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Checks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
@@ -13,7 +14,7 @@
     <div class="btn-group" role="group">
         <a href="${pageContext.request.contextPath}/checks/add" class="btn btn-primary">Add new check</a>
         <a href="${pageContext.request.contextPath}/checks/find-all-mine-by-period" class="btn btn-secondary">Find by period</a>
-        <a href="${pageContext.request.contextPath}/checks/find-by-check-number">Find by check number</a>
+        <a href="${pageContext.request.contextPath}/checks/find-by-check-number" class="btn btn-secondary">Find by check number</a>
     </div>
 </c:if>
 <c:if test="${empty checks}">
@@ -37,7 +38,7 @@
                 <td>${check.printDate}</td>
                 <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
                 <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}">Details</a></td>
+                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
             </tr>
         </c:forEach>
         </tbody>

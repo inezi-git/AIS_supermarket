@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>My Checks By Date Range</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
@@ -18,7 +19,7 @@
     <input type="date" id="endDate" name="endDate" value="${endDate.toLocalDate()}" required>
     <input type="time" id="endTime" name="endTime" value="${endDate.toLocalTime()}" required>
     <br><br>
-    <input type="submit" value="Find">
+    <input type="submit" value="Find" class="btn btn-primary">
 </form>
 <c:if test="${empty checks}">
     <h2>No checks created by me were found on this period</h2>
@@ -39,12 +40,15 @@
                 <td>${check.printDate}</td>
                 <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
                 <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}">Details</a></td>
+                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 </c:if>
+<div class="form-group">
+    <a href="${pageContext.request.contextPath}/checks/find-by-check-number" class="btn btn-secondary">Find by check number</a>
+</div>
 <div class="form-group">
     <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks today</a>
 </div>

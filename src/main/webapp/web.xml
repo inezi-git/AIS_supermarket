@@ -5,43 +5,6 @@
          version="4.0">
 
 <servlet>
-  <servlet-name>req1</servlet-name>
-  <servlet-class>supermarket.controller.store_product.GetMaxAndMinPriceForCategoryController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>req1</servlet-name>
-  <url-pattern>/store_products/find_max_and_min_for_each</url-pattern>
-</servlet-mapping>
-
-<servlet>
-  <servlet-name>totalAmountAndSumByPeriodController</servlet-name>
-  <servlet-class>supermarket.controller.store_product.GetTotalAmountAndSumByPeriodController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>totalAmountAndSumByPeriodController</servlet-name>
-  <url-pattern>/store_products/total_amount_and_sum_by_period</url-pattern>
-</servlet-mapping>
-
-<servlet>
-  <servlet-name>GetProductsOnSaleDuringPeriodController</servlet-name>
-  <servlet-class>supermarket.controller.store_product.ProductStatsController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>GetProductsOnSaleDuringPeriodController</servlet-name>
-  <url-pattern>/store_products/products_stats</url-pattern>
-</servlet-mapping>
-
-<servlet>
-  <servlet-name>GetCustomerCardsBySumController</servlet-name>
-  <servlet-class>supermarket.controller.customer_card.GetCustomerCardsBySumController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>GetCustomerCardsBySumController</servlet-name>
-  <url-pattern>/customer_cards/customer_cards_by_sum</url-pattern>
-</servlet-mapping>
-
-
-<servlet>
   <servlet-name>loginController</servlet-name>
   <servlet-class>supermarket.controller.LoginController</servlet-class>
 </servlet>
@@ -479,48 +442,12 @@
 </servlet-mapping>
 
 <servlet>
-  <servlet-name>getStoreProductTotalSoldSumByCashier</servlet-name>
-  <servlet-class>supermarket.controller.store_product.GetTotalSoldSumByCashierController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>getStoreProductTotalSoldSumByCashier</servlet-name>
-  <url-pattern>/store_products/find-total-sold-sum-by-cashier</url-pattern>
-</servlet-mapping>
-
-<servlet>
-  <servlet-name>getStoreProductTotalSoldSum</servlet-name>
-  <servlet-class>supermarket.controller.store_product.GetTotalSoldSumController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>getStoreProductTotalSoldSum</servlet-name>
-  <url-pattern>/store_products/find-total-sold-sum</url-pattern>
-</servlet-mapping>
-
-<servlet>
-  <servlet-name>getStoreProductTotalSoldAmount</servlet-name>
-  <servlet-class>supermarket.controller.store_product.GetStoreProductTotalAmountByPeriodController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>getStoreProductTotalSoldAmount</servlet-name>
-  <url-pattern>/store_products/find-total-sold-amount</url-pattern>
-</servlet-mapping>
-
-<servlet>
   <servlet-name>getStoreProductByUpc</servlet-name>
   <servlet-class>supermarket.controller.store_product.GetStoreProductByUpcController</servlet-class>
 </servlet>
 <servlet-mapping>
   <servlet-name>getStoreProductByUpc</servlet-name>
   <url-pattern>/store_products/find-by-upc</url-pattern>
-</servlet-mapping>
-
-<servlet>
-  <servlet-name>getStoreProductByUpcForCashier</servlet-name>
-  <servlet-class>supermarket.controller.store_product.GetStoreProductByUpcForCashierController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>getStoreProductByUpcForCashier</servlet-name>
-  <url-pattern>/store_products/find-by-upc-for-cashier</url-pattern>
 </servlet-mapping>
 
 <servlet>

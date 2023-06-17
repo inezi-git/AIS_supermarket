@@ -9,10 +9,4 @@ public interface SaleService {
     Sale save(Sale sale);
 
     List<Sale> getSalesByCheck(Check check);
-
-    List<Sale> getSalesByUpcAndDateRange(String upc, LocalDateTime from, LocalDateTime to);
-
-    List<Sale> getSalesByCashierAndDateRange(String upc, LocalDateTime from, LocalDateTime to);
-
-    List<Sale> getSalesByDateRange(LocalDateTime from, LocalDateTime to);
 }

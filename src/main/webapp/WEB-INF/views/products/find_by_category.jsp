@@ -7,21 +7,20 @@
     <title>Find Products by Category</title>
 </head>
 <body>
+<div class="container">
 <form method="post" action="${pageContext.request.contextPath}/products/find-by-category">
-    <label for="category">Category:</label>
     <select name="category" id="category" required>
         <c:forEach var="category" items="${categories}">
             <option value="${category}" ${category == categoryName || param.category == category ? 'selected' : ''}>${category}</option>
         </c:forEach>
     </select>
-    <input type="submit" value="Find">
+    <input type="submit" value="Find" class="btn btn-primary">
 </form>
 <c:if test="${not empty errorMessage}">
     <h2>${errorMessage}</h2>
 </c:if>
 <c:if test="${not empty products}">
-    <h2>Results for Products in Category ${categoryName}:</h2>
-    <table border="1">
+    <table class="table table-striped">
         <thead>
         <tr>
             <th>ID</th>
@@ -42,6 +41,10 @@
         </tbody>
     </table>
 </c:if>
+    <div>
+        <a href="${pageContext.request.contextPath}/products" class="btn btn-secondary">Back to all products</a>
+    </div>
+</div>
 </body>
 </html>
 <%@include file="../footer.jsp"%>

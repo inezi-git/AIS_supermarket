@@ -10,9 +10,12 @@
 <body>
 <div class="container">
     <div class="btn-group" role="group">
-        <div>
-            <a href="${pageContext.request.contextPath}/products/add" class="btn btn-primary">Add new product</a>
-        </div>
+        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
+        <c:if test="${userRole eq 'Manager'}">
+            <div>
+                <a href="${pageContext.request.contextPath}/products/add" class="btn btn-primary">Add new product</a>
+            </div>
+        </c:if>
         <div>
             <a href="${pageContext.request.contextPath}/products/find-by-category" class="btn btn-primary">Find by category</a>
         </div>
@@ -22,7 +25,6 @@
                 <input type="submit" value="Find">
             </div>
         </form>
-        <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
         <c:if test="${userRole eq 'Manager'}">
             <a href="${pageContext.request.contextPath}/report/products" class="btn btn-info">Get report about products</a>
         </c:if>
