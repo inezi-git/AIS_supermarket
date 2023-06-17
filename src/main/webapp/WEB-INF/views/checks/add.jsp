@@ -7,6 +7,7 @@
     <title>Create Check</title>
 </head>
 <body>
+<div class="container">
 <form method="post" id="createCheckForm" action="${pageContext.request.contextPath}/checks/add">
     <div>
         <label for="card_number">Customer Card:</label>
@@ -18,7 +19,7 @@
             </c:forEach>
         </select>
     </div>
-    <table border="1">
+    <table class="table table-striped">
         <thead>
         <tr>
             <th>UPC</th>
@@ -52,8 +53,9 @@
         </tbody>
     </table>
     <br>
-    <input type="submit" value="Create Check">
+    <input type="submit" value="Create Check" href="${pageContext.request.contextPath}/checks/today">
 </form>
+</div>
 </body>
 </html>
 

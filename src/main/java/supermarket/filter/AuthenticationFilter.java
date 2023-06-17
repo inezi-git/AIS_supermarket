@@ -59,27 +59,17 @@ public class AuthenticationFilter implements Filter {
                 "/store_products/update",
                 "/store_products/delete",
                 "/store_products",
-                "/checks/delete",
-                "/checks/find-all-by-cashier-and-period",
-                "/checks/find-all-by-period",
-                "/checks/find-total-sold-amount",
-                "/checks/find-total-sold-amount-all-cashiers",
-                "/checks/find-total-sold-units",
                 "/store_products/promotional",
                 "/store_products/non-promotional",
-                "/report",
                 "/report/employees", "/report/categories",
                 "/report/products", "/report/store_products",
-                "/report/customer_cards", "/report/checks"
+                "/report/customer_cards",
+                "/report/checks"
         );
 
 
         cashierUrls = Set.of(
-                "/store_products/find-by-upc-for-cashier",
-                "/checks/today",
-                "/checks/find-all-mine-by-period",
-                "/checks/find-by-check-number",
-                "employees/about-me"
+                "/store_products/find-by-upc-for-cashier"
         );
 
         commonUrls = Set.of(
@@ -94,12 +84,23 @@ public class AuthenticationFilter implements Filter {
                 "/products/find-by-category",
                 "/store_products/find-by-upc-for-cashier",
                 "/checks/today",
-                "/checks/find-all-mine-by-period",
-                "/checks/find-by-check-number",
+                "/checks/add",
                 "/store_products/find_max_and_min_for_each",
                 "/store_products/total_amount_and_sum_by_period",
                 "/store_products/products_stats",
-                "/customer_cards/customer_cards_by_sum"
+                "/customer_cards/customer_cards_by_sum",
+                "/checks/find-all-mine-by-period",
+                "/checks/find-by-check-number",
+                "employees/about-me",
+                "/checks/delete",
+                "/checks/find-all-by-cashier-and-period",
+                "checks/find-all-mine-by-period",
+                "/checks/find-all-by-period",
+                "/checks/find-total-sold-amount",
+                "/checks/find-total-sold-amount-all-cashiers",
+                "/checks/find-total-sold-units",
+                "/checks/get",
+                "/checks/find-by-check_number"
         );
     }
 

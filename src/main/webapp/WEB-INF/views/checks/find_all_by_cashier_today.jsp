@@ -8,29 +8,32 @@
     <title>Checks</title>
 </head>
 <body>
+<div class="container">
 <c:if test="${userRole eq 'Cashier'}">
-    <div class="container">
-        <tr><td><a href="${pageContext.request.contextPath}/checks/add">Sell Store Products</a></td></tr>
+    <div class="btn-group" role="group">
+        <a href="${pageContext.request.contextPath}/checks/add" class="btn btn-primary">Add new check</a>
+        <a href="${pageContext.request.contextPath}/checks/find-all-mine-by-period" class="btn btn-secondary">Find by period</a>
+        <a href="${pageContext.request.contextPath}/checks/find-by-check-number">Find by check number</a>
     </div>
 </c:if>
-
 <c:if test="${empty checks}">
-    <h2>No checks found today</h2>
+    <h2>No checks created by this cashier were found today</h2>
 </c:if>
 <c:if test="${not empty checks}">
-
-    <table border="1">
-        <thead>
+    <h2>Checks created by me today</h2>
+    <table class="table table-striped">
         <tr>
-            <th>Print Date</th>
-            <th>Customer Card</th>
-            <th>Sum Total</th>
+            <th>Check number</th>
+            <th>Print date</th>
+            <th>Customer card</th>
+            <th>Sum total</th>
             <th>Details</th>
         </tr>
-        </thead>
+
         <tbody>
         <c:forEach var="check" items="${checks}">
             <tr>
+                <td>${check.checkNumber}</td>
                 <td>${check.printDate}</td>
                 <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
                 <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
@@ -45,6 +48,7 @@
 <c:if test="${userRole eq 'Manager'}">
     <tr><td><a href="${pageContext.request.contextPath}/report/checks">Get report about checks</a></td></tr>
 </c:if>
+</div>
 </body>
 </html>
 <%@include file="../footer.jsp"%>

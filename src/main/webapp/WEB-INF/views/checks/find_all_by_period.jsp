@@ -2,12 +2,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@include file="../header.jsp"%>
 <html>
 <head>
     <title>Checks by Cashier and Date Range</title>
 </head>
-<body>
+<div class="container">
 <h1>Find Checks by Cashier and Date Range</h1>
 <form method="post" action="${pageContext.request.contextPath}/checks/find-all-by-period">
     <label for="startDate">Start Date:</label>
@@ -21,11 +21,11 @@
     <input type="submit" value="Find">
 </form>
 <c:if test="${empty checks}">
-    <h2>No Checks Found</h2>
+    <h2>No checks were found on this period</h2>
 </c:if>
 <c:if test="${not empty checks}">
-    <h2>Checks Found:</h2>
-    <table border="1">
+    <h2>Checks found:</h2>
+    <table class="table table-striped">
         <thead>
         <tr>
             <th>Print Date</th>
@@ -53,6 +53,10 @@
     </c:forEach>
     <h4>Total Sum: <fmt:formatNumber value="${totalSum}" pattern="#,##0.00"/></h4>
 </c:if>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+    <div class="form-group">
+        <a href="${pageContext.request.contextPath}/checks/find-all-by-cashier-and-period" class="btn btn-secondary">Find by cashier and period</a>
+    </div>
+</div>
 </body>
 </html>
+<%@include file="../footer.jsp"%>

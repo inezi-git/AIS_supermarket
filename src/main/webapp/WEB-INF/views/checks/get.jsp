@@ -2,14 +2,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ include file="../header.jsp"%>
 <html>
 <head>
     <title>Check Details</title>
 </head>
 <body>
-<h2>Check Info:</h2>
-<table border="1">
+<div class="container">
+<table class="table table-striped">
     <thead>
     <tr>
         <th>Check Number</th>
@@ -32,8 +32,8 @@
     </tbody>
 </table>
 <br>
-<h2>Purchased Products:</h2>
-<table border="1">
+<h2>Purchased products</h2>
+<table class="table table-striped">
     <thead>
     <tr>
         <th>UPC</th>
@@ -55,6 +55,10 @@
     </c:forEach>
     </tbody>
 </table>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+    <div class="form-group">
+        <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks today</a>
+    </div>
+</div>
 </body>
 </html>
+<%@ include file="../footer.jsp"%>

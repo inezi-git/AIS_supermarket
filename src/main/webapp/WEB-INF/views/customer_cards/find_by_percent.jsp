@@ -43,6 +43,5 @@
     </tbody>
   </table>
 </c:if>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
 </body>
 </html>

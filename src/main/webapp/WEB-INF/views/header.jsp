@@ -34,10 +34,16 @@
                         <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/store_products">Store products</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/checks/today">Checks</a>
-                        </li>
-
+                        <c:if test="${userRole eq 'Cashier'}">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/checks/today">Checks</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${userRole eq 'Manager'}">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/checks/find-all-by-period">Checks</a>
+                            </li>
+                        </c:if>
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/customer_cards">Customer cards</a>
                         </li>

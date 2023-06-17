@@ -2,13 +2,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="en_US" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ include file="../header.jsp"%>
 <html>
 <head>
     <title>My Checks By Date Range</title>
 </head>
 <body>
-<h1>Find All My Checks By Date Range</h1>
+<div class="container">
 <form method="post" action="${pageContext.request.contextPath}/checks/find-all-mine-by-period">
     <label for="startDate">Start Date:</label>
     <input type="date" id="startDate" name="startDate" value="${startDate.toLocalDate()}" required>
@@ -21,11 +21,10 @@
     <input type="submit" value="Find">
 </form>
 <c:if test="${empty checks}">
-    <h2>No Checks Found</h2>
+    <h2>No checks created by me were found on this period</h2>
 </c:if>
 <c:if test="${not empty checks}">
-    <h2>Checks Found:</h2>
-    <table border="1">
+    <table class="table table-striped">
         <thead>
         <tr>
             <th>Print Date</th>
@@ -46,6 +45,10 @@
         </tbody>
     </table>
 </c:if>
-<h5><a href="${pageContext.request.contextPath}/logout">Log out</a></h5>
+<div class="form-group">
+    <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks today</a>
+</div>
+</div>
 </body>
 </html>
+<%@ include file="../footer.jsp"%>
