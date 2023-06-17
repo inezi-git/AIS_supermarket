@@ -91,7 +91,7 @@ public class AuthenticationFilter implements Filter {
                 "/customer_cards/customer_cards_by_sum",
                 "/checks/find-all-mine-by-period",
                 "/checks/find-by-check-number",
-                "employees/about-me",
+                "/employees/about-me",
                 "/checks/delete",
                 "/checks/find-all-by-cashier-and-period",
                 "checks/find-all-mine-by-period",

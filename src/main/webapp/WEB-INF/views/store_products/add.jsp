@@ -10,7 +10,7 @@
     <h1>Add new store product</h1>
     <form method="post" id="store_product" action="${pageContext.request.contextPath}/store_products/add"></form>
     <div class="form-group">
-        <label for="id_product">Category</label>
+        <label for="id_product">Category and product</label>
         <select name="id_product" id="id_product" class="form-control" form="store_product" required>
             <c:forEach var="product" items="${products}">
                 <option value="${product.id}">${product.id} ${product.name}</option>
