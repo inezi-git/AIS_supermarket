@@ -334,6 +334,16 @@
 </servlet-mapping>
 
 <servlet>
+  <servlet-name>getInfoAboutMe</servlet-name>
+  <servlet-class>supermarket.controller.employee.GetInfoAboutMeController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>getInfoAboutMe</servlet-name>
+  <url-pattern>/employees/about-me</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
   <servlet-name>getAllEmployees</servlet-name>
   <servlet-class>supermarket.controller.employee.GetAllEmployeesController</servlet-class>
 </servlet>

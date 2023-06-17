@@ -78,7 +78,8 @@ public class AuthenticationFilter implements Filter {
                 "/store_products/find-by-upc-for-cashier",
                 "/checks/today",
                 "/checks/find-all-mine-by-period",
-                "/checks/find-by-check-number"
+                "/checks/find-by-check-number",
+                "employees/about-me"
         );
 
         commonUrls = Set.of(

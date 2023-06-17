@@ -56,6 +56,7 @@
                                 Manager
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/employees/about-me">About me</a></li>
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Log out</a></li>
                             </ul>
                         </li>
@@ -69,12 +70,12 @@
                                 Cashier
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/employees/about-me">About me</a></li>
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Log out</a></li>
                             </ul>
                         </li>
                     </c:if>
                 </ul>
-
 
                 <ul class="navbar-nav">
                     <c:if test="${empty userRole}">
