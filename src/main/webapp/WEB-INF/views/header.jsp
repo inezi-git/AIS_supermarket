@@ -29,7 +29,6 @@
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/products">Products</a>
                         </li>
-
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/store_products">Store products</a>
                         </li>

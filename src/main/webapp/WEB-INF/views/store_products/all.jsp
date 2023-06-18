@@ -23,14 +23,13 @@
                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/store_products/non-promotional">Non-promotional</a></li>
                 </ul>
             </div>
-        <form method="get" action="${pageContext.request.contextPath}/store_products/find-by-upc">
-            <div class="d-flex justify-content-between">
-                <input type="text" id="upc" placeholder="UPC" name="upc" value="${param.upc}" required>
-                <input type="submit" value="Find" class="btn btn-primary">
-            </div>
-        </form>
         <c:if test="${userRole eq 'Manager'}">
-            <a href="${pageContext.request.contextPath}/store_products/find-by-upc" class="btn btn-secondary">Find by upc</a>
+            <form method="get" action="${pageContext.request.contextPath}/store_products/find-by-upc">
+                <div class="d-flex justify-content-between">
+                    <input type="text" id="upc" placeholder="UPC" name="upc" value="${param.upc}" required>
+                    <input type="submit" value="Find" class="btn btn-primary">
+                </div>
+            </form>
             <a href="${pageContext.request.contextPath}/report/store_products" class="btn btn-info">Get report about store products</a>
         </c:if>
     </div>

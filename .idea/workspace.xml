@@ -10,29 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06d4a4dc-7b02-427c-919f-c58ee046a445" name="Changes" comment="Some changes">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc11485d-14b4-4395-8115-717eb7386d1a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc11485d-14b4-4395-8115-717eb7386d1a/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc11485d-14b4-4395-8115-717eb7386d1a/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc11485d-14b4-4395-8115-717eb7386d1a/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc11485d-14b4-4395-8115-717eb7386d1a/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_supermarket.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database_supermarket.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/customer_card/GetCustomerCardsByLastNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/customer_card/GetCustomerCardsByLastNameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetStoreProductByUpcController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetStoreProductByUpcController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/CustomerCardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/CustomerCardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/EmployeeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/CustomerCardDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/CustomerCardDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/EmployeeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/EmployeeDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/StoreProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/StoreProductDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_by_upc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_by_upc.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,6 +325,7 @@
       <workItem from="1687119362225" duration="1692000" />
       <workItem from="1687121318005" duration="594000" />
       <workItem from="1687122221013" duration="77000" />
+      <workItem from="1687122596262" duration="80000" />
     </task>
     <task id="LOCAL-00001" summary="Some changes">
       <created>1686949217459</created>
