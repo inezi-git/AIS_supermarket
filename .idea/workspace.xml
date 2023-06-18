@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06d4a4dc-7b02-427c-919f-c58ee046a445" name="Changes" comment="Some changes">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,6 +315,7 @@
       <workItem from="1687101303929" duration="7144000" />
       <workItem from="1687108504256" duration="83000" />
       <workItem from="1687108700946" duration="82000" />
+      <workItem from="1687108921511" duration="273000" />
     </task>
     <task id="LOCAL-00001" summary="Some changes">
       <created>1686949217459</created>
