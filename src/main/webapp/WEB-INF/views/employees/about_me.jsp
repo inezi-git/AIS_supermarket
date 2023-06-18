@@ -37,6 +37,9 @@
     </tbody>
   </table>
 </c:if>
+    <div>
+        <a href="${pageContext.request.contextPath}/employees/about-me/change-password" class="btn btn-secondary">Change my password</a>
+    </div>
   </div>
 </body>
 </html>

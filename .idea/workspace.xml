@@ -11,49 +11,21 @@
   <component name="ChangeListManager">
     <list default="true" id="06d4a4dc-7b02-427c-919f-c58ee046a445" name="Changes" comment="Some changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/AddCheckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/AddCheckController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/customer_card/GetCustomerCardsBySumController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetMaxAndMinPriceForCategoryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetStoreProductByUpcController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetStoreProductByUpcController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetStoreProductByUpcForCashierController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetStoreProductTotalAmountByPeriodController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetTotalAmountAndSumByPeriodController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetTotalSoldSumByCashierController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/GetTotalSoldSumController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/store_product/ProductStatsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/SignUpController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllTodayChecksByCashierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/controller/check/GetAllTodayChecksByCashierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/EmployeeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/CategoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/CategoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/EmployeeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/dao/impl/EmployeeDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/filter/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/CheckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/CustomerCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/CustomerCardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/SaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/SaleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/StoreProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/StoreProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/CheckServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/CheckServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/CustomerCardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/CustomerCardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/SaleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/SaleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/StoreProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/StoreProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_cashier_and_period.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_cashier_and_period.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_cashier_today.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_cashier_today.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/supermarket/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/categories/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_cashier_today.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_mine_today.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_period.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_by_period.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_mine_by_period.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_all_mine_by_period.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_by_check_number.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/find_by_check_number.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/checks/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/customer_cards_by_sum.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/find_by_percent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/customer_cards/find_by_percent.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/find_phone_and_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/find_phone_and_address.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/about_me.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/about_me.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/employees/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/find_by_category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products/find_by_category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_by_upc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_by_upc.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_total_max_for_each.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_total_sold_amount.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_total_sold_sum.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/find_total_sold_sum_by_cashier.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/product_stats.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store_products/total_amount_and_sum_by_period.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +56,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2R9XxmCLXGV25IGqKO2yaRI9enr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -351,6 +326,8 @@
       <workItem from="1687016816049" duration="4844000" />
       <workItem from="1687022000389" duration="1838000" />
       <workItem from="1687023972179" duration="10444000" />
+      <workItem from="1687035176223" duration="77000" />
+      <workItem from="1687070270825" duration="9343000" />
     </task>
     <task id="LOCAL-00001" summary="Some changes">
       <created>1686949217459</created>

@@ -24,7 +24,7 @@ public class GetAllTodayChecksByCashierController extends HttpServlet {
         String cashierId = (String) req.getSession().getAttribute("id_employee");
         List<Check> checks = checkService.getAllByToday(cashierId);
         req.setAttribute("checks", checks);
-        req.getRequestDispatcher("/WEB-INF/views/checks/find_all_by_cashier_today.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/checks/find_all_mine_today.jsp").forward(req, resp);
     }
 
     @Override

@@ -30,7 +30,6 @@ public class AuthenticationFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {
         allowedUrls.add("/login");
-        allowedUrls.add("/register");
         allowedUrls.add("/index");
         allowedUrls.add("/logout");
 

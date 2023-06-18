@@ -23,15 +23,6 @@
 </servlet-mapping>
 
 <servlet>
-  <servlet-name>signUpController</servlet-name>
-  <servlet-class>supermarket.controller.SignUpController</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>signUpController</servlet-name>
-  <url-pattern>/register</url-pattern>
-</servlet-mapping>
-
-<servlet>
   <servlet-name>accessDenied</servlet-name>
   <servlet-class>supermarket.controller.AccessDeniedController</servlet-class>
 </servlet>
@@ -214,7 +205,6 @@
   <servlet-name>getAllChecksByPeriod</servlet-name>
   <url-pattern>/checks/find-all-by-period</url-pattern>
 </servlet-mapping>
-
 <servlet>
   <servlet-name>updateCheck</servlet-name>
   <servlet-class>supermarket.controller.check.UpdateCheckController</servlet-class>
@@ -305,6 +295,14 @@
   <url-pattern>/employees/about-me</url-pattern>
 </servlet-mapping>
 
+<servlet>
+  <servlet-name>changeMyPassword</servlet-name>
+  <servlet-class>supermarket.controller.employee.ChangeMyPasswordController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>changeMyPassword</servlet-name>
+  <url-pattern>/employees/about-me/change-password</url-pattern>
+</servlet-mapping>
 
 <servlet>
   <servlet-name>getAllEmployees</servlet-name>

@@ -94,23 +94,16 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public Employee update(Employee employee) {
-        String password = HashUtil.hasPassword(employee.getPassword());
-        if (!password.equals(get(employee.getId()).get().getPassword())) {
-            throw new IncorrectPasswordException("Incorrect password");
-        }
         String query = "UPDATE Employee "
                 + "SET empl_surname = ?, empl_name = ?, empl_patronymic = ?, "
                 + "empl_role = ?, salary = ?, date_of_birth = ?, date_of_start = ?, "
-                + "phone_number = ?, city = ?, street = ?, zip_code = ?, email = ?, password = ? "
+                + "phone_number = ?, city = ?, street = ?, zip_code = ?"
                 + "WHERE id_employee = ?";
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement updateEmployeeStatement = connection.prepareStatement(query)) {
-            updateEmployeeStatement.setString(1,
-                    employee.getEmployeeFullName().getSurname());
-            updateEmployeeStatement.setString(2,
-                    employee.getEmployeeFullName().getName());
-            updateEmployeeStatement.setString(3,
-                    employee.getEmployeeFullName().getPatronymic());
+             PreparedStatement updateEmployeeStatement = connection.prepareStatement(query)) {
+            updateEmployeeStatement.setString(1, employee.getEmployeeFullName().getSurname());
+            updateEmployeeStatement.setString(2, employee.getEmployeeFullName().getName());
+            updateEmployeeStatement.setString(3, employee.getEmployeeFullName().getPatronymic());
             updateEmployeeStatement.setString(4, employee.getEmployeeRole().name());
             updateEmployeeStatement.setBigDecimal(5, employee.getSalary());
             updateEmployeeStatement.setDate(6, Date.valueOf(employee.getDateOfBirth()));
@@ -119,18 +112,27 @@ public class EmployeeDaoImpl implements EmployeeDao {
             updateEmployeeStatement.setString(9, employee.getAddress().getCity());
             updateEmployeeStatement.setString(10, employee.getAddress().getStreet());
             updateEmployeeStatement.setString(11, employee.getAddress().getZipCode());
-            updateEmployeeStatement.setString(12, employee.getEmail());
-            updateEmployeeStatement.setString(13, HashUtil.hasPassword(employee.getPassword()));
-            updateEmployeeStatement.setString(14, employee.getId());
+            updateEmployeeStatement.setString(12, employee.getId());
             updateEmployeeStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't update "
-                    + employee + " in employees database.", e);
+            throw new DataProcessingException("Couldn't update " + employee + " in employees database.", e);
         }
         return employee;
     }
 
-    @Override
+    public Employee updatePassword(Employee employee) {
+        String query = "UPDATE Employee "
+                + "SET password = ?"
+                + "WHERE id_employee = ?";
+        try (Connection connection = ConnectionWithDB.getConnection();
+             PreparedStatement updateEmployeeStatement = connection.prepareStatement(query)) {
+            updateEmployeeStatement.setString(1, HashUtil.hasPassword(employee.getPassword()));
+            updateEmployeeStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't change password for " + employee + " in employees database.", e);
+        }
+        return employee;
+    }
     public boolean delete(String id) {
         String query = "DELETE FROM Employee WHERE id_employee = ?";
         try (Connection connection = ConnectionWithDB.getConnection();

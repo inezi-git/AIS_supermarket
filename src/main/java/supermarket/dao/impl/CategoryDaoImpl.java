@@ -77,8 +77,7 @@ public class CategoryDaoImpl implements CategoryDao {
             updateCategoryStatement.setInt(2, category.getCategoryNumber());
             updateCategoryStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't update "
-                    + category + " in categories database.", e);
+            throw new DataProcessingException("Couldn't update " + category + " in categories database.", e);
         }
         return category;
     }

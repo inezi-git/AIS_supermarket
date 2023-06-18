@@ -88,15 +88,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page">About</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/login">Log in</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/register">Sign up</a>
-                        </li>
-
                     </c:if>
                 </ul>
             </div>

@@ -72,11 +72,7 @@
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" class="form-control" value="${employee.email}" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Enter Password</label>
-            <input type="password" name="password" id="password" class="form-control" required>
+            <input type="text" name="email" id="email" class="form-control" value="${employee.email}" readonly>
         </div>
         <div class="form-group">
             <input type="submit" name="update" form="employee" value="Update" class="btn btn-primary">

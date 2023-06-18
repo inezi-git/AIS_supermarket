@@ -34,6 +34,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeDao.update(employee);
     }
 
+    public Employee updatePassword(Employee employee) {
+        return employeeDao.updatePassword(employee);
+    }
+
     @Override
     public boolean delete(String id) {
         return employeeDao.delete(id);

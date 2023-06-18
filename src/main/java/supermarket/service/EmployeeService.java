@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface EmployeeService extends BasicService<Employee, String> {
     List<Employee> getAllSortedBySurname();
+    Employee updatePassword(Employee employee);
 
     List<Employee> getAllCashiersSortedBySurname();
 
