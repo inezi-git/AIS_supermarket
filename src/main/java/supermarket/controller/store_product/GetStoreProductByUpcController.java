@@ -22,14 +22,12 @@ public class GetStoreProductByUpcController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        String upc = req.getParameter("selectedUpc");
-        if (upc != null) {
-            Map<String, Object> storeProductData = storeProductService.getStoreProductDataByUpc(upc);
-            if (storeProductData != null || storeProductData.isEmpty()) {
-                req.setAttribute("product", storeProductData);
-            } else {
-                req.setAttribute("errorMessage", "No store product by UPC " + upc + " found.");
-            }
+        String upc = req.getParameter("upc");
+        Map<String, Object> storeProductData = storeProductService.getStoreProductDataByUpc(upc);
+        if (storeProductData != null || storeProductData.isEmpty()) {
+            req.setAttribute("storeProducts", storeProductData);
+        } else {
+            req.setAttribute("errorMessage", "No store product by UPC " + upc + " found.");
         }
         List<String> upcs = storeProductService.getAll().stream()
                 .map(StoreProduct::getUpc)
@@ -37,22 +35,10 @@ public class GetStoreProductByUpcController extends HttpServlet {
         req.setAttribute("upcs", upcs);
         req.getRequestDispatcher("/WEB-INF/views/store_products/find_by_upc.jsp").forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        String upc = req.getParameter("upc");
-        req.setAttribute("selectedUpc", upc);
-        Map<String, Object> storeProductData = storeProductService.getStoreProductDataByUpc(upc);
-        if (storeProductData == null || storeProductData.isEmpty()) {
-            req.setAttribute("errorMessage", "No store products by UPC " + upc + " found.");
-            req.getRequestDispatcher("/WEB-INF/views/store_products/find_by_upc.jsp").forward(req, resp);
-        } else {
-            req.setAttribute("product", storeProductData);
-            String url = String.format("%s?selectedUpc=%s", req.getRequestURI(),
-                    URLEncoder.encode(upc, StandardCharsets.UTF_8));
-            resp.sendRedirect(url);
-        }
+        doGet(req, resp);
     }
+
 }

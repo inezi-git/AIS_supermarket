@@ -18,6 +18,13 @@ CREATE TABLE `DB_SuperMarket`.`Employee`  (
              `password` varchar(64) NOT NULL,
              PRIMARY KEY (`id_employee`)
 );
+-- main manager
+-- email: maria@gmail.com
+-- password: maria123
+INSERT INTO `DB_SuperMarket`.`Employee` (
+            `id_employee`, `empl_surname`, `empl_name`, `empl_patronymic`, `empl_role`, `salary`, `date_of_birth`, `date_of_start`, `phone_number`, `city`, `street`, `zip_code`, `email`, `password`)
+            VALUES ('7e1c8577-1', 'Melnyk', 'Maria', 'Petrivna', 'MANAGER', '10000.0000', '2000-11-11', '2020-01-01', '+1457816', 'Kyiv', 'Polska', '01001', 'maria@gmail.com', '626e3c805e77eeb472c42c6be607be2af7ac5c08fd7050f278e0330fe81abf57'
+);
 
 CREATE TABLE `DB_SuperMarket`.`Category` (
             `category_number` int NOT NULL AUTO_INCREMENT,

@@ -56,9 +56,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Map<String, String> getPhoneAndAddressBySurname(String surname) {
         return employeeDao.getPhoneAndAddressBySurname(surname);
     }
-
     @Override
     public Optional<Employee> findByEmail(String email) {
         return employeeDao.findByEmail(email);
     }
+
 }

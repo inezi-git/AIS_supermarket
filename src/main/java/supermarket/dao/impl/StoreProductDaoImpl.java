@@ -149,7 +149,7 @@ public class StoreProductDaoImpl implements StoreProductDao {
 
     @Override
     public Map<String, Object> getStoreProductDataByUpc(String upc) {
-        String query = "SELECT selling_price, products_number, product_name, characteristics "
+        String query = "SELECT selling_price, products_number, product_name, producer, characteristics "
                 + "FROM store_product "
                 + "JOIN product ON product.id_product = store_product.id_product "
                 + "WHERE UPC = ?";
@@ -293,6 +293,7 @@ public class StoreProductDaoImpl implements StoreProductDao {
                 Product productDetails = new Product();
                 productDetails.setId(resultSet.getLong("id_product"));
                 productDetails.setName(resultSet.getString("product_name"));
+                productDetails.setProducer(resultSet.getString("producer"));
                 productDetails.setCharacteristics(resultSet.getString("characteristics"));
                 productDetails.setCategory(category);
 
@@ -330,6 +331,7 @@ public class StoreProductDaoImpl implements StoreProductDao {
                 ProductStat productStat = new ProductStat();
                 productStat.setIdProduct(resultSet.getLong("id_product"));
                 productStat.setProductName(resultSet.getString("product_name"));
+                productStat.setProducer(resultSet.getString("producer"));
                 productStat.setCharacteristics(resultSet.getString("characteristics"));
                 productStat.setTotalNumber(resultSet.getInt("total_number"));
                 productStat.setTotalSum(resultSet.getBigDecimal("total_sum"));
@@ -353,7 +355,7 @@ public class StoreProductDaoImpl implements StoreProductDao {
 
     private Product getProductByStoreProductUpc(String upc) {
         String query = "SELECT product.id_product, product.category_number, category_name, "
-                + "product_name, characteristics FROM product "
+                + "product_name, producer, characteristics FROM product "
                 + "JOIN store_product sp on product.id_product = sp.id_product "
                 + "JOIN category ON product.category_number = category.category_number "
                 + "WHERE sp.UPC = ?";
@@ -379,6 +381,7 @@ public class StoreProductDaoImpl implements StoreProductDao {
                 resultSet.getString("category_name")
         ));
         product.setName(resultSet.getString("product_name"));
+        product.setProducer(resultSet.getString("producer"));
         product.setCharacteristics(resultSet.getString("characteristics"));
         return product;
     }
@@ -389,6 +392,7 @@ public class StoreProductDaoImpl implements StoreProductDao {
         storeProductData.put("selling_price", resultSet.getBigDecimal("selling_price"));
         storeProductData.put("products_number", resultSet.getInt("products_number"));
         storeProductData.put("product_name", resultSet.getString("product_name"));
+        storeProductData.put("producer", resultSet.getString("producer"));
         storeProductData.put("characteristics", resultSet.getString("characteristics"));
         return storeProductData;
     }

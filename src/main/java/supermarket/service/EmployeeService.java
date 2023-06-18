@@ -7,12 +7,8 @@ import java.util.Optional;
 
 public interface EmployeeService extends BasicService<Employee, String> {
     List<Employee> getAllSortedBySurname();
-
     List<Employee> getAllCashiersSortedBySurname();
-
     Map<String, String> getPhoneAndAddressBySurname(String surname);
-
     Optional<Employee> findByEmail(String email);
-
     Employee updatePassword(Employee employee);
 }

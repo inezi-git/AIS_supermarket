@@ -201,8 +201,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
         String query = "SELECT * FROM employee WHERE email = ?";
         Employee employee = null;
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement findDriverByLoginStatement =
-                        connection.prepareStatement(query)) {
+             PreparedStatement findDriverByLoginStatement =
+                     connection.prepareStatement(query)) {
             findDriverByLoginStatement.setString(1, email);
             ResultSet resultSet = findDriverByLoginStatement.executeQuery();
             if (resultSet.next()) {

@@ -22,8 +22,7 @@ public class GetCustomerCardsByLastNameController extends HttpServlet {
         String lastName = req.getParameter("lastName");
         List<CustomerCard> customerCards = customerCardService.getAllByLastName(lastName);
         req.setAttribute("customerCards", customerCards);
-        req.getRequestDispatcher("/WEB-INF/views/customer_cards/find_by_last_name.jsp")
-                .forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/customer_cards/find_by_last_name.jsp").forward(req, resp);
     }
 
     @Override

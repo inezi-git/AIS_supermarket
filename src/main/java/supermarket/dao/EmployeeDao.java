@@ -13,6 +13,5 @@ public interface EmployeeDao extends BasicDao<Employee, String> {
     Map<String, String> getPhoneAndAddressBySurname(String surname);
 
     Optional<Employee> findByEmail(String email);
-
     Employee updatePassword(Employee employee);
 }

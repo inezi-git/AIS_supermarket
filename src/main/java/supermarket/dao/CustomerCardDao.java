@@ -11,5 +11,4 @@ public interface CustomerCardDao extends BasicDao<CustomerCard, String> {
 
     List<CustomerCard> getAllByLastName(String lastName);
 
-    List<CustomerCard> requestCustomer(BigDecimal inputSum);
 }

@@ -17,7 +17,7 @@
         <form method="get" action="${pageContext.request.contextPath}/customer_cards/find-by-last-name">
             <div class="d-flex justify-content-between">
                 <input type="text" id="lastName" placeholder="Customer's last name" name="lastName" value="${param.lastName}" required>
-                <input type="submit" value="Find">
+                <input type="submit" value="Find" class="btn btn-primary">
             </div>
         </form>
         <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
