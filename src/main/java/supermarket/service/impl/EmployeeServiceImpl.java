@@ -33,7 +33,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee update(Employee employee) {
         return employeeDao.update(employee);
     }
-
     public Employee updatePassword(Employee employee) {
         return employeeDao.updatePassword(employee);
     }

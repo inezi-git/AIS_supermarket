@@ -32,8 +32,7 @@ public class AddProductController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         req.setCharacterEncoding("UTF-8");
-        Category category = categoryService.get(Integer
-                .parseInt(req.getParameter("category_number")));
+        Category category = categoryService.get(Integer.parseInt(req.getParameter("category_number")));
         String name = req.getParameter("product_name");
         String producer = req.getParameter("producer");
         String characteristics = req.getParameter("characteristics");

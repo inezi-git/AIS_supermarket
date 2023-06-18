@@ -100,7 +100,8 @@ public class AuthenticationFilter implements Filter {
                 "/checks/find-total-sold-amount-all-cashiers",
                 "/checks/find-total-sold-units",
                 "/checks/get",
-                "/checks/find-by-check_number"
+                "/checks/find-by-check_number",
+                "/employees/change-my-password"
         );
     }
 

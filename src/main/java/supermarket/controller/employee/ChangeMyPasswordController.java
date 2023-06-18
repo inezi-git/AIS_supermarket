@@ -2,7 +2,6 @@ package supermarket.controller.employee;
 
 import supermarket.exception.IncorrectPasswordException;
 import supermarket.lib.Injector;
-import supermarket.model.Category;
 import supermarket.model.Employee;
 import supermarket.model.composite.Address;
 import supermarket.model.composite.FullName;
@@ -35,10 +34,34 @@ public class ChangeMyPasswordController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
-        Employee employee = (Employee)req.getSession().getAttribute("employee");
+        String id = req.getParameter("id");
+        FullName fullName = new FullName(
+                req.getParameter("empl_surname"),
+                req.getParameter("empl_name"),
+                req.getParameter("empl_patronymic")
+        );
+        Employee.Role role = Employee.Role.valueOf(req.getParameter("empl_role"));
+        BigDecimal salary = new BigDecimal(req.getParameter("salary"));
+        LocalDate dateOfBirth = LocalDate.parse(req.getParameter("date_of_birth"));
+        LocalDate dateOfStart = LocalDate.parse(req.getParameter("date_of_start"));
+        String phoneNumber = req.getParameter("phone_number");
+        Address address = new Address(
+                req.getParameter("city"),
+                req.getParameter("street"),
+                req.getParameter("zip_code")
+        );
+        String email = req.getParameter("email");
         String password = req.getParameter("password");
-        employeeService.updatePassword(employee);
-        resp.sendRedirect(req.getContextPath() + "/employees/about-me");
-
+        Employee employee = new Employee(id, fullName, role, salary,
+                dateOfBirth, dateOfStart, phoneNumber, address, email, password);
+        try {
+            employeeService.updatePassword(employee);
+            resp.sendRedirect(req.getContextPath() + "/employees/about-me");
+        } catch (IncorrectPasswordException e) {
+            req.setAttribute("employee", employee);
+            req.setAttribute("employeeRoles", Employee.Role.values());
+            req.setAttribute("message", "Incorrect password, please try again.");
+            req.getRequestDispatcher("/WEB-INF/views/employees/change_my_password.jsp").forward(req, resp);
+        }
     }
 }

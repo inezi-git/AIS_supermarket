@@ -301,7 +301,7 @@
 </servlet>
 <servlet-mapping>
   <servlet-name>changeMyPassword</servlet-name>
-  <url-pattern>/employees/about-me/change-password</url-pattern>
+  <url-pattern>/employees/change-my-password</url-pattern>
 </servlet-mapping>
 
 <servlet>

@@ -14,32 +14,32 @@
     <c:if test="${not empty currentCashier}">
       <table class="table table-striped">
     <tr>
-      <th>Employee ID</th>
-      <th>Full Name</th>
-      <th>Salary</th>
-      <th>Date of Birth</th>
-      <th>Date of Start</th>
-      <th>Phone Number</th>
-      <th>Address</th>
-      <th>Email</th>
+        <th>Employee ID</th>
+        <th>Full Name</th>
+        <th>Salary</th>
+        <th>Date of Birth</th>
+        <th>Date of Start</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Email</th>
     </tr>
     <tbody>
     <tr>
-      <td>${currentCashier.id}</td>
-      <td>${currentCashier.employeeFullName}</td>
-      <td><fmt:formatNumber value="${currentCashier.salary}" pattern="#.00"/></td>
-      <td>${currentCashier.dateOfBirth}</td>
-      <td>${currentCashier.dateOfStart}</td>
-      <td>${currentCashier.phoneNumber}</td>
-      <td>${currentCashier.address}</td>
-      <td>${currentCashier.email}</td>
+        <td>${currentCashier.id}</td>
+        <td>${currentCashier.employeeFullName}</td>
+        <td><fmt:formatNumber value="${currentCashier.salary}" pattern="#.00"/></td>
+        <td>${currentCashier.dateOfBirth}</td>
+        <td>${currentCashier.dateOfStart}</td>
+        <td>${currentCashier.phoneNumber}</td>
+        <td>${currentCashier.address}</td>
+        <td>${currentCashier.email}</td>
     </tr>
+    <div>
+        <a href="${pageContext.request.contextPath}/employees/change-my-password?id=${currentCashier.id}" class="btn btn-secondary">Change my password</a>
+    </div>
     </tbody>
   </table>
 </c:if>
-    <div>
-        <a href="${pageContext.request.contextPath}/employees/about-me/change-password" class="btn btn-secondary">Change my password</a>
-    </div>
   </div>
 </body>
 </html>

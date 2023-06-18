@@ -2,7 +2,6 @@ package supermarket.dao.impl;
 
 import supermarket.dao.EmployeeDao;
 import supermarket.exception.DataProcessingException;
-import supermarket.exception.IncorrectPasswordException;
 import supermarket.lib.Dao;
 import supermarket.model.Employee;
 import supermarket.model.composite.Address;
@@ -119,7 +118,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         }
         return employee;
     }
-
+    @Override
     public Employee updatePassword(Employee employee) {
         String query = "UPDATE Employee "
                 + "SET password = ?"
@@ -127,9 +126,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
         try (Connection connection = ConnectionWithDB.getConnection();
              PreparedStatement updateEmployeeStatement = connection.prepareStatement(query)) {
             updateEmployeeStatement.setString(1, HashUtil.hasPassword(employee.getPassword()));
+            updateEmployeeStatement.setString(2, employee.getId());
             updateEmployeeStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't change password for " + employee + " in employees database.", e);
+            throw new DataProcessingException("Couldn't update " + employee + " in employees database.", e);
         }
         return employee;
     }

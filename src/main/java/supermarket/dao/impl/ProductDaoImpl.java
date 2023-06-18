@@ -20,7 +20,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public Product save(Product product) {
         String query = "INSERT INTO Product (category_number, product_name, producer, characteristics) "
-                + "VALUES (?, ?, ?, ?)";
+                    + "VALUES (?, ?, ?, ?)";
         try (Connection connection = ConnectionWithDB.getConnection();
                 PreparedStatement saveProductStatement = connection.prepareStatement(query,
                         Statement.RETURN_GENERATED_KEYS)) {
@@ -34,8 +34,7 @@ public class ProductDaoImpl implements ProductDao {
                 product.setId(resultSet.getObject(1, Long.class));
             }
         } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't create "
-                    + product + ". ", e);
+            throw new DataProcessingException("Couldn't create " + product + ". ", e);
         }
         return product;
     }
@@ -62,9 +61,8 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public List<Product> getAll() {
-        String query = "SELECT id_product, product.category_number, category_name, "
-                + "product_name, producer, characteristics FROM product "
-                + "JOIN category ON product.category_number = category.category_number ";
+        String query = "SELECT id_product, product.category_number, category_name, product_name, producer, characteristics "
+                     + "FROM product JOIN category ON product.category_number = category.category_number ";
         List<Product> products = new ArrayList<>();
         try (Connection connection = ConnectionWithDB.getConnection();
                 PreparedStatement getAllProductsStatement = connection.prepareStatement(query)) {
@@ -73,8 +71,7 @@ public class ProductDaoImpl implements ProductDao {
                 products.add(parseProductFromResultSet(resultSet));
             }
         } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't get a list of products "
-                    + "from products database.", e);
+            throw new DataProcessingException("Couldn't get a list of products from products database.", e);
         }
         return products;
     }
@@ -153,11 +150,11 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public List<Product> getAllByCategorySortedByName(String categoryName) {
-        String query = "SELECT id_product, product.category_number, category_name, "
-                + "product_name, producer, characteristics FROM product "
-                + "JOIN category ON product.category_number = category.category_number "
-                + "WHERE category.category_name = ? "
-                + "ORDER BY product_name";
+        String query = "SELECT id_product, product.category_number, category_name, product_name, producer, characteristics "
+                    + "FROM product "
+                    + "JOIN category ON product.category_number = category.category_number "
+                    + "WHERE category.category_name = ? "
+                    + "ORDER BY product_name";
         List<Product> products = new ArrayList<>();
         try (Connection connection = ConnectionWithDB.getConnection();
                 PreparedStatement getAllProductsStatement = connection.prepareStatement(query)) {
@@ -167,8 +164,7 @@ public class ProductDaoImpl implements ProductDao {
                 products.add(parseProductFromResultSet(resultSet));
             }
         } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't get a list of products "
-                    + "from products database.", e);
+            throw new DataProcessingException("Couldn't get a list of products from products database.", e);
         }
         return products;
     }

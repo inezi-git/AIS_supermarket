@@ -10,19 +10,68 @@
 </head>
 <body>
 <div class="container">
-  <form method="post" id="employee" action="${pageContext.request.contextPath}/employees/about-me/change-my-password">
+  <form method="post" id="employee" action="${pageContext.request.contextPath}/employees/change-my-password">
     <c:if test="${not empty param.message}">
       <div class="alert alert-danger">${param.message}</div>
     </c:if>
     <c:if test="${not empty message}">
       <div class="alert alert-danger">${message}</div>
     </c:if>
-    <td>
-      <input type="password" name="password" form="employee" required>
-    </td>
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input type="text" name="id" id="id" class="form-control" value="${employee.id}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="empl_surname">Surname</label>
+      <input type="text" name="empl_surname" id="empl_surname" class="form-control" value="${employee.employeeFullName.surname}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="empl_name">Name</label>
+      <input type="text" name="empl_name" id="empl_name" class="form-control" value="${employee.employeeFullName.name}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="empl_patronymic">Patronymic</label>
+      <input type="text" name="empl_patronymic" id="empl_patronymic" class="form-control" value="${employee.employeeFullName.patronymic}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="empl_role">Role</label>
+      <input type="text" name="empl_role" id="empl_role" class="form-control" value="${employee.employeeRole}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input type="text" name="salary" id="salary" class="form-control" value="<fmt:formatNumber value='${employee.salary}' pattern='#.00' currencySymbol='.'/>" readonly pattern="^\d+(\.\d{2})?$" title="Please enter a valid value in the format #.00">
+    </div>
+    <div class="form-group">
+      <label for="date_of_birth">Date of birth</label>
+      <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="${employee.dateOfBirth}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="date_of_start">Date of start</label>
+      <input type="date" name="date_of_start" id="date_of_start" class="form-control" value="${employee.dateOfStart}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="phone_number">Phone number</label>
+      <input type="text" name="phone_number" id="phone_number" class="form-control" value="${employee.phoneNumber}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" name="city" id="city" class="form-control" value="${employee.address.city}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" name="street" id="street" class="form-control" value="${employee.address.street}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="zip_code">Zip code</label>
+      <input type="text" name="zip_code" id="zip_code" class="form-control" value="${employee.address.zipCode}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="form-control" form="employee" required>
+    </div>
     <div class="form-group">
       <input type="submit" name="update" form="employee" value="Update" class="btn btn-primary">
-      <a href="${pageContext.request.contextPath}/employees/about/me" class="btn btn-secondary">Cancel</a>
+      <a href="${pageContext.request.contextPath}/employees/about-me" class="btn btn-secondary">Cancel</a>
     </div>
   </form>
 </div>
