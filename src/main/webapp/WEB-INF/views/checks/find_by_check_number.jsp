@@ -7,6 +7,7 @@
 <html>
 <head>
     <title>Find By Check Number</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
@@ -31,7 +32,7 @@
             <td>${check.employee.employeeFullName}</td>
             <td>${check.customerCard != null ? check.customerCard.customerFullName + ' (' + check.customerCard.percent + '%)' : ''}</td>
             <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-            <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}">Details</a></td>
+            <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
         </tr>
         </tbody>
     </table>

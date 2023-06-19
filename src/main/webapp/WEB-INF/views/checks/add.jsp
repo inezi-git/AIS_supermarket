@@ -14,9 +14,7 @@
             <select name="card_number" id="card_number">
                 <option value="none">None</option>
                 <c:forEach var="card" items="${customerCards}">
-                    <option value="${card.cardNumber}">
-                            ${card.customerFullName} (${card.percent}%)
-                    </option>
+                    <option value="${card.cardNumber}">${card.customerFullName} (${card.percent}%)</option>
                 </c:forEach>
             </select>
         </div>
