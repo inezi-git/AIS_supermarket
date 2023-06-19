@@ -11,7 +11,6 @@ public interface StoreProductService extends BasicService<StoreProduct, String> 
     List<StoreProduct> getAllSortedByAmount();
 
     Map<String, Object> getStoreProductDataByUpc(String upc);
-    Map<String, Object> getStoreProductPriceAndAmountByUpc(String upc);
 
     List<StoreProduct> getAllPromotionalSortedByAmountAndName();
 

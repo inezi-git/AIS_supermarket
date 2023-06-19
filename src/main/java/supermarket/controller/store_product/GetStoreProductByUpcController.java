@@ -25,15 +25,8 @@ public class GetStoreProductByUpcController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String upc = req.getParameter("upc");
         Map<String, Object> storeProductData = storeProductService.getStoreProductDataByUpc(upc);
-        if (storeProductData != null || storeProductData.isEmpty()) {
-            req.setAttribute("storeProducts", storeProductData);
-        } else {
-            req.setAttribute("errorMessage", "No store product by UPC " + upc + " found.");
-        }
-        List<String> upcs = storeProductService.getAll().stream()
-                .map(StoreProduct::getUpc)
-                .toList();
-        req.setAttribute("upcs", upcs);
+        req.setAttribute("storeProducts", storeProductData);
+        req.setAttribute("upc", upc);
         req.getRequestDispatcher("/WEB-INF/views/store_products/find_by_upc.jsp").forward(req, resp);
     }
     @Override

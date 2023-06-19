@@ -11,17 +11,20 @@
 <body>
 <div class="container">
     <c:if test="${empty storeProducts}">
-        <h2>No store products found with this upc</h2>
+        <h2>No store products with upc ${upc} were found</h2>
     </c:if>
     <c:if test="${not empty storeProducts}">
+        <h2>Store product with upc ${upc} has been found</h2>
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>Product Name</th>
                 <th>Price</th>
                 <th>Amount</th>
-                <th>Producer</th>
-                <th>Characteristics</th>
+                <c:if test="${userRole eq 'Manager'}">
+                    <th>Producer</th>
+                    <th>Characteristics</th>
+                </c:if>
             </tr>
             </thead>
             <tbody>
@@ -29,8 +32,10 @@
                 <td>${storeProducts.product_name}</td>
                 <td><fmt:formatNumber value="${storeProducts.selling_price}" pattern="#.00"/></td>
                 <td>${storeProducts.products_number}</td>
-                <td>${storeProducts.producer}</td>
-                <td>${storeProducts.characteristics}</td>
+                <c:if test="${userRole eq 'Manager'}">
+                    <td>${storeProducts.producer}</td>
+                    <td>${storeProducts.characteristics}</td>
+                </c:if>
             </tr>
             </tbody>
         </table>

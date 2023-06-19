@@ -12,8 +12,6 @@ public interface StoreProductDao extends BasicDao<StoreProduct, String> {
 
     Map<String, Object> getStoreProductDataByUpc(String upc);
 
-    Map<String, Object> getStoreProductPriceAndAmountByUpc(String upc);
-
     List<StoreProduct> getAllPromotionalSortedByAmountAndName();
 
     List<StoreProduct> getAllNonPromotionalSortedByAmountAndName();

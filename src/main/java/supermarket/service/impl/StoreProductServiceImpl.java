@@ -53,11 +53,6 @@ public class StoreProductServiceImpl implements StoreProductService {
     }
 
     @Override
-    public Map<String, Object> getStoreProductPriceAndAmountByUpc(String upc) {
-        return storeProductDao.getStoreProductPriceAndAmountByUpc(upc);
-    }
-
-    @Override
     public List<StoreProduct> getAllPromotionalSortedByAmountAndName() {
         return storeProductDao.getAllPromotionalSortedByAmountAndName();
     }

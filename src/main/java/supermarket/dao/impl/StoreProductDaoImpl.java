@@ -168,23 +168,6 @@ public class StoreProductDaoImpl implements StoreProductDao {
     }
 
     @Override
-    public Map<String, Object> getStoreProductPriceAndAmountByUpc(String upc) {
-        String query = "SELECT selling_price, products_number "
-                + "FROM store_product "
-                + "WHERE UPC = ?";
-        Map<String, Object> storeProductData;
-        try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement getProductStatement = connection.prepareStatement(query)) {
-            getProductStatement.setString(1, upc);
-            ResultSet resultSet = getProductStatement.executeQuery();
-            storeProductData = parseProductSmallDataFromResultSet(resultSet);
-        } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't get store product data from store products database.", e);
-        }
-        return storeProductData;
-    }
-
-    @Override
     public List<StoreProduct> getAllPromotionalSortedByAmountAndName() {
         String query = "SELECT * FROM Store_Product "
                 + "JOIN product ON product.id_product = store_product.id_product "
@@ -279,14 +262,6 @@ public class StoreProductDaoImpl implements StoreProductDao {
         storeProductData.put("product_name", resultSet.getString("product_name"));
         storeProductData.put("producer", resultSet.getString("producer"));
         storeProductData.put("characteristics", resultSet.getString("characteristics"));
-        return storeProductData;
-    }
-
-    private Map<String, Object> parseProductSmallDataFromResultSet(ResultSet resultSet)
-            throws SQLException {
-        Map<String, Object> storeProductData = new HashMap<>();
-        storeProductData.put("selling_price", resultSet.getBigDecimal("selling_price"));
-        storeProductData.put("products_number", resultSet.getInt("products_number"));
         return storeProductData;
     }
 }
