@@ -61,4 +61,5 @@ public class StoreProductServiceImpl implements StoreProductService {
     public List<StoreProduct> getAllNonPromotionalSortedByAmountAndName() {
         return storeProductDao.getAllNonPromotionalSortedByAmountAndName();
     }
+
 }

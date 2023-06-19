@@ -5,14 +5,14 @@ import supermarket.exception.DataProcessingException;
 import supermarket.lib.Dao;
 import supermarket.model.Category;
 import supermarket.util.ConnectionWithDB;
+
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Dao
 public class CategoryDaoImpl implements CategoryDao {
@@ -116,5 +116,42 @@ public class CategoryDaoImpl implements CategoryDao {
         category.setCategoryNumber(resultSet.getInt("category_number"));
         category.setCategoryName(resultSet.getString("category_name"));
         return category;
+    }
+
+    public Map<String, Object> getCategoryStatistics() {
+        String query = "SELECT C.category_name, COUNT(P.id_product) AS total_products, " +
+                "MIN(SP.selling_price) AS min_price, AVG(SP.selling_price) AS avg_price, " +
+                "MAX(SP.selling_price) AS max_price " +
+                "FROM Category C " +
+                "JOIN Product P ON C.category_number = P.category_number " +
+                "JOIN Store_Product SP ON P.id_product = SP.id_product " +
+                "GROUP BY C.category_name";
+
+        Map<String, Object> categoryProductData = new HashMap<>();
+
+        try (Connection connection = ConnectionWithDB.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+
+            while (resultSet.next()) {
+                String categoryName = resultSet.getString("category_name");
+                int totalProducts = resultSet.getInt("total_products");
+                BigDecimal minPrice = resultSet.getBigDecimal("min_price");
+                BigDecimal avgPrice = resultSet.getBigDecimal("avg_price");
+                BigDecimal maxPrice = resultSet.getBigDecimal("max_price");
+
+                Map<String, Object> productData = new HashMap<>();
+                productData.put("total_products", totalProducts);
+                productData.put("min_price", minPrice);
+                productData.put("avg_price", avgPrice);
+                productData.put("max_price", maxPrice);
+
+                categoryProductData.put(categoryName, productData);
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't retrieve category product data.", e);
+        }
+
+        return categoryProductData;
     }
 }

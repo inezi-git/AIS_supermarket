@@ -4,18 +4,15 @@ import supermarket.dao.StoreProductDao;
 import supermarket.exception.DataProcessingException;
 import supermarket.lib.Dao;
 import supermarket.model.Category;
-import supermarket.model.CategoryMaxPriceProduct;
 import supermarket.model.Product;
-import supermarket.model.ProductStat;
 import supermarket.model.StoreProduct;
 import supermarket.util.ConnectionWithDB;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -264,4 +261,5 @@ public class StoreProductDaoImpl implements StoreProductDao {
         storeProductData.put("characteristics", resultSet.getString("characteristics"));
         return storeProductData;
     }
+
 }

@@ -6,6 +6,7 @@ import supermarket.lib.Service;
 import supermarket.model.Category;
 import supermarket.service.CategoryService;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -40,5 +41,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> getAllSortedByName() {
         return categoryDao.getAllSortedByName();
+    }
+
+    @Override
+    public Map<String, Object> getCategoryStatistics() {
+        return categoryDao.getCategoryStatistics();
     }
 }

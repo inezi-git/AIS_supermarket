@@ -1,9 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
 <%@include file="../header.jsp"%>
-
 <html>
 <head>
     <title>All Categories</title>
@@ -14,9 +12,8 @@
     <div class="btn-group" role="group">
         <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}"/>
         <c:if test="${userRole eq 'Manager'}">
-            <div>
-                <a href="${pageContext.request.contextPath}/categories/add" class="btn btn-primary">Add new category</a>
-            </div>
+            <a href="${pageContext.request.contextPath}/categories/add" class="btn btn-primary">Add new category</a>
+            <a href="${pageContext.request.contextPath}/categories/statistics" class="btn btn-secondary">Statistics</a>
             <a href="${pageContext.request.contextPath}/report/categories" class="btn btn-info">Get report about categories</a>
         </c:if>
     </div>
