@@ -14,6 +14,7 @@
     <jstl.version>1.2</jstl.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <log4j.version>1.2.17</log4j.version>
   </properties>
 
   <dependencies>
@@ -27,6 +28,11 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.32</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>

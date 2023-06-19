@@ -3,10 +3,11 @@ package supermarket.controller.check;
 import supermarket.lib.Injector;
 import supermarket.service.CategoryService;
 import java.io.IOException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+@WebServlet("/checks")
 public class GetAllChecksController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
     private final CategoryService categoryService = (CategoryService) injector

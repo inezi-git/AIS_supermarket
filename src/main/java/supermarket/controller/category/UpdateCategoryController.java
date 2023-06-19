@@ -5,10 +5,11 @@ import supermarket.model.Category;
 import supermarket.service.CategoryService;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+@WebServlet("/categories/update")
 public class UpdateCategoryController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
     private final CategoryService categoryService = (CategoryService) injector

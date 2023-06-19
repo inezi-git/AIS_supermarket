@@ -3,10 +3,11 @@ package supermarket.controller.employee;
 import supermarket.lib.Injector;
 import supermarket.service.EmployeeService;
 import java.io.IOException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+@WebServlet("/employees/delete")
 public class DeleteEmployeeController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
     private final EmployeeService employeeService = (EmployeeService) injector

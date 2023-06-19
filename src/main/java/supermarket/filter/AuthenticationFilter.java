@@ -12,10 +12,12 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+@WebFilter("/*")
 public class AuthenticationFilter implements Filter {
     private static final String MANAGER_ROLE = "Manager";
     private static final String CASHIER_ROLE = "Cashier";
@@ -93,7 +95,6 @@ public class AuthenticationFilter implements Filter {
                 "/employees/about-me",
                 "/checks/delete",
                 "/checks/find-all-by-cashier-and-period",
-                "checks/find-all-mine-by-period",
                 "/checks/find-all-by-period",
                 "/checks/find-total-sold-amount",
                 "/checks/find-total-sold-amount-all-cashiers",
