@@ -10,20 +10,11 @@
 </head>
 <body>
 <div class="container">
-<form method="post" action="${pageContext.request.contextPath}/checks/find-by-check-number">
-    <select name="checkNumber" id="checkNumber" required>
-        <c:forEach var="checkNumber" items="${checkNumbers}">
-            <c:set var="selectedCheckNumber" value="${requestScope.selectedCheckNumber}" />
-            <option value="${checkNumber}" ${checkNumber == selectedCheckNumber
-            || param.selectedCheckNumber == checkNumber ? 'selected' : ''}>${checkNumber}</option>
-        </c:forEach>
-    </select>
-    <input type="submit" value="Find" class="btn btn-primary">
-</form>
-<c:if test="${not empty errorMessage}">
-    <h2>${errorMessage}</h2>
+<c:if test="${empty check}">
+    <h2>Check with this number is not found</h2>
 </c:if>
 <c:if test="${not empty check}">
+    <h2>Check with number ${check.checkNumber} is found</h2>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -38,13 +29,16 @@
         <tr>
             <td>${check.printDate}</td>
             <td>${check.employee.employeeFullName}</td>
-            <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
+            <td>${check.customerCard != null ? check.customerCard.customerFullName + ' (' + check.customerCard.percent + '%)' : ''}</td>
             <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
             <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}">Details</a></td>
         </tr>
         </tbody>
     </table>
 </c:if>
+    <div class="form-group">
+        <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks</a>
+    </div>
 </div>
 </body>
 </html>
