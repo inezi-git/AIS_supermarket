@@ -22,10 +22,8 @@ public class GetCheckInfoByCheckNumberController extends HttpServlet {
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         String checkNumber = req.getParameter("checkNumber");
-
         Check check = checkService.get(checkNumber);
         req.setAttribute("check", check);
-
         String cashierId = (String) req.getSession().getAttribute("id_employee");
         List<String> checkNumbers = checkService.getAllChecksByCashier(cashierId).stream()
                 .map(Check::getCheckNumber).toList();

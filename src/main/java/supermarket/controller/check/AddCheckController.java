@@ -56,7 +56,6 @@ public class AddCheckController extends HttpServlet {
         Check check = createCheck(req);
         checkService.create(check);
         saveSalesAndUpdateStoreProducts(req, check);
-        req.getRequestDispatcher("/WEB-INF/views/checks/find_all_mine_today.jsp").forward(req, resp);
         resp.sendRedirect(req.getContextPath() + "/checks/today");
     }
 
