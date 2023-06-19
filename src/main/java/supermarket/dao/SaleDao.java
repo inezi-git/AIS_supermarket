@@ -8,10 +8,4 @@ public interface SaleDao {
     Sale save(Sale sale);
 
     List<Sale> getSalesByCheckNumber(String checkNumber);
-
-    List<Sale> getSalesByUpcAndDateRange(String upc, LocalDateTime from, LocalDateTime to);
-
-    List<Sale> getSalesByCashierAndDateRange(String upc, LocalDateTime from, LocalDateTime to);
-
-    List<Sale> getSalesByDateRange(LocalDateTime from, LocalDateTime to);
 }

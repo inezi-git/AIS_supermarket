@@ -32,6 +32,15 @@
             </form>
             <a href="${pageContext.request.contextPath}/report/store_products" class="btn btn-info">Get report about store products</a>
         </c:if>
+        <c:if test="${userRole eq 'Cashier'}">
+            <form method="get" action="${pageContext.request.contextPath}/store_products/find-price-and-amount-by-upc">
+                <div class="d-flex justify-content-between">
+                    <input type="text" id="upc1" placeholder="UPC" name="upc" value="${param.upc}" required>
+                    <input type="submit" value="Find" class="btn btn-primary">
+                </div>
+            </form>
+            <a href="${pageContext.request.contextPath}/report/store_products" class="btn btn-info">Get report about store products</a>
+        </c:if>
     </div>
 <table class="table table-striped">
     <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />

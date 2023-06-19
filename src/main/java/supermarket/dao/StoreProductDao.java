@@ -17,10 +17,4 @@ public interface StoreProductDao extends BasicDao<StoreProduct, String> {
     List<StoreProduct> getAllPromotionalSortedByAmountAndName();
 
     List<StoreProduct> getAllNonPromotionalSortedByAmountAndName();
-
-    List<CategoryMaxPriceProduct> requestCategory();
-
-    List<StoreProduct> requestProduct(LocalDateTime startDate, LocalDateTime endDate);
-
-    List<ProductStat> requestProductStat(LocalDateTime startDate, LocalDateTime endDate);
 }
