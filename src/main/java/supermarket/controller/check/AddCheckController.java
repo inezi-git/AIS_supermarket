@@ -56,7 +56,8 @@ public class AddCheckController extends HttpServlet {
         Check check = createCheck(req);
         checkService.create(check);
         saveSalesAndUpdateStoreProducts(req, check);
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/checks/find_all_mine_today.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/checks/today");
     }
 
     private boolean validateAmounts(HttpServletRequest req) {
@@ -75,13 +76,10 @@ public class AddCheckController extends HttpServlet {
 
     private Check createCheck(HttpServletRequest req) {
         String id_employee = (String) req.getSession().getAttribute("id_employee");
-        String card_number = req.getParameter("card_number");
         LocalDateTime print_date = LocalDateTime.now();
         BigDecimal sum_total = calculateSumTotal(req);
         Employee employee = employeeService.get(id_employee);
-        CustomerCard customerCard = customerCardService.get(card_number);
-
-        return new Check(null, employee, customerCard, print_date, sum_total);
+        return new Check(null, employee, null, print_date, sum_total);
     }
 
     private BigDecimal calculateSumTotal(HttpServletRequest req) {

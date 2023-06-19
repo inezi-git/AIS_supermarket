@@ -10,13 +10,7 @@ import supermarket.model.composite.Address;
 import supermarket.model.composite.FullName;
 import supermarket.util.ConnectionWithDB;
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -43,7 +37,11 @@ public class CheckDaoImpl implements CheckDao {
             String checkNumber = String.format("%09d", checkNumberLong);
             saveCheckStatement.setString(1, checkNumber);
             saveCheckStatement.setString(2, check.getEmployee().getId());
-            saveCheckStatement.setString(3, check.getCustomerCard().getCardNumber());
+            if (check.getCustomerCard() != null) {
+                saveCheckStatement.setString(3, check.getCustomerCard().getCardNumber());
+            } else {
+                saveCheckStatement.setNull(3, Types.VARCHAR);
+            }
             saveCheckStatement.setDate(4, Date.valueOf(check.getPrintDate().toLocalDate()));
             saveCheckStatement.setBigDecimal(5, check.getSumTotal());
             saveCheckStatement.setBigDecimal(6, check.getVat());

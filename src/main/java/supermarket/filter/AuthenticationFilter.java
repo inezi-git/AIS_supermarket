@@ -43,7 +43,6 @@ public class AuthenticationFilter implements Filter {
                 "/customer_cards/update",
                 "/customer_cards/delete",
                 "/customer_cards",
-
                 "/categories/add",
                 "/categories/update",
                 "/categories/delete",

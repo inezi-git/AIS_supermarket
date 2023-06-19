@@ -36,7 +36,7 @@
             <tr>
                 <td>${check.checkNumber}</td>
                 <td>${check.printDate}</td>
-                <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
+                <td>${check.customerCard != null ? check.customerCard.customerFullName + ' (' + check.customerCard.percent + '%)' : ''}</td>
                 <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
                 <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
             </tr>
