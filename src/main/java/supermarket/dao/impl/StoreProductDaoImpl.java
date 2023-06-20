@@ -279,6 +279,8 @@ public class StoreProductDaoImpl implements StoreProductDao {
         } catch (SQLException e) {
             throw new DataProcessingException("Couldn't get store products containing name " + name, e);
         }
+        storeProducts.forEach(storeProduct ->
+                storeProduct.setProduct(getProductByStoreProductUpc(storeProduct.getUpc())));
         return storeProducts;
     }
 

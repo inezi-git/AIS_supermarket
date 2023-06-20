@@ -30,7 +30,7 @@
                 <input type="submit" value="Find" class="btn btn-primary">
             </div>
         </form>
-        <form method="get" action="${pageContext.request.contextPath}/products/find-store-product-by-name">
+        <form method="get" action="${pageContext.request.contextPath}/store_products/find-store-products-by-name">
             <div class="d-flex justify-content-between">
                 <input class="form-control" type="text" placeholder="Store product name" id="name" name="name" value="${param.upc}" required>
                 <input type="submit" value="Find" class="btn btn-primary">

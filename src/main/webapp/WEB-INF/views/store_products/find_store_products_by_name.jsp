@@ -23,22 +23,30 @@
                     <th>Amount</th>
                     <th>Is Promotional</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <c:forEach var="storeProduct" items="${storeProducts}">
                 <tr>
-                    <td>${storeProduct.UPC}</td>
-                    <td>${storeProduct.UPC_prom}</td>
+                    <td>${storeProduct.upc}</td>
+                    <td>${storeProduct.upcProm}</td>
                     <td>${storeProduct.product}</td>
-                    <td><fmt:formatNumber value="${storeProduct.selling_price}" pattern="#.00"/></td>
-                    <td>${storeProduct.products_number}</td>
-                    <td>${storeProduct.promotional_product}</td>
+                    <td><fmt:formatNumber value="${storeProduct.price}" pattern="#.00"/></td>
+                    <td>${storeProduct.amount}</td>
+                    <td>${storeProduct.isPromotional}</td>
+                    <c:if test="${userRole eq 'Manager'}">
+                        <td>
+                            <a href="${pageContext.request.contextPath}/store_products/update?upc=${storeProduct.upc}"><i class="bi bi-pencil-fill"></i></a>
+                        </td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/store_products/delete?upc=${storeProduct.upc}"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </c:if>
                     <c:if test="${userRole eq 'Cashier'}">
                         <td>
                             <a href="${pageContext.request.contextPath}/store_products/update?upc=${storeProduct.upc}"><i class="bi bi-plus"></i></a>
                         </td>
-
                     </c:if>
                     </c:forEach>
                 </tr>
@@ -51,5 +59,4 @@
 </div>
 </body>
 </html>
-
 <%@include file="../footer.jsp"%>
