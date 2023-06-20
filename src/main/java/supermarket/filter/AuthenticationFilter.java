@@ -103,7 +103,8 @@ public class AuthenticationFilter implements Filter {
                 "/checks/find-by-check_number",
                 "/employees/change-my-password",
                 "/store_products/find-price-and-amount-by-upc",
-                "/store_products/find-store-products-by-name"
+                "/store_products/find-store-products-by-name",
+                "/checks/add-store-product-to-check"
         );
     }
 

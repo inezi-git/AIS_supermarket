@@ -111,7 +111,6 @@ public class CheckDaoImpl implements CheckDao {
             throw new DataProcessingException("Couldn't delete check with number " + number, e);
         }
     }
-
     @Override
     public Map<String, Object> getAllInfoByNumber(String number) {
         String query = "SELECT `check`.check_number, id_employee, "

@@ -1,6 +1,7 @@
 package supermarket.controller.check;
 
 import supermarket.lib.Injector;
+import supermarket.controller.check.AddStoreProductToCheckController.*;
 import supermarket.model.Check;
 import supermarket.model.CustomerCard;
 import supermarket.model.Employee;
@@ -20,6 +21,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import static supermarket.controller.check.AddStoreProductToCheckController.storeProductsToCheck;
+
 @WebServlet("/checks/add")
 public class AddCheckController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
@@ -38,9 +42,8 @@ public class AddCheckController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        List<StoreProduct> storeProducts = storeProductService.getAllSortedByAmount();
         List<CustomerCard> customerCards = customerCardService.getAllSortedBySurname();
-        req.setAttribute("storeProducts", storeProducts);
+        req.setAttribute("storeProducts", storeProductsToCheck);
         req.setAttribute("customerCards", customerCards);
         req.getRequestDispatcher("/WEB-INF/views/checks/add.jsp").forward(req, resp);
     }
@@ -57,6 +60,7 @@ public class AddCheckController extends HttpServlet {
         Check check = createCheck(req);
         checkService.create(check);
         saveSalesAndUpdateStoreProducts(req, check);
+        storeProductsToCheck.clear();
         resp.sendRedirect(req.getContextPath() + "/checks/today");
     }
 

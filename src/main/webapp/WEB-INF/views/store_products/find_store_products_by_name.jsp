@@ -45,7 +45,7 @@
                     </c:if>
                     <c:if test="${userRole eq 'Cashier'}">
                         <td>
-                            <a href="${pageContext.request.contextPath}/store_products/update?upc=${storeProduct.upc}"><i class="bi bi-plus"></i></a>
+                            <a href="${pageContext.request.contextPath}/checks/add-store-product-to-check?upc=${storeProduct.upc}"><i class="bi bi-plus"></i></a>
                         </td>
                     </c:if>
                     </c:forEach>
