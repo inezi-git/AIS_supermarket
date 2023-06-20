@@ -6,6 +6,5 @@ import java.util.Map;
 
 public interface CategoryDao extends BasicDao<Category, Integer> {
     List<Category> getAllSortedByName();
-
     Map<String, Object> getCategoryStatistics();
 }

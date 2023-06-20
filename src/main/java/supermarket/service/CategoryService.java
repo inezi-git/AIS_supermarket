@@ -6,6 +6,5 @@ import java.util.Map;
 
 public interface CategoryService extends BasicService<Category, Integer> {
     List<Category> getAllSortedByName();
-
     Map<String, Object> getCategoryStatistics();
 }

@@ -24,7 +24,7 @@ public class AuthenticationFilter implements Filter {
     private static final Injector injector = Injector.getInstance("supermarket");
     private final EmployeeService employeeService = (EmployeeService) injector
             .getInstance(EmployeeService.class);
-    private Set<String> allowedUrls = new HashSet<>();
+    private final Set<String> allowedUrls = new HashSet<>();
     private Set<String> managerUrls;
     private Set<String> cashierUrls;
     private Set<String> commonUrls;
@@ -62,8 +62,10 @@ public class AuthenticationFilter implements Filter {
                 "/store_products/promotional",
                 "/customer_cards/find-by-percent",
                 "/store_products/non-promotional",
-                "/report/employees", "/report/categories",
-                "/report/products", "/report/store_products",
+                "/report/employees",
+                "/report/categories",
+                "/report/products",
+                "/report/store_products",
                 "/report/customer_cards",
                 "/report/checks"
         );
