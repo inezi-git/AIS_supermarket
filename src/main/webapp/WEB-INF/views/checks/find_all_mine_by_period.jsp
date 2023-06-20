@@ -10,45 +10,44 @@
 </head>
 <body>
 <div class="container">
-<form method="post" action="${pageContext.request.contextPath}/checks/find-all-mine-by-period">
-    <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" name="startDate" value="${startDate.toLocalDate()}" required>
-    <input type="time" id="startTime" name="startTime" value="${startDate.toLocalTime()}" required>
-    <br><br>
-    <label for="endDate">End Date:</label>
-    <input type="date" id="endDate" name="endDate" value="${endDate.toLocalDate()}" required>
-    <input type="time" id="endTime" name="endTime" value="${endDate.toLocalTime()}" required>
-    <br><br>
-    <input type="submit" value="Find" class="btn btn-primary">
-</form>
-<c:if test="${empty checks}">
-    <h2>No checks created by me were found on this period</h2>
-</c:if>
-<c:if test="${not empty checks}">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Print Date</th>
-                <th>Customer Card</th>
-                <th>Sum Total</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="check" items="${checks}">
+    <form method="post" action="${pageContext.request.contextPath}/checks/find-all-mine-by-period">
+        <label for="startDate">From:</label>
+        <input class="form-control" type="date" id="startDate" name="startDate" value="${startDate.toLocalDate()}" required>
+        <input class="form-control" type="time" id="startTime" name="startTime" value="${startDate.toLocalTime()}" required>
+        <label for="endDate">To:</label>
+        <input class="form-control" type="date" id="endDate" name="endDate" value="${endDate.toLocalDate()}" required>
+        <input class="form-control" type="time" id="endTime" name="endTime" value="${endDate.toLocalTime()}" required>
+        <input type="submit" value="Find" class="btn btn-primary">
+    </form>
+
+    <c:if test="${empty checks}">
+        <h2>No checks created by me were found on this period</h2>
+    </c:if>
+    <c:if test="${not empty checks}">
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td>${check.printDate}</td>
-                    <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
-                    <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-                    <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
+                    <th>Print Date</th>
+                    <th>Customer Card</th>
+                    <th>Sum Total</th>
+                    <th>Details</th>
                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-</c:if>
-    <div>
-        <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks today</a>
-    </div>
+            </thead>
+            <tbody>
+                <c:forEach var="check" items="${checks}">
+                    <tr>
+                        <td>${check.printDate}</td>
+                        <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
+                        <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
+                        <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </c:if>
+        <div>
+            <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks today</a>
+        </div>
 </div>
 </body>
 </html>

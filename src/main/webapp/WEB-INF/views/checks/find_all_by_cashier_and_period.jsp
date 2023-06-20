@@ -9,61 +9,59 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <div class="container">
-<h1>Find Checks by Cashier and Date Range</h1>
-<form method="post" action="${pageContext.request.contextPath}/checks/find-all-by-cashier-and-period">
-    <label for="cashier">Cashier:</label>
-    <select name="cashier" id="cashier" required>
-        <c:forEach var="cashier" items="${cashiers}">
-            <option value="${cashier.id}" ${cashier.id eq chosenCashierId ? 'selected' : ''}>${cashier.employeeFullName}</option>
-        </c:forEach>
-    </select>
-    <br><br>
-    <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" name="startDate" value="${startDate.toLocalDate()}" required>
-    <input type="time" id="startTime" name="startTime" value="${startDate.toLocalTime()}" required>
-    <br><br>
-    <label for="endDate">End Date:</label>
-    <input type="date" id="endDate" name="endDate" value="${endDate.toLocalDate()}" required>
-    <input type="time" id="endTime" name="endTime" value="${endDate.toLocalTime()}" required>
-    <br><br>
-    <input type="submit" value="Find" class="btn btn-primary">
-</form>
-<c:if test="${empty checks}">
-    <h2>No checks created by this cashier were found</h2>
-</c:if>
-<c:if test="${not empty checks}">
-    <h2>Checks Found:</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Print Date</th>
-                <th>Cashier</th>
-                <th>Customer Card</th>
-                <th>Sum Total</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="check" items="${checks}">
-                <tr>
-                    <td>${check.printDate}</td>
-                    <td>${check.employee.employeeFullName}</td>
-                    <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
-                    <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-                    <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-    <c:set var="totalSum" value="0" />
-    <c:forEach var="check" items="${checks}">
-        <c:set var="totalSum" value="${totalSum + check.sumTotal}" />
-    </c:forEach>
-    <h4>Total Sum: <fmt:formatNumber value="${totalSum}" pattern="#,##0.00"/></h4>
-</c:if>
     <div class="form-group">
-        <a href="${pageContext.request.contextPath}/checks/find-all-by-period" class="btn btn-secondary">Find by period</a>
+        <a href="${pageContext.request.contextPath}/checks/find-all-by-period" class="btn btn-secondary">Find all checks by period</a>
     </div>
+    <h2>Find Checks by Cashier and Date Range</h2>
+    <form method="post" action="${pageContext.request.contextPath}/checks/find-all-by-cashier-and-period">
+        <label for="cashier">Cashier:</label>
+        <select name="cashier" id="cashier" required>
+            <c:forEach var="cashier" items="${cashiers}">
+                <option value="${cashier.id}" ${cashier.id eq chosenCashierId ? 'selected' : ''}>${cashier.employeeFullName}</option>
+            </c:forEach>
+        </select>
+        <br>
+        <label for="startDate">From:</label>
+        <input class="form-control" type="date" id="startDate" name="startDate" value="${startDate.toLocalDate()}" required>
+        <input class="form-control" type="time" id="startTime" name="startTime" value="${startDate.toLocalTime()}" required>
+        <label for="endDate">End Date:</label>
+        <input class="form-control" type="date" id="endDate" name="endDate" value="${endDate.toLocalDate()}" required>
+        <input class="form-control" type="time" id="endTime" name="endTime" value="${endDate.toLocalTime()}" required>
+        <input type="submit" value="Find" class="btn btn-primary">
+    </form>
+    <c:if test="${empty checks}">
+        <h2>No checks created by this cashier were found</h2>
+    </c:if>
+    <c:if test="${not empty checks}">
+        <h2>Checks Found:</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Print Date</th>
+                    <th>Cashier</th>
+                    <th>Customer Card</th>
+                    <th>Sum Total</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="check" items="${checks}">
+                    <tr>
+                        <td>${check.printDate}</td>
+                        <td>${check.employee.employeeFullName}</td>
+                        <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
+                        <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
+                        <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+        <c:set var="totalSum" value="0" />
+        <c:forEach var="check" items="${checks}">
+            <c:set var="totalSum" value="${totalSum + check.sumTotal}" />
+        </c:forEach>
+        <h4>Total Sum: <fmt:formatNumber value="${totalSum}" pattern="#,##0.00"/></h4>
+    </c:if>
 </div>
 </body>
 </html>

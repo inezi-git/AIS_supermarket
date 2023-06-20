@@ -16,7 +16,7 @@
             <a href="${pageContext.request.contextPath}/checks/find-all-mine-by-period" class="btn btn-secondary">Find by period</a>
             <form method="get" action="${pageContext.request.contextPath}/checks/find-by-check-number">
                 <div class="d-flex justify-content-between">
-                    <input type="text" id="checkNumber" placeholder="Check number" name="checkNumber" value="${param.checkNumber}" required>
+                    <input class="form-control" type="text" id="checkNumber" placeholder="Check number" name="checkNumber" value="${param.checkNumber}" required>
                     <input type="submit" value="Find" class="btn btn-primary">
                 </div>
             </form>
