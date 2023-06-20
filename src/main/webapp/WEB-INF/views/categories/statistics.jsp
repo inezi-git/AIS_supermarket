@@ -24,25 +24,28 @@
   <c:forEach var="category" items="${categories}">
     <tr>
       <td>
-        <c:out value="${category.category_name}"/>
+        <c:out value="${category.key}"/>
       </td>
       <td>
-        <c:out value="${category.productData.totalProducts}"/>
+        <c:out value="${category.value.total_products}"/>
       </td>
       <td>
-        <fmt:formatNumber value="${category.productData.minPrice}" pattern="#.00"/>
+        <fmt:formatNumber value="${category.value.min_price}" pattern="#.00"/>
       </td>
       <td>
-        <fmt:formatNumber value="${category.productData.maxPrice}" pattern="#.00"/>
+        <fmt:formatNumber value="${category.value.max_price}" pattern="#.00"/>
       </td>
       <td>
-        <fmt:formatNumber value="${category.productData.avgPrice}" pattern="#.00"/>
+        <fmt:formatNumber value="${category.value.avg_price}" pattern="#.00"/>
       </td>
     </tr>
   </c:forEach>
   </tbody>
 </table>
+  <div>
+    <a href="${pageContext.request.contextPath}/categories" class="btn btn-secondary">Back to all categories</a>
+  </div>
 </div>
 </body>
 </html>
-<%@include file="../header.jsp"%>
+<%@include file="../footer.jsp"%>
