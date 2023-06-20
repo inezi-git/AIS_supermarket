@@ -121,11 +121,12 @@ public class CategoryDaoImpl implements CategoryDao {
     public Map<String, Object> getCategoryStatistics() {
         String query = "SELECT Category.category_name, " +
                     "COUNT(Product.id_product) AS total_products, " +
+                    "COUNT(Store_Product.id_product) AS total_store_products, " +
                     "MIN(Store_Product.selling_price) AS min_price, " +
                     "AVG(Store_Product.selling_price) AS avg_price, " +
                     "MAX(Store_Product.selling_price) AS max_price " +
-                    "FROM Category JOIN Product ON Category.category_number = Product.category_number " +
-                    "JOIN Store_Product ON Product.id_product = Store_Product.id_product " +
+                    "FROM Category LEFT JOIN Product ON Category.category_number = Product.category_number " +
+                    "LEFT JOIN Store_Product ON Product.id_product = Store_Product.id_product " +
                     "GROUP BY Category.category_name";
 
         Map<String, Object> categoryStatistics = new HashMap<>();
@@ -137,12 +138,14 @@ public class CategoryDaoImpl implements CategoryDao {
             while (resultSet.next()) {
                 String categoryName = resultSet.getString("category_name");
                 int totalProducts = resultSet.getInt("total_products");
+                int totalStoreProducts = resultSet.getInt("total_store_products");
                 BigDecimal minPrice = resultSet.getBigDecimal("min_price");
                 BigDecimal avgPrice = resultSet.getBigDecimal("avg_price");
                 BigDecimal maxPrice = resultSet.getBigDecimal("max_price");
 
                 Map<String, Object> productData = new HashMap<>();
                 productData.put("total_products", totalProducts);
+                productData.put("total_store_products", totalStoreProducts);
                 productData.put("min_price", minPrice);
                 productData.put("avg_price", avgPrice);
                 productData.put("max_price", maxPrice);

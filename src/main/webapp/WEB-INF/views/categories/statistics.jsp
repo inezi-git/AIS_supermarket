@@ -15,6 +15,7 @@
   <tr>
     <th>Category name</th>
     <th>Number of products</th>
+    <th>Number of store products</th>
     <th>Min price</th>
     <th>Max price</th>
     <th>Average price</th>
@@ -28,6 +29,9 @@
       </td>
       <td>
         <c:out value="${category.value.total_products}"/>
+      </td>
+      <td>
+        <c:out value="${category.value.total_store_products}"/>
       </td>
       <td>
         <fmt:formatNumber value="${category.value.min_price}" pattern="#.00"/>
