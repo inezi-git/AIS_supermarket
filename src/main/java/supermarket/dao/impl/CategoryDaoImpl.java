@@ -119,15 +119,16 @@ public class CategoryDaoImpl implements CategoryDao {
     }
 
     public Map<String, Object> getCategoryStatistics() {
-        String query = "SELECT C.category_name, COUNT(P.id_product) AS total_products, " +
-                "MIN(SP.selling_price) AS min_price, AVG(SP.selling_price) AS avg_price, " +
-                "MAX(SP.selling_price) AS max_price " +
-                "FROM Category C " +
-                "JOIN Product P ON C.category_number = P.category_number " +
-                "JOIN Store_Product SP ON P.id_product = SP.id_product " +
-                "GROUP BY C.category_name";
+        String query = "SELECT Category.category_name, " +
+                    "COUNT(Product.id_product) AS total_products, " +
+                    "MIN(Store_Product.selling_price) AS min_price, " +
+                    "AVG(Store_Product.selling_price) AS avg_price, " +
+                    "MAX(Store_Product.selling_price) AS max_price " +
+                    "FROM Category JOIN Product ON Category.category_number = Product.category_number " +
+                    "JOIN Store_Product ON Product.id_product = Store_Product.id_product " +
+                    "GROUP BY Category.category_name";
 
-        Map<String, Object> categoryProductData = new HashMap<>();
+        Map<String, Object> categoryStatistics = new HashMap<>();
 
         try (Connection connection = ConnectionWithDB.getConnection();
              PreparedStatement statement = connection.prepareStatement(query);
@@ -146,12 +147,12 @@ public class CategoryDaoImpl implements CategoryDao {
                 productData.put("avg_price", avgPrice);
                 productData.put("max_price", maxPrice);
 
-                categoryProductData.put(categoryName, productData);
+                categoryStatistics.put(categoryName, productData);
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Couldn't retrieve category product data.", e);
         }
 
-        return categoryProductData;
+        return categoryStatistics;
     }
 }
