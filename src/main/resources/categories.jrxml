@@ -21,22 +21,22 @@
 		<band/>
 	</background>
 	<title>
-		<band height="72">
+		<band height="40">
 			<frame>
-				<reportElement style="CyrillicFont" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="5a772103-bd77-494c-962d-1e4cfa608652"/>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="20" backcolor="#FFFFFF" uuid="e0b34b33-d30f-47dd-ab55-15c072dd6760"/>
 				<staticText>
-					<reportElement style="CyrillicFont" x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="0cdc077b-6ff1-4231-a297-b01a098cc065"/>
+					<reportElement style="CyrillicFont" x="20" y="20" width="400" height="20" forecolor="#778899" uuid="86354c1c-74ab-44e3-835a-1bf6f3c69921"/>
 					<textElement>
-						<font size="34" isBold="true"/>
+						<font size="14" isBold="true"/>
 					</textElement>
-					<text><![CDATA[ZLAGODA]]></text>
+					<text><![CDATA[Mini-supermarket "ZLAGODA"]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="CyrillicFont" x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="757f9d55-f69a-48e2-93e8-c4e86a335bc8"/>
-					<textElement textAlignment="Right">
-						<font size="14" isBold="false"/>
+					<reportElement style="CyrillicFont"  x="20" y="45" width="180" height="20" forecolor="#000000" uuid="27d12e30-7f5a-4b5d-99ed-5cd50ce5d76f"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Categories Information]]></text>
+					<text><![CDATA[Report about categories]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -46,24 +46,21 @@
 	</pageHeader>
 	<columnHeader>
 		<band height="21">
-			<line>
-				<reportElement style="CyrillicFont" x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="1d3673bc-e528-4237-9fd5-5c73979378cc"/>
-			</line>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="0" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="52bfb7f4-e8a9-4ebe-8bf6-9d9587baf1ee">
+				<reportElement style="CyrillicFont" mode="Opaque" x="0" y="0" width="277" height="20" forecolor="#000000" backcolor="#D382DC" uuid="52bfb7f4-e8a9-4ebe-8bf6-9d9587baf1ee">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ae1f7ee-3dee-4ccf-af30-96671f5ccaa3"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Number]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="277" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b146aca6-9145-4704-9dd4-919476ffac2d">
+				<reportElement style="CyrillicFont" mode="Opaque" x="277" y="0" width="277" height="20" forecolor="#000000" backcolor="#D382DC" uuid="b146aca6-9145-4704-9dd4-919476ffac2d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f5fd3619-f5e3-4edf-abec-3dca49197ae1"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Name]]></text>
 			</staticText>
@@ -79,7 +76,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ae1f7ee-3dee-4ccf-af30-96671f5ccaa3"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{category_number}]]></textFieldExpression>
 			</textField>
@@ -88,7 +85,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f5fd3619-f5e3-4edf-abec-3dca49197ae1"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{category_name}]]></textFieldExpression>
 			</textField>

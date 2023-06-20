@@ -80,7 +80,7 @@
 			<frame>
 				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="20" backcolor="#FFFFFF" uuid="e0b34b33-d30f-47dd-ab55-15c072dd6760"/>
 				<staticText>
-					<reportElement style="CyrillicFont" x="20" y="20" width="400" height="20" forecolor="#800080" uuid="86354c1c-74ab-44e3-835a-1bf6f3c69921"/>
+					<reportElement style="CyrillicFont" x="20" y="20" width="400" height="20" forecolor="#778899" uuid="86354c1c-74ab-44e3-835a-1bf6f3c69921"/>
 					<textElement>
 						<font size="14" isBold="true"/>
 					</textElement>
@@ -115,7 +115,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f7f41cb3-37ae-49ac-92fc-241934288d17"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Surname]]></text>
 			</staticText>
@@ -124,7 +124,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b8adcfe-b0c5-496a-972f-bda019c3fb16"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Name]]></text>
 			</staticText>
@@ -133,7 +133,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff133a50-fe10-4829-b255-0081fa4dfdb2"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Patronymic]]></text>
 			</staticText>
@@ -142,7 +142,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ce3a7c9-5b12-4f60-9333-d5622393b57c"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Role]]></text>
 			</staticText>
@@ -151,7 +151,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0c0d6029-828f-471c-a53b-f7e76205262b"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Salary]]></text>
 			</staticText>
@@ -160,7 +160,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8094120-d4f8-490b-8fea-35bee6d61be9"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Birth]]></text>
 			</staticText>
@@ -169,7 +169,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c8d2cd25-1c36-47e1-8eec-74931857b6dc"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Start]]></text>
 			</staticText>
@@ -178,7 +178,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7850dc81-b6dc-409d-a66f-3755163e9b52"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Phone]]></text>
 			</staticText>
@@ -187,7 +187,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70c194ec-4413-402d-9c10-618b107eff37"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[City]]></text>
 			</staticText>
@@ -196,7 +196,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d0a80e1e-840b-4054-a3fc-a30638424ea7"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Street]]></text>
 			</staticText>
@@ -205,7 +205,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7b838f94-a2f8-4014-879a-82fb938867d1"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Zip]]></text>
 			</staticText>
@@ -214,7 +214,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e3928aef-e722-4b82-823a-4b99efbe9208"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Email]]></text>
 			</staticText>

@@ -53,22 +53,22 @@
 		<band/>
 	</background>
 	<title>
-		<band height="72">
+		<band height="40">
 			<frame>
-				<reportElement style="CyrillicFont" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="8fe35e2f-36f7-45ea-ab48-338b0a0f7d07"/>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="20" backcolor="#FFFFFF" uuid="e0b34b33-d30f-47dd-ab55-15c072dd6760"/>
 				<staticText>
-					<reportElement style="CyrillicFont" x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="19bfdd7f-fca6-4466-8168-95c8c5a73ef6"/>
+					<reportElement style="CyrillicFont" x="20" y="20" width="400" height="20" forecolor="#778899" uuid="86354c1c-74ab-44e3-835a-1bf6f3c69921"/>
 					<textElement>
-						<font size="34" isBold="true"/>
+						<font size="14" isBold="true"/>
 					</textElement>
-					<text><![CDATA[ZLAGODA]]></text>
+					<text><![CDATA[Mini-supermarket "ZLAGODA"]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="CyrillicFont" x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="878229ca-2d75-451e-9249-1b8c27edd91c"/>
-					<textElement textAlignment="Right">
-						<font size="14" isBold="false"/>
+					<reportElement style="CyrillicFont"  x="20" y="45" width="180" height="20" forecolor="#000000" uuid="27d12e30-7f5a-4b5d-99ed-5cd50ce5d76f"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Checks Information]]></text>
+					<text><![CDATA[Report about checks]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -78,78 +78,75 @@
 	</pageHeader>
 	<columnHeader>
 		<band height="21">
-			<line>
-				<reportElement style="CyrillicFont" x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="88020ae9-9bd9-440e-a40a-c56c2ae598db"/>
-			</line>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="0" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c4bbbe96-5f10-4dbc-8073-85f0942a430f">
+				<reportElement style="CyrillicFont" mode="Opaque" x="0" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="c4bbbe96-5f10-4dbc-8073-85f0942a430f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d4edcef-a9e2-4768-98d8-69a6d3ae9d03"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Check]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="69" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f8ccc07d-7e84-4fb0-b55a-2d03810f3a6e">
+				<reportElement style="CyrillicFont" mode="Opaque" x="69" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="f8ccc07d-7e84-4fb0-b55a-2d03810f3a6e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b05bcee4-54d9-41a4-9c1a-129ae911071a"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Empl. Surname]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="138" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b94de35d-14f6-4c40-8b19-88cc034dff26">
+				<reportElement style="CyrillicFont" mode="Opaque" x="138" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="b94de35d-14f6-4c40-8b19-88cc034dff26">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4443fa3d-61db-4856-aaeb-4eea8db066b8"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Empl. Name]]></text>
+				<text><![CDATA[Empl.Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="207" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3cca1b39-df37-4cfc-87f2-19a34afcd60a">
+				<reportElement style="CyrillicFont" mode="Opaque" x="207" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="3cca1b39-df37-4cfc-87f2-19a34afcd60a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a9ff505-6e50-4d33-b058-14c18f737671"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Cust. Surname]]></text>
+				<text><![CDATA[Cust.Surname]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="276" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8354d3a6-73bc-41ad-81dc-f99a3a18a577">
+				<reportElement style="CyrillicFont" mode="Opaque" x="276" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="8354d3a6-73bc-41ad-81dc-f99a3a18a577">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51f4ddc9-5c8b-457b-b9ba-68bf68b5723f"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Cust. Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="345" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="636fd156-9fea-4ebc-aacc-776581fe6c4b">
+				<reportElement style="CyrillicFont" mode="Opaque" x="345" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="636fd156-9fea-4ebc-aacc-776581fe6c4b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ec1d293e-d526-4650-8101-edcd45b0737b"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Date]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="414" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c799b23e-2a4b-47fc-9248-c603c6551b37">
+				<reportElement style="CyrillicFont" mode="Opaque" x="414" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="c799b23e-2a4b-47fc-9248-c603c6551b37">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="40401421-dc6f-45da-ae2e-5d4f0eebe2ce"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Sum]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="CyrillicFont" mode="Opaque" x="483" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4c9c55c9-4b56-49c2-a6b6-5236e9d8de5c">
+				<reportElement style="CyrillicFont" mode="Opaque" x="483" y="0" width="69" height="20" forecolor="#000000" backcolor="#D382DC" uuid="4c9c55c9-4b56-49c2-a6b6-5236e9d8de5c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ccfcf5c5-7954-469c-9cb3-ae271df6d8e8"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[VAT]]></text>
 			</staticText>
@@ -165,7 +162,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d4edcef-a9e2-4768-98d8-69a6d3ae9d03"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{check_number}]]></textFieldExpression>
 			</textField>
@@ -183,7 +180,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4443fa3d-61db-4856-aaeb-4eea8db066b8"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{empl_name}]]></textFieldExpression>
 			</textField>
@@ -192,7 +189,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a9ff505-6e50-4d33-b058-14c18f737671"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cust_surname}]]></textFieldExpression>
 			</textField>
@@ -201,7 +198,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51f4ddc9-5c8b-457b-b9ba-68bf68b5723f"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cust_name}]]></textFieldExpression>
 			</textField>
@@ -219,7 +216,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="40401421-dc6f-45da-ae2e-5d4f0eebe2ce"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sum_total}]]></textFieldExpression>
 			</textField>
@@ -228,7 +225,7 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ccfcf5c5-7954-469c-9cb3-ae271df6d8e8"/>
 				</reportElement>
 				<textElement>
-					<font size="14"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{vat}]]></textFieldExpression>
 			</textField>
