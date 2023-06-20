@@ -14,16 +14,15 @@
     <div class="btn-group" role="group">
         <a href="${pageContext.request.contextPath}/employees/add" class="btn btn-primary">Add new employee</a>
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All employees</button>
+            <button class="class= btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All employees</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/employees/cashiers">Cashiers</a></li>
             </ul>
         </div>
-        <a href="${pageContext.request.contextPath}/employees/find-phone-and-address" class="btn btn-secondary">Find phone and address for employee</a>
+        <a href="${pageContext.request.contextPath}/employees/find-phone-and-address" class="btn btn-light">Find phone and address for employee</a>
         <a href="${pageContext.request.contextPath}/report/employees" class="btn btn-info">Get report about employees</a>
     </div>
-<table class="table table-striped">
-    <thead>
+    <table class="table table-striped">
         <tr>
             <th>ID</th>
             <th>Full Name</th>
@@ -37,8 +36,6 @@
             <th></th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
         <c:forEach var="cashier" items="${employees}">
             <tr>
                 <td>
@@ -76,8 +73,7 @@
                 </td>
             </tr>
         </c:forEach>
-    </tbody>
-</table>
+    </table>
 </div>
 </body>
 </html>
