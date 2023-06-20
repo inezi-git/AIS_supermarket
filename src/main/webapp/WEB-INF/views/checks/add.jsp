@@ -20,13 +20,13 @@
         </div>
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>UPC</th>
-                <th>Product</th>
-                <th>Selling price</th>
-                <th>Amount</th>
-                <th>Amount For Sale</th>
-            </tr>
+                <tr>
+                    <th>UPC</th>
+                    <th>Product</th>
+                    <th>Selling price</th>
+                    <th>Amount</th>
+                    <th>Amount For Sale</th>
+                </tr>
             </thead>
             <tbody>
             <c:forEach var="storeProduct" items="${storeProducts}">

@@ -22,7 +22,7 @@
         <form method="get" action="${pageContext.request.contextPath}/products/find-by-name">
             <div class="d-flex justify-content-between">
                 <input class="form-control" type="text" placeholder="Product name" id="name" name="name" value="${param.name}" required>
-                <input type="submit" value="Find">
+                <input type="submit" value="Find" class="btn btn-primary">
             </div>
         </form>
         <c:if test="${userRole eq 'Manager'}">

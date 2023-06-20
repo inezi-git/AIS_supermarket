@@ -1,6 +1,7 @@
 package supermarket.service;
 
 import supermarket.model.CategoryMaxPriceProduct;
+import supermarket.model.Product;
 import supermarket.model.ProductStat;
 import supermarket.model.StoreProduct;
 import java.time.LocalDateTime;
@@ -15,4 +16,6 @@ public interface StoreProductService extends BasicService<StoreProduct, String> 
     List<StoreProduct> getAllPromotionalSortedByAmountAndName();
 
     List<StoreProduct> getAllNonPromotionalSortedByAmountAndName();
+
+    List<StoreProduct> getStoreProductsByName(String name);
 }

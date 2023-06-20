@@ -4,6 +4,7 @@ import supermarket.dao.StoreProductDao;
 import supermarket.lib.Inject;
 import supermarket.lib.Service;
 import supermarket.model.CategoryMaxPriceProduct;
+import supermarket.model.Product;
 import supermarket.model.ProductStat;
 import supermarket.model.StoreProduct;
 import supermarket.service.StoreProductService;
@@ -62,4 +63,8 @@ public class StoreProductServiceImpl implements StoreProductService {
         return storeProductDao.getAllNonPromotionalSortedByAmountAndName();
     }
 
+    @Override
+    public List<StoreProduct> getStoreProductsByName(String name) {
+        return storeProductDao.getStoreProductsByName(name);
+    }
 }

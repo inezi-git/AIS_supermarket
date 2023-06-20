@@ -1,0 +1,36 @@
+package supermarket.controller.store_product;
+
+import supermarket.lib.Injector;
+import supermarket.model.StoreProduct;
+import supermarket.service.StoreProductService;
+
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/store_products/find-store-products-by-name")
+public class GetStoreProductsByNameController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("supermarket");
+    private final StoreProductService storeProductService = (StoreProductService) injector
+            .getInstance(StoreProductService.class);
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        String name = req.getParameter("name");
+        List<StoreProduct> storeProducts = storeProductService.getStoreProductsByName(name);
+        req.setAttribute("storeProducts", storeProducts);
+        req.getRequestDispatcher("/WEB-INF/views/store_products/find_store_products_by_name.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        doGet(req, resp);
+    }
+}

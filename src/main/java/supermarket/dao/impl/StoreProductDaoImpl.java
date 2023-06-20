@@ -262,4 +262,24 @@ public class StoreProductDaoImpl implements StoreProductDao {
         return storeProductData;
     }
 
+    @Override
+    public List<StoreProduct> getStoreProductsByName(String name) {
+        String query = "SELECT UPC, UPC_prom, store_product.id_product, selling_price, products_number, promotional_product "
+                + "FROM store_product "
+                + "JOIN product ON product.id_product = store_product.id_product "
+                + "WHERE product_name LIKE ?";
+        List<StoreProduct> storeProducts = new ArrayList<>();
+        try (Connection connection = ConnectionWithDB.getConnection();
+             PreparedStatement getStoreProductStatement = connection.prepareStatement(query)) {
+            getStoreProductStatement.setString(1, "%" + name + "%");
+            ResultSet resultSet = getStoreProductStatement.executeQuery();
+            while (resultSet.next()) {
+                storeProducts.add(parseStoreProductFromResultSet(resultSet));
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't get store products containing name " + name, e);
+        }
+        return storeProducts;
+    }
+
 }
