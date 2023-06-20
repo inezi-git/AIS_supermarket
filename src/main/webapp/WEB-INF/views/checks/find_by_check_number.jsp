@@ -18,22 +18,22 @@
     <h2>Check with number ${check.checkNumber} is found</h2>
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th>Print Date</th>
-            <th>Cashier</th>
-            <th>Customer Card</th>
-            <th>Sum Total</th>
-            <th>Details</th>
-        </tr>
+            <tr>
+                <th>Print Date</th>
+                <th>Cashier</th>
+                <th>Customer Card</th>
+                <th>Sum Total</th>
+                <th>Details</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>${check.printDate}</td>
-            <td>${check.employee.employeeFullName}</td>
-            <td>${check.customerCard != null ? check.customerCard.customerFullName + ' (' + check.customerCard.percent + '%)' : ''}</td>
-            <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-            <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
-        </tr>
+            <tr>
+                <td>${check.printDate}</td>
+                <td>${check.employee.employeeFullName}</td>
+                <td>${check.customerCard != null ? check.customerCard.customerFullName + ' (' + check.customerCard.percent + '%)' : ''}</td>
+                <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
+                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
+            </tr>
         </tbody>
     </table>
 </c:if>

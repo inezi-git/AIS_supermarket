@@ -18,29 +18,33 @@
         </c:if>
     </div>
     <table class="table table-striped">
-    <tr>
-        <th>Number</th>
-        <th>Name</th>
-        <th></th>
-        <th></th>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th></th>
+                <th></th>
 
-    </tr>
-    <c:forEach var="category" items="${categories}">
-        <tr>
-            <td>
-                <c:out value="${category.categoryNumber}"/>
-            </td>
-            <td>
-                <c:out value="${category.categoryName}"/>
-            </td>
-            <td>
-                <a href="${pageContext.request.contextPath}/categories/update?categoryNumber=${category.categoryNumber}"><i class="bi bi-pencil-fill"></i></a>
-            </td>
-            <td>
-                <a href="${pageContext.request.contextPath}/categories/delete?categoryNumber=${category.categoryNumber}"><i class="bi bi-trash"></i></a>
-            </td>
-        </tr>
-    </c:forEach>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="category" items="${categories}">
+                <tr>
+                    <td>
+                        <c:out value="${category.categoryNumber}"/>
+                    </td>
+                    <td>
+                        <c:out value="${category.categoryName}"/>
+                    </td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/categories/update?categoryNumber=${category.categoryNumber}"><i class="bi bi-pencil-fill"></i></a>
+                    </td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/categories/delete?categoryNumber=${category.categoryNumber}"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
 </table>
 </div>
 </body>

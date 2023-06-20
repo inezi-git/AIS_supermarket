@@ -21,14 +21,18 @@
 </c:if>
 <c:if test="${not empty employeeData}">
     <table class="table table-striped">
-        <tr>
-            <th>Phone Number</th>
-            <th>Address</th>
-        </tr>
-        <tr>
-            <td>${employeeData.phone_number}</td>
-            <td>${employeeData.city}, ${employeeData.street}, ${employeeData.zip_code}</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>${employeeData.phone_number}</td>
+                <td>${employeeData.city}, ${employeeData.street}, ${employeeData.zip_code}</td>
+            </tr>
+        </tbody>
     </table>
 </c:if>
 </div>

@@ -13,8 +13,8 @@
             <label for="card_number">Customer Card:</label>
             <select name="card_number" id="card_number">
                 <option value="none">None</option>
-                <c:forEach var="card" items="${customerCards}">
-                    <option value="${card.cardNumber}">${card.customerFullName} (${card.percent}%)</option>
+                <c:forEach var="customer_card" items="${customerCards}">
+                    <option value="${customer_card.cardNumber}">${customer_card.customerFullName} (${customer_card.percent}%)</option>
                 </c:forEach>
             </select>
         </div>

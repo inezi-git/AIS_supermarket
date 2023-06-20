@@ -97,23 +97,6 @@ public class CheckDaoImpl implements CheckDao {
 
     @Override
     public Check update(Check check) {
-        String query = "UPDATE `Check` "
-                + "SET id_employee = ?, card_number = ?, print_date = ?, "
-                + "sum_total = ?, vat = ? WHERE check_number = ?";
-        try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement updateCheckStatement = connection.prepareStatement(query)) {
-            updateCheckStatement.setString(1, check.getEmployee().getId());
-            updateCheckStatement.setString(2, check.getCustomerCard().getCardNumber());
-            updateCheckStatement.setDate(3,
-                    Date.valueOf(check.getPrintDate().toLocalDate()));
-            updateCheckStatement.setBigDecimal(4, check.getSumTotal());
-            updateCheckStatement.setBigDecimal(5, check.getVat());
-            updateCheckStatement.setString(6, check.getCheckNumber());
-            updateCheckStatement.executeUpdate();
-        } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't update "
-                    + check + " in checks database.", e);
-        }
         return check;
     }
 

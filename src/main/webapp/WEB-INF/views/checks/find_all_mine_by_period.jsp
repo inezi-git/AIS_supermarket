@@ -27,31 +27,28 @@
 <c:if test="${not empty checks}">
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th>Print Date</th>
-            <th>Customer Card</th>
-            <th>Sum Total</th>
-            <th>Details</th>
-        </tr>
+            <tr>
+                <th>Print Date</th>
+                <th>Customer Card</th>
+                <th>Sum Total</th>
+                <th>Details</th>
+            </tr>
         </thead>
         <tbody>
-        <c:forEach var="check" items="${checks}">
-            <tr>
-                <td>${check.printDate}</td>
-                <td>${check.customerCard != null ? check.customerCard.customerFullName + ' (' + check.customerCard.percent + '%)' : ''}</td>
-                <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
-            </tr>
-        </c:forEach>
+            <c:forEach var="check" items="${checks}">
+                <tr>
+                    <td>${check.printDate}</td>
+                    <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
+                    <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
+                    <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
+                </tr>
+            </c:forEach>
         </tbody>
     </table>
 </c:if>
-<div class="form-group">
-    <a href="${pageContext.request.contextPath}/checks/find-by-check-number" class="btn btn-secondary">Find by check number</a>
-</div>
-<div class="form-group">
-    <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks today</a>
-</div>
+    <div>
+        <a href="${pageContext.request.contextPath}/checks/today" class="btn btn-secondary">Back to all my checks today</a>
+    </div>
 </div>
 </body>
 </html>

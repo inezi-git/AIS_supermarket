@@ -28,30 +28,30 @@
     <h2>Checks found:</h2>
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th>Print Date</th>
-            <th>Cashier</th>
-            <th>Customer Card</th>
-            <th>Sum Total</th>
-            <th>Details</th>
-            <th></th>
-        </tr>
+            <tr>
+                <th>Print Date</th>
+                <th>Cashier</th>
+                <th>Customer Card</th>
+                <th>Sum Total</th>
+                <th>Details</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody>
-        <c:forEach var="check" items="${checks}">
-            <tr>
-                <td>${check.printDate}</td>
-                <td>${check.employee.employeeFullName}</td>
-                <td>${check.customerCard != null ? check.customerCard.customerFullName + ' (' + check.customerCard.percent + '%)' : ''}</td>
-                <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
-                <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
-                <c:if test="${userRole eq 'Manager'}">
-                    <td>
-                        <a href="${pageContext.request.contextPath}/checks/delete?id=${product.id}"><i class="bi bi-trash"></i></a>
-                    </td>
-                </c:if>
-            </tr>
-        </c:forEach>
+            <c:forEach var="check" items="${checks}">
+                <tr>
+                    <td>${check.printDate}</td>
+                    <td>${check.employee.employeeFullName}</td>
+                    <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
+                    <td><fmt:formatNumber value="${check.sumTotal}" pattern="#,##0.00"/></td>
+                    <td><a href="${pageContext.request.contextPath}/checks/get?checkNumber=${check.checkNumber}"><i class="bi bi-three-dots"></i></a></td>
+                    <c:if test="${userRole eq 'Manager'}">
+                        <td>
+                            <a href="${pageContext.request.contextPath}/checks/delete?id=${product.id}"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </c:if>
+                </tr>
+            </c:forEach>
         </tbody>
     </table>
     <c:set var="totalSum" value="0" />

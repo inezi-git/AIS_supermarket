@@ -31,43 +31,47 @@
     </div>
 
 <table class="table table-striped">
-<c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
-    <tr>
-        <th>ID</th>
-        <th>Category</th>
-        <th>Name</th>
-        <th>Producer</th>
-        <th>Characteristics</th>
-        <th></th>
-        <th></th>
-    </tr>
-    <c:forEach var="product" items="${products}">
+    <c:set var="userRole" value="${sessionScope.chosenEmployee.employeeRole.name}" />
+    <thead>
         <tr>
-            <td>
-                <c:out value="${product.id}"/>
-            </td>
-            <td>
-                <c:out value="${product.category}"/>
-            </td>
-            <td>
-                <c:out value="${product.name}"/>
-            </td>
-            <td>
-                <c:out value="${product.producer}"/>
-            </td>
-            <td>
-                <c:out value="${product.characteristics}"/>
-            </td>
-            <c:if test="${userRole eq 'Manager'}">
-            <td>
-                <a href="${pageContext.request.contextPath}/products/update?id=${product.id}"><i class="bi bi-pencil-fill"></i></a>
-            </td>
-            <td>
-                <a href="${pageContext.request.contextPath}/products/delete?id=${product.id}"><i class="bi bi-trash"></i></a>
-            </td>
-            </c:if>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Producer</th>
+            <th>Characteristics</th>
+            <th></th>
+            <th></th>
         </tr>
-    </c:forEach>
+    </thead>
+    <tbody>
+        <c:forEach var="product" items="${products}">
+            <tr>
+                <td>
+                    <c:out value="${product.id}"/>
+                </td>
+                <td>
+                    <c:out value="${product.category}"/>
+                </td>
+                <td>
+                    <c:out value="${product.name}"/>
+                </td>
+                <td>
+                    <c:out value="${product.producer}"/>
+                </td>
+                <td>
+                    <c:out value="${product.characteristics}"/>
+                </td>
+                <c:if test="${userRole eq 'Manager'}">
+                <td>
+                    <a href="${pageContext.request.contextPath}/products/update?id=${product.id}"><i class="bi bi-pencil-fill"></i></a>
+                </td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/products/delete?id=${product.id}"><i class="bi bi-trash"></i></a>
+                </td>
+                </c:if>
+            </tr>
+        </c:forEach>
+    </tbody>
 </table>
 </div>
 </body>

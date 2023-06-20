@@ -76,10 +76,13 @@ public class AddCheckController extends HttpServlet {
 
     private Check createCheck(HttpServletRequest req) {
         String id_employee = (String) req.getSession().getAttribute("id_employee");
+        String card_number = req.getParameter("card_number");
         LocalDateTime print_date = LocalDateTime.now();
         BigDecimal sum_total = calculateSumTotal(req);
         Employee employee = employeeService.get(id_employee);
-        return new Check(null, employee, null, print_date, sum_total);
+        CustomerCard customerCard = customerCardService.get(card_number);
+
+        return new Check(null, employee, customerCard, print_date, sum_total);
     }
 
     private BigDecimal calculateSumTotal(HttpServletRequest req) {

@@ -17,26 +17,26 @@
         <h2>Store product with upc ${upc} has been found</h2>
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Amount</th>
-                <c:if test="${userRole eq 'Manager'}">
-                    <th>Producer</th>
-                    <th>Characteristics</th>
-                </c:if>
-            </tr>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <c:if test="${userRole eq 'Manager'}">
+                        <th>Producer</th>
+                        <th>Characteristics</th>
+                    </c:if>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>${storeProducts.product_name}</td>
-                <td><fmt:formatNumber value="${storeProducts.selling_price}" pattern="#.00"/></td>
-                <td>${storeProducts.products_number}</td>
-                <c:if test="${userRole eq 'Manager'}">
-                    <td>${storeProducts.producer}</td>
-                    <td>${storeProducts.characteristics}</td>
-                </c:if>
-            </tr>
+                <tr>
+                    <td>${storeProducts.product_name}</td>
+                    <td><fmt:formatNumber value="${storeProducts.selling_price}" pattern="#.00"/></td>
+                    <td>${storeProducts.products_number}</td>
+                    <c:if test="${userRole eq 'Manager'}">
+                        <td>${storeProducts.producer}</td>
+                        <td>${storeProducts.characteristics}</td>
+                    </c:if>
+                </tr>
             </tbody>
         </table>
     </c:if>

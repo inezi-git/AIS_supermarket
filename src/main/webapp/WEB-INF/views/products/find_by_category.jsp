@@ -22,22 +22,22 @@
 <c:if test="${not empty products}">
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th>ID</th>
-            <th>Product Name</th>
-            <th>Producer</th>
-            <th>Characteristics</th>
-        </tr>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Producer</th>
+                <th>Characteristics</th>
+            </tr>
         </thead>
         <tbody>
-        <c:forEach var="product" items="${products}">
-            <tr>
-                <td>${product.id}</td>
-                <td>${product.name}</td>
-                <td>${product.producer}</td>
-                <td>${product.characteristics}</td>
-            </tr>
-        </c:forEach>
+            <c:forEach var="product" items="${products}">
+                <tr>
+                    <td>${product.id}</td>
+                    <td>${product.name}</td>
+                    <td>${product.producer}</td>
+                    <td>${product.characteristics}</td>
+                </tr>
+            </c:forEach>
         </tbody>
     </table>
 </c:if>

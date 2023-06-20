@@ -12,40 +12,42 @@
   <h2>No customer cards found</h2>
 </c:if>
 <c:if test="${not empty customerCards}">
-  <table class="table table-striped">
-    <tr>
-      <th>Card Number</th>
-      <th>Full Name</th>
-      <th>Phone Number</th>
-      <th>Address</th>
-      <th>Discount Percent</th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tbody>
-    <c:forEach var="customerCard" items="${customerCards}">
-      <tr>
-        <td>${customerCard.cardNumber}</td>
-        <td>${customerCard.customerFullName}</td>
-        <td>${customerCard.phoneNumber}</td>
-        <td>${customerCard.customerAddress}</td>
-        <td>${customerCard.percent}%</td>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Card Number</th>
+                <th>Full Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Discount Percent</th>
+                <th></th>
+                <th></th>
+              </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="customerCard" items="${customerCards}">
+             <tr>
+                 <td>${customerCard.cardNumber}</td>
+                 <td>${customerCard.customerFullName}</td>
+                 <td>${customerCard.phoneNumber}</td>
+                 <td>${customerCard.customerAddress}</td>
+                 <td>${customerCard.percent}%</td>
 
-        <c:if test="${userRole eq 'Manager'}">
-        <td>
-          <a href="${pageContext.request.contextPath}/products/update?id=${product.id}"><i class="bi bi-pencil-fill"></i></a>
-        </td>
-        <td>
-          <a href="${pageContext.request.contextPath}/products/delete?id=${product.id}"><i class="bi bi-trash"></i></a>
-        </td>
-        </c:if>
-    </c:forEach>
-      </tr>
-    </tbody>
-  </table>
-  <div class="form-group">
-    <a href="${pageContext.request.contextPath}/customer_cards" class="btn btn-secondary">Back to all customer cards</a>
-  </div>
+            <c:if test="${userRole eq 'Manager'}">
+             <td>
+                 <a href="${pageContext.request.contextPath}/products/update?id=${product.id}"><i class="bi bi-pencil-fill"></i></a>
+                 </td>
+             <td>
+                 <a href="${pageContext.request.contextPath}/products/delete?id=${product.id}"><i class="bi bi-trash"></i></a>
+             </td>
+             </c:if>
+        </c:forEach>
+             </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <a href="${pageContext.request.contextPath}/customer_cards" class="btn btn-secondary">Back to all customer cards</a>
+    </div>
 </c:if>
 </div>
 </body>
