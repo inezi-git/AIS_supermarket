@@ -64,6 +64,11 @@
       <artifactId>jasperreports-fonts</artifactId>
       <version>6.20.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>4.0.1</version>
+    </dependency>
   </dependencies>
 
   <build>
