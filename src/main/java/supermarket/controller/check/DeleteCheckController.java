@@ -18,6 +18,6 @@ public class DeleteCheckController extends HttpServlet {
             throws IOException {
         req.setCharacterEncoding("UTF-8");
         checkService.delete(req.getParameter("check_number"));
-        resp.sendRedirect(req.getContextPath() + "/checks");
+        resp.sendRedirect(req.getContextPath() + "/checks/find-all-by-period");
     }
 }

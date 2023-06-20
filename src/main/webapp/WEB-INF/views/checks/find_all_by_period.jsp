@@ -35,6 +35,7 @@
                 <th>Sum Total</th>
                 <th>Details</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>

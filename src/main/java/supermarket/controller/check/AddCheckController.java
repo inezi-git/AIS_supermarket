@@ -81,13 +81,13 @@ public class AddCheckController extends HttpServlet {
         BigDecimal sum_total = calculateSumTotal(req);
         Employee employee = employeeService.get(id_employee);
         CustomerCard customerCard = customerCardService.get(card_number);
-
         return new Check(null, employee, customerCard, print_date, sum_total);
     }
 
     private BigDecimal calculateSumTotal(HttpServletRequest req) {
         String[] amounts = req.getParameterValues("amount");
         String[] upcs = req.getParameterValues("upc");
+        String card_number = req.getParameter("card_number");
         BigDecimal sum_total = BigDecimal.ZERO;
 
         for (int i = 0; i < amounts.length; i++) {
@@ -97,7 +97,11 @@ public class AddCheckController extends HttpServlet {
             BigDecimal price = storeProduct.getPrice();
             sum_total = sum_total.add(price.multiply(BigDecimal.valueOf(amount)));
         }
-
+        CustomerCard customerCard = customerCardService.get(card_number);
+        if (customerCard != null) {
+            BigDecimal percent = new BigDecimal(customerCard.getPercent());
+            sum_total = sum_total.subtract(sum_total.multiply(percent.divide(new BigDecimal(100))));
+        }
         return sum_total;
     }
 

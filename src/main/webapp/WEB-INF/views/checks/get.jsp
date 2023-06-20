@@ -24,7 +24,7 @@
         <tr>
             <td>${check.checkNumber}</td>
             <td>${check.employee.employeeFullName}</td>
-            <td>${check.customerCard.customerFullName}</td>
+            <td>${check.customerCard.customerFullName} (${check.customerCard.percent}%)</td>
             <td>${check.printDate}</td>
             <td><fmt:formatNumber value="${check.sumTotal}" pattern="#.00"/></td>
             <td><fmt:formatNumber value="${check.vat}" pattern="#.00"/></td>
