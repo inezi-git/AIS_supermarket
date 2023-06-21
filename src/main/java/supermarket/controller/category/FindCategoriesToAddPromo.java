@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 
-@WebServlet("/categoriesToAddPromo")
+@WebServlet("/categories/categoriesToAddPromo")
 public class FindCategoriesToAddPromo extends HttpServlet {
     private static final Injector injector = Injector.getInstance("supermarket");
     private final CategoryService categoryService = (CategoryService) injector

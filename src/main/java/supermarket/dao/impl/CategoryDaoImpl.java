@@ -162,7 +162,7 @@ public class CategoryDaoImpl implements CategoryDao {
     @Override
     public List<String> findCategoriesToAddPromo() {
 
-        String query = "SELECT category_name " +
+        String query = "SELECT category_name,category_number " +
                 "FROM Category " +
                 "WHERE category_number IN ( " +
                 "    SELECT category_number " +
