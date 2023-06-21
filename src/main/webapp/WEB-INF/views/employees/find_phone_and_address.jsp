@@ -35,6 +35,9 @@
         </tbody>
     </table>
 </c:if>
+    <div>
+        <a href="${pageContext.request.contextPath}/employees" class="btn btn-secondary">Back to all employees</a>
+    </div>
 </div>
 </body>
 </html>
