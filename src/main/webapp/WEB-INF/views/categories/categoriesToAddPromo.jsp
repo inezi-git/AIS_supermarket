@@ -21,6 +21,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <th>Number</th>
             <th>Name</th>
             <th></th>
             <th></th>
@@ -31,7 +32,10 @@
         <c:forEach var="category" items="${categories}">
             <tr>
                 <td>
-                    <c:out value="${category.value.category_name_p}"/>
+                    <c:out value="${category.categoryNumber}"/>
+                </td>
+                <td>
+                    <c:out value="${category.categoryName}"/>
                 </td>
             </tr>
         </c:forEach>
