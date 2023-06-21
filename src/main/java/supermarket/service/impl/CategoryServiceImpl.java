@@ -49,7 +49,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<String> findCategoriesToAddPromo() {
+    public List<Category> findCategoriesToAddPromo() {
         return categoryDao.findCategoriesToAddPromo();
     }
 }

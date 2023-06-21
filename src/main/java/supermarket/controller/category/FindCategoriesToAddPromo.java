@@ -23,7 +23,7 @@ public class FindCategoriesToAddPromo extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        List<String> categories = categoryService.findCategoriesToAddPromo();
+        List<Category> categories = categoryService.findCategoriesToAddPromo();
         req.setAttribute("categories", categories);
         req.getRequestDispatcher("/WEB-INF/views/categories/categoriesToAddPromo.jsp").forward(req, resp);
     }

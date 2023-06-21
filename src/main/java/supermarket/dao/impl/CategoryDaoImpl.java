@@ -20,8 +20,8 @@ public class CategoryDaoImpl implements CategoryDao {
     public Category save(Category category) {
         String query = "INSERT INTO Category (category_name) VALUES (?)";
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement saveCategoryStatement = connection.prepareStatement(query,
-                        Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement saveCategoryStatement = connection.prepareStatement(query,
+                     Statement.RETURN_GENERATED_KEYS)) {
             saveCategoryStatement.setString(1, category.getCategoryName());
             saveCategoryStatement.executeUpdate();
             ResultSet resultSet = saveCategoryStatement.getGeneratedKeys();
@@ -39,7 +39,7 @@ public class CategoryDaoImpl implements CategoryDao {
         String query = "SELECT * FROM Category WHERE category_number = ?";
         Category category = null;
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement getCategoryStatement = connection.prepareStatement(query)) {
+             PreparedStatement getCategoryStatement = connection.prepareStatement(query)) {
             getCategoryStatement.setInt(1, id);
             ResultSet resultSet = getCategoryStatement.executeQuery();
             if (resultSet.next()) {
@@ -56,7 +56,7 @@ public class CategoryDaoImpl implements CategoryDao {
         String query = "SELECT * FROM Category";
         List<Category> categories = new ArrayList<>();
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement getAllCategoriesStatement = connection.prepareStatement(query)) {
+             PreparedStatement getAllCategoriesStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = getAllCategoriesStatement.executeQuery();
             while (resultSet.next()) {
                 categories.add(parseCategoryFromResultSet(resultSet));
@@ -72,7 +72,7 @@ public class CategoryDaoImpl implements CategoryDao {
     public Category update(Category category) {
         String query = "UPDATE Category SET category_name = ? WHERE category_number = ?";
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement updateCategoryStatement = connection.prepareStatement(query)) {
+             PreparedStatement updateCategoryStatement = connection.prepareStatement(query)) {
             updateCategoryStatement.setString(1, category.getCategoryName());
             updateCategoryStatement.setInt(2, category.getCategoryNumber());
             updateCategoryStatement.executeUpdate();
@@ -86,7 +86,7 @@ public class CategoryDaoImpl implements CategoryDao {
     public boolean delete(Integer id) {
         String query = "DELETE FROM Category WHERE category_number = ?";
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement deleteCategoryStatement = connection.prepareStatement(query)) {
+             PreparedStatement deleteCategoryStatement = connection.prepareStatement(query)) {
             deleteCategoryStatement.setLong(1, id);
             return deleteCategoryStatement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -99,7 +99,7 @@ public class CategoryDaoImpl implements CategoryDao {
         String query = "SELECT * FROM Category ORDER BY category_name";
         List<Category> categories = new ArrayList<>();
         try (Connection connection = ConnectionWithDB.getConnection();
-                PreparedStatement getAllCategoriesStatement = connection.prepareStatement(query)) {
+             PreparedStatement getAllCategoriesStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = getAllCategoriesStatement.executeQuery();
             while (resultSet.next()) {
                 categories.add(parseCategoryFromResultSet(resultSet));
@@ -120,14 +120,14 @@ public class CategoryDaoImpl implements CategoryDao {
 
     public Map<String, Object> getCategoryStatistics() {
         String query = "SELECT Category.category_name, " +
-                    "COUNT(Product.id_product) AS total_products, " +
-                    "COUNT(Store_Product.id_product) AS total_store_products, " +
-                    "MIN(Store_Product.selling_price) AS min_price, " +
-                    "AVG(Store_Product.selling_price) AS avg_price, " +
-                    "MAX(Store_Product.selling_price) AS max_price " +
-                    "FROM Category LEFT JOIN Product ON Category.category_number = Product.category_number " +
-                    "LEFT JOIN Store_Product ON Product.id_product = Store_Product.id_product " +
-                    "GROUP BY Category.category_name";
+                "COUNT(Product.id_product) AS total_products, " +
+                "COUNT(Store_Product.id_product) AS total_store_products, " +
+                "MIN(Store_Product.selling_price) AS min_price, " +
+                "AVG(Store_Product.selling_price) AS avg_price, " +
+                "MAX(Store_Product.selling_price) AS max_price " +
+                "FROM Category LEFT JOIN Product ON Category.category_number = Product.category_number " +
+                "LEFT JOIN Store_Product ON Product.id_product = Store_Product.id_product " +
+                "GROUP BY Category.category_name";
 
         Map<String, Object> categoryStatistics = new HashMap<>();
 
@@ -160,8 +160,7 @@ public class CategoryDaoImpl implements CategoryDao {
     }
 
     @Override
-    public List<String> findCategoriesToAddPromo() {
-
+    public List<Category> findCategoriesToAddPromo() {
         String query = "SELECT category_name,category_number " +
                 "FROM Category " +
                 "WHERE category_number IN ( " +
@@ -175,23 +174,22 @@ public class CategoryDaoImpl implements CategoryDao {
                 "    AND id_product NOT IN ( " +
                 "        SELECT id_product " +
                 "        FROM Store_Product " +
-                "        WHERE products_number < ? " +
+                "        WHERE products_number < 20 " +
                 "        AND promotional_product = TRUE " +
                 "    ) " +
-                ")AS category_name_p";
-
-        List<String> categories = new ArrayList<>();
+                ")";
+        List<Category> categories2 = new ArrayList<>();
         try (Connection connection = ConnectionWithDB.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query);
-             ResultSet resultSet = statement.executeQuery()) {
+             PreparedStatement getAllCategoriesStatement = connection.prepareStatement(query)) {
+            ResultSet resultSet = getAllCategoriesStatement.executeQuery();
             while (resultSet.next()) {
-                String categoryName = resultSet.getString("category_name_p");
-                categories.add(categoryName);
+                categories2.add(parseCategoryFromResultSet(resultSet));
+
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Couldn't get a list of categories "
                     + "from categories database.", e);
         }
-        return categories;
+        return categories2;
     }
 }
