@@ -47,4 +47,9 @@ public class CategoryServiceImpl implements CategoryService {
     public Map<String, Object> getCategoryStatistics() {
         return categoryDao.getCategoryStatistics();
     }
+
+    @Override
+    public List<String> findCategoriesToAddPromo() {
+        return categoryDao.findCategoriesToAddPromo();
+    }
 }

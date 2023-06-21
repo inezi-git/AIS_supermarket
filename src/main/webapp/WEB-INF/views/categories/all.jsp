@@ -15,6 +15,7 @@
             <a href="${pageContext.request.contextPath}/categories/add" class="btn btn-primary">Add new category</a>
             <a href="${pageContext.request.contextPath}/categories/statistics" class="btn btn-secondary">Statistics</a>
             <a href="${pageContext.request.contextPath}/report/categories" class="btn btn-info">Get report about categories</a>
+            <a href="${pageContext.request.contextPath}/categories/categoriesToAddPromo" class="btn btn-secondary">Find categories to add promotional items</a>
         </c:if>
     </div>
     <table class="table table-striped">

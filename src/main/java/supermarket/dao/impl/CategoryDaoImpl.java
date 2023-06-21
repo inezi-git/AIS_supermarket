@@ -128,10 +128,13 @@ public class CategoryDaoImpl implements CategoryDao {
                     "FROM Category LEFT JOIN Product ON Category.category_number = Product.category_number " +
                     "LEFT JOIN Store_Product ON Product.id_product = Store_Product.id_product " +
                     "GROUP BY Category.category_name";
+
         Map<String, Object> categoryStatistics = new HashMap<>();
+
         try (Connection connection = ConnectionWithDB.getConnection();
              PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
+
             while (resultSet.next()) {
                 String categoryName = resultSet.getString("category_name");
                 int totalProducts = resultSet.getInt("total_products");
@@ -139,17 +142,56 @@ public class CategoryDaoImpl implements CategoryDao {
                 BigDecimal minPrice = resultSet.getBigDecimal("min_price");
                 BigDecimal avgPrice = resultSet.getBigDecimal("avg_price");
                 BigDecimal maxPrice = resultSet.getBigDecimal("max_price");
+
                 Map<String, Object> productData = new HashMap<>();
                 productData.put("total_products", totalProducts);
                 productData.put("total_store_products", totalStoreProducts);
                 productData.put("min_price", minPrice);
                 productData.put("avg_price", avgPrice);
                 productData.put("max_price", maxPrice);
+
                 categoryStatistics.put(categoryName, productData);
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Couldn't retrieve category product data.", e);
         }
+
         return categoryStatistics;
+    }
+
+    @Override
+    public List<String> findCategoriesToAddPromo() {
+
+        String query = "SELECT category_name " +
+                "FROM Category " +
+                "WHERE category_number IN ( " +
+                "    SELECT category_number " +
+                "    FROM Product P " +
+                "    WHERE NOT EXISTS ( " +
+                "        SELECT * " +
+                "        FROM Product " +
+                "        WHERE category_number = P.category_number " +
+                "    ) " +
+                "    AND id_product NOT IN ( " +
+                "        SELECT id_product " +
+                "        FROM Store_Product " +
+                "        WHERE products_number < ? " +
+                "        AND promotional_product = TRUE " +
+                "    ) " +
+                ")AS category_name_p";
+
+        List<String> categories = new ArrayList<>();
+        try (Connection connection = ConnectionWithDB.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()) {
+                String categoryName = resultSet.getString("category_name_p");
+                categories.add(categoryName);
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't get a list of categories "
+                    + "from categories database.", e);
+        }
+        return categories;
     }
 }
