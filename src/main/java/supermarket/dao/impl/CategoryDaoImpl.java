@@ -161,30 +161,23 @@ public class CategoryDaoImpl implements CategoryDao {
 
     @Override
     public List<Category> findCategoriesToAddPromo() {
-        String query = "SELECT category_name,category_number " +
+        String query = "SELECT category_number, category_name " +
                 "FROM Category " +
-                "WHERE category_number IN ( " +
-                "    SELECT category_number " +
-                "    FROM Product P " +
-                "    WHERE NOT EXISTS ( " +
-                "        SELECT * " +
-                "        FROM Product " +
-                "        WHERE category_number = P.category_number " +
-                "    ) " +
-                "    AND id_product NOT IN ( " +
-                "        SELECT id_product " +
-                "        FROM Store_Product " +
-                "        WHERE products_number < 20 " +
-                "        AND promotional_product = TRUE " +
-                "    ) " +
-                ")";
+                "WHERE category_number IN ( SELECT category_number " +
+                "                           FROM Product P " +
+                "                           WHERE NOT EXISTS ( SELECT * " +
+                "                                              FROM Product " +
+                "                                              WHERE category_number = P.category_number  " +
+                "                                              AND id_product NOT IN ( SELECT id_product " +
+                "                                                                      FROM Store_Product " +
+                "                                                                      WHERE products_number < 20 " +
+                "                                                                      AND promotional_product = 0)));";
         List<Category> categories2 = new ArrayList<>();
         try (Connection connection = ConnectionWithDB.getConnection();
              PreparedStatement getAllCategoriesStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = getAllCategoriesStatement.executeQuery();
             while (resultSet.next()) {
                 categories2.add(parseCategoryFromResultSet(resultSet));
-
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Couldn't get a list of categories "

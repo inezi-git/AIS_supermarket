@@ -5,7 +5,6 @@
 <html>
 <head>
     <title>CategoriesToAddPromo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
@@ -21,17 +20,18 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Name</th>
-            <th></th>
-            <th></th>
-
+            <th>Category number</th>
+            <th>Category name</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var="category" items="${categories}">
             <tr>
                 <td>
-                    <c:out value="${category.value.category_name_p}"/>
+                    <c:out value="${category.categoryNumber}"/>
+                </td>
+                <td>
+                    <c:out value="${category.categoryName}"/>
                 </td>
             </tr>
         </c:forEach>
